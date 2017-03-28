@@ -48,7 +48,6 @@
         </action>
     </package>
 
-<<<<<<< HEAD
     <package name="charge" namespace="/charge" extends="json-default">
         <action name="query" class="Action.ChargeAction" method="query">
             <result type="json"></result>
@@ -60,6 +59,3 @@
         </action>
     </package>
 </struts>
-=======
-</struts>
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9

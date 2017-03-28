@@ -34,13 +34,8 @@ public class DiseaseDao {
                         , rs.getString("name")
                         ,rs.getInt("year")
                         ,rs.getFloat("fees")
-<<<<<<< HEAD
                         ,rs.getFloat("groupfees")
                         ,rs.getInt("s_count")));
-=======
-                        ,rs.getFloat("group")
-                        ,rs.getInt("count")));
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,13 +64,8 @@ public class DiseaseDao {
                         , rs.getString("name")
                         ,rs.getInt("year")
                         ,rs.getFloat("fees")
-<<<<<<< HEAD
                         ,rs.getFloat("groupfees")
                         ,rs.getInt("s_count")));
-=======
-                        ,rs.getFloat("group")
-                        ,rs.getInt("count")));
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
             }
         } catch (SQLException e) {
             e.printStackTrace();

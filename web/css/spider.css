@@ -23,11 +23,7 @@ body {
 
 .header_bg{
     width : 100%;
-<<<<<<< HEAD
     height : 12%;
-=======
-    height : 20%;
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
 }
 
 .menu{
@@ -36,7 +32,6 @@ body {
 
 
 #content{
-<<<<<<< HEAD
     width : 80%;
     height : 78%;
     margin-left:10%;
@@ -48,10 +43,6 @@ body {
     height : 78%;
     margin-left:5%;
     margin-right:5%
-=======
-    width : 100%;
-    height : 70%;
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
 }
 
 .footer1_bg {
@@ -67,39 +58,19 @@ body {
 }
 
 #manager {
-<<<<<<< HEAD
     float: left;
     width: 100%;
     height: 100%;
 }
 
 
-=======
-    margin-top: 20px;
-    margin-left: 10px;
-    float: left;
-    width: 45%;
-    height: 80%;
-}
-
-#well {
-    margin-top: 20px;
-    margin-right: 20px;
-    float: right;
-    width: 50%;
-    height: 80%;
-}
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
 
 #detail-information{
     height: 80%;
 }
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
 #page{
     height: 10%;
 }
@@ -134,7 +105,6 @@ body {
 
 }
 
-<<<<<<< HEAD
 #manager1 {
     margin-top: 20px;
     margin-left: 10px;
@@ -157,8 +127,6 @@ body {
     width: 50%;
     height: 100%;
 }
-=======
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
 
 #well h3{
     width:30%;
@@ -207,11 +175,7 @@ th{
     color: #797979;
 }
 .wrap{
-<<<<<<< HEAD
     width: 100%;
-=======
-    width: 300px;
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
     margin: 0 auto;
 }
 .select_style{
@@ -219,8 +183,4 @@ th{
     margin-left: 100px;
     height:50px;
     font-size:20px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9

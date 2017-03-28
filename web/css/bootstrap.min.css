@@ -3711,7 +3711,6 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 .nav {
     margin-bottom: 0;
     padding-left: 0;
-<<<<<<< HEAD
     list-style: none;
 }
 
@@ -3720,9 +3719,6 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
     padding-left: 0;
     float:right;
     list-style: none;
-=======
-    list-style: none
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
 }
 
 .nav > li {
@@ -6254,8 +6250,4 @@ button.close {
     .hidden-print {
         display: none !important
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9

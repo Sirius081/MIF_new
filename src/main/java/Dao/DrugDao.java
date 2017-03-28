@@ -51,11 +51,7 @@ public class DrugDao {
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
-<<<<<<< HEAD
         StringBuffer sql=new StringBuffer("select * from drug where year=? order by "+orderBy+" desc limit 10");
-=======
-        StringBuffer sql=new StringBuffer("select * from disease where year=? order by "+orderBy+" desc limit 10");
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
         try {
             stmt=con.prepareStatement(sql.toString());
             stmt.setInt(1,year);
