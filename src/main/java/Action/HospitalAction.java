@@ -45,11 +45,7 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
     public String top10(){
         String orderBy=request.getParameter("orderBy");
         int year=Integer.parseInt(request.getParameter("year"));
-<<<<<<< HEAD
         hospitals=dao.getTop10(orderBy, year);
-=======
-        dao.getTop10(orderBy,year);
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
         return SUCCESS;
     }
 

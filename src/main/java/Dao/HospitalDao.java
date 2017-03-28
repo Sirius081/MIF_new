@@ -26,11 +26,7 @@ public class HospitalDao {
             sql.append(" and year="+hospital.getYear());
         }
         if(hospital.getLevel()!=null){
-<<<<<<< HEAD
             sql.append(" and level='"+hospital.getLevel()+"\r'");
-=======
-            sql.append(" and level='"+hospital.getLevel()+"'");
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
         }
         try {
             stmt=con.prepareStatement(sql.toString());
@@ -43,11 +39,7 @@ public class HospitalDao {
                         ,rs.getFloat("groupfees")
                         ,rs.getInt("m_count")
                         ,rs.getInt("h_count")
-<<<<<<< HEAD
                         ,rs.getString("level")));
-=======
-                ,rs.getString("level")));
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -66,11 +58,7 @@ public class HospitalDao {
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
-<<<<<<< HEAD
         StringBuffer sql=new StringBuffer("select * from hospital where year=? order by "+orderBy+" desc limit 10");
-=======
-        StringBuffer sql=new StringBuffer("select * from disease where year=? order by "+orderBy+" desc limit 10");
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
         try {
             stmt=con.prepareStatement(sql.toString());
             stmt.setInt(1,year);
