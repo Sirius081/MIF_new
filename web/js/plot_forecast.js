@@ -27,27 +27,15 @@ function plot(forecastList){
             {
                 type : 'category',
                 boundaryGap : false,
-<<<<<<< HEAD
                 data : []
             }
         ],
         yAxis : [
              {
-=======
-                data : [],
-            }
-        ],
-        yAxis : [
-            {
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
                 type : 'value'
             }
         ],
         series : [
-<<<<<<< HEAD
-=======
-
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
         ]
     };
     var data=[];

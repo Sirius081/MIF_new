@@ -33,10 +33,6 @@ public class DrugAction extends ActionSupport implements ServletRequestAware {
         if (request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
         Drug drug=new Drug(0,year,name,0);
         drugs=dao.getDrugs(drug);
         return SUCCESS;

@@ -15,13 +15,7 @@
   <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
   <link href="css/common.css" rel="stylesheet"/>
   <link href="css/spider.css" rel="stylesheet"/>
-<<<<<<< HEAD
   <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-=======
-
-  <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/sub-menu.js"></script>
@@ -36,7 +30,6 @@
   <div class="logo">
     <span class="font-style">泸州市医保基金预测平台</span>
   </div>
-<<<<<<< HEAD
   <div>
     <nav>
       <div class="btn-group" id="btn-group1">
@@ -60,14 +53,6 @@
         </ul>
       </div>
     </nav>
-=======
-  <div class="menu">
-    <nav>
-      <ul class="top_list list-unstyled">
-        <li><a href="">收支预测</a></li>
-
-      </ul>
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
     </nav>
   </div>
 </div>
@@ -83,14 +68,6 @@
     <div id="source_table_content" style="">
       <div class="wrap" >
         <form id="queryPredict">
-<<<<<<< HEAD
-=======
-          <span style="font-size:25px" >选择模型：</span>
-          <select id="select_model" class="form-control select_style" ></select>
-          <span style="font-size:25px">选择变量：</span>
-          <select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>
-          <input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
         </form>
       </div>
 
@@ -150,10 +127,5 @@
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
 </body>
 </html>

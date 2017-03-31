@@ -48,7 +48,6 @@
         </action>
     </package>
 
-<<<<<<< HEAD
     <package name="charge" namespace="/charge" extends="json-default">
         <action name="query" class="Action.ChargeAction" method="query">
             <result type="json"></result>
@@ -59,7 +58,15 @@
             <result type="json"></result>
         </action>
     </package>
+    <package name="statistic" namespace="/statistic" extends="json-default">
+        <action name="totalTrend" class="Action.StatisticAction" method="totalTrend">
+            <result type="json"></result>
+        </action>
+        <action name="ageDistribution" class="Action.StatisticAction" method="ageDistribution">
+            <result type="json"></result>
+        </action>
+        <action name="feesDetail" class="Action.StatisticAction" method="feesDetail">
+            <result type="json"></result>
+        </action>
+    </package>
 </struts>
-=======
-</struts>
->>>>>>> df9c04cbc0372faff294ebe0e59fdb5909d9d5b9
