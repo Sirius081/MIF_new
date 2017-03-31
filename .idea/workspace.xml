@@ -7,194 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4fade26-1cba-4f5c-994f-765d6118d29f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/医疗项目数据库建表说明.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/市内医疗机构名单.xls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Action/ChargeAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Action/CostAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Action/DiseaseAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Action/DrugAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Action/FundAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Action/HospitalAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Action/StatisticAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/ChargeDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/CostDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/DBtool.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/DictionaryDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/DiseaseDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/DrugDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/ForecastDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/HospitalDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/StatisticDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Dao/YLBXDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/AgeDistribution.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/Charge.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/Cost.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/Disease.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/Drug.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/FeesDetail.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/Forecast.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/Hospital.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/KeyValue.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/TotalTrend.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Entity/YLBX.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/ReadData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Service/FundService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/Util/Dictionary.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/t.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/test.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/asm-3.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/asm-commons-3.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/asm-tree-3.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/c3p0-0.9.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/commons-fileupload-1.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/commons-io-2.0.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/commons-lang3-3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/freemarker-2.3.19.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/javassist-3.11.0.GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/mchange-commons-java-0.2.10.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.25.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/ognl-3.0.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/struts2-convention-plugin-2.3.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/struts2-core-2.3.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/struts2-json-plugin-2.3.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/lib/xwork-core-2.3.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/logo_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_diagonals-thick_20_666666_40x40.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_flat_10_000000_40x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_glass_100_f6f6f6_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_glass_100_fdf5ce_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_gloss-wave_35_f6a828_500x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_highlight-soft_100_eeeeee_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-bg_highlight-soft_75_ffe45c_1x100.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-icons_222222_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-icons_228ef1_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-icons_ef8c08_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-icons_ffd27a_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/img/logo_3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Action/ChargeAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Action/CostAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Action/DiseaseAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Action/DrugAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Action/FundAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Action/HospitalAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Action/StatisticAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/ChargeDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/CostDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/DBtool.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/DictionaryDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/DiseaseDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/DrugDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/ForecastDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/HospitalDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/StatisticDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Dao/YLBXDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/AgeDistribution.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/Charge.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/Cost.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/Disease.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/Drug.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/FeesDetail.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/Forecast.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/Hospital.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/KeyValue.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/TotalTrend.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Entity/YLBX.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/ReadData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Service/FundService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/Util/Dictionary.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/t.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/test.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/MIF-master.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/MIF_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_commons_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__asm_asm_tree_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_c3p0_0_9_5_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javassist_javassist_3_11_0_GA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_0_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts2_convention_plugin_2_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts2_core_2_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_struts2_json_plugin_2_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_struts_xwork_xwork_core_2_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_19.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xsd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MIF.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/doc/.~lock.医疗项目数据库建表说明.docx#" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/classes/struts.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/charge.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/cost.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/bootstrap-3.1.1.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/jquery-ui-1.10.4.custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/jquery-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/jquery-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/owl.carousel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/spider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/css/ui.jqgrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/disease.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/drug.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/hospital.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/hospital1.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/charge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/cost.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/dataPreprocessing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/disease.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/display.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/drug.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/echarts.common.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/grid.locale-cn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/hospital.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/jquery-3.1.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/jquery.jqGrid.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/plot_forecast.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/spider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/js/sub-menu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/mif.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/predict.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/test.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/test2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/test2.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/test3.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/test4.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/MIF_war_exploded/test5.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Action/StatisticAction.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Dao/StatisticDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Entity/AgeDistribution.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Entity/FeesDetail.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Entity/TotalTrend.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Dao/DBtool.java" afterPath="$PROJECT_DIR$/src/main/java/Dao/DBtool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MIF.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -221,14 +35,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3996139">
+            <state vertical-scroll-proportion="0.0">
               <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.73166025">
+              <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1331,12 +1155,12 @@
       <workItem from="1490682491434" duration="62000" />
       <workItem from="1490682605974" duration="29000" />
       <workItem from="1490683156143" duration="4766000" />
-      <workItem from="1490954927439" duration="372000" />
+      <workItem from="1490954927439" duration="455000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288213000" />
+    <option name="totallyTimeSpent" value="288296000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1349,7 +1173,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="84" y="27" width="1719" height="1053" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1369,7 +1193,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20790893" sideWeight="0.49411765" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20790893" sideWeight="0.49411765" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40628386" sideWeight="0.49508426" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1793,11 +1617,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3996139">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.73166025">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
