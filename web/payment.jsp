@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: song
+  Date: 2017/3/28
+  Time: 16:57
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -19,10 +26,12 @@
     <link href="css/style.css" rel="stylesheet"/>
     <script type="text/javascript" src="js/common.js"></script>
     <!-- GOOGLE FONT -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+
     <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/echarts.js"></script>
 
 </head>
 <body>
@@ -62,7 +71,8 @@
                             <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="predict.jsp">收支走向预测</a>
                                 </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a>
+                                </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                                 </li>
                             </ul>
@@ -88,60 +98,37 @@
 <div class="content-wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-sm-8 col-xs-12">
+            <div class="col-md-5 col-sm-5 col-xs-12">
                 <div class="panel-body">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            基金缴费模型
-                        </div>
-                        <div class="panel-body">
-                            <form id="queryPredict">
-                                <div class="form-group">
-                                    <label>按照年份：</label>
-                                    <select id="year">
-                                        <option value="2016">2016</option>
-                                        <option>2017</option>
-                                        <option>2018</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>平均工资：</label>
-                                    <input class="form-control" id="avgwage" type="text"/>
-                                </div>
-                                <div class="form-group">
-                                    <label>缴费上限</label>
-                                    <input class="form-control" id="ceil" type="text"/>
-                                </div>
-                                <div class="form-group">
-                                    <label>缴费下限</label>
-                                    <input class="form-control" id="floor" type="text"/>
-                                </div>
-                                <div class="form-group">
-                                    <label>缴费比例</label>
-                                    <input id="ratio1" class="input" type="text"/>
-                                    <input id="ratio2" class="input" type="text"/>
-                                </div>
-                                <div class="form-group">
-                                    <label>缴费金额</label>
-                                    <input class="form-control" id="result" type="text"/>
-                                </div>
-                                <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
-                                       value="查询"/>
-                                <button type="reset" class="btn btn-primary">重置</button>
-                            </form>
-                        </div>
-                    </div>
-
+                    <form id="queryPredict" name="form1">
+                        <span style="font-size:25px">选择保险类型：</span>
+                        <select  id="identity" class="form-control select_style">
+                            <option ></option>
+                            <option value="1">城镇职工</option>
+                            <option value="2">城镇居民</option>
+                        </select>
+                        <span style="font-size:25px">选择内容：</span>
+                        <select name="totalTrend" id="totalTrend" class="form-control select_style"
+                                onChange="getCity()">
+                            <option ></option>
+                            <option value="totalTrend">总体趋势</option>
+                            <option value="ageGroup">参保人群细分</option>
+                        </select>
+                        <span style="font-size:25px">选择查看：</span>
+                        <select id="selectBy"  name="selectBy" class="form-control select_style"
+                                style="width:200px;margin-left: 100px">
+                        </select>
+                        <input id="query" class="btn" type="button" value="查询" onclick="plot_statistic()"
+                               style="font-size: 20px; margin-left: 100px;margin-top:20px "/>
+                    </form>
                 </div>
             </div>
             <!--图形展示-->
-            <div class="col-md-6 col-sm-4 col-xs-12">
-                <div id="detail-information">
+            <div class="col-md-7 col-sm-7 col-xs-12">
+                <div id="detail-information" class="plotsize">
                 </div>
             </div>
-
         </div>
-
     </div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
@@ -154,12 +141,6 @@
         </div>
     </div>
 </section>
-
-<script src="assets/js/jquery-1.10.2.js"></script>
-<!-- BOOTSTRAP SCRIPTS  -->
-<script src="assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/charge.js" charset="utf-8"></script>
-<script type="text/javascript" src="js/spider.js"></script>
-<script type="text/javascript" src="js/plot_forecast.js"></script>
+<script type="text/javascript" src="js/payment.js" charset="utf-8"></script>
 </body>
 </html>

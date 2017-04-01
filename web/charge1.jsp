@@ -1,5 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
+  User: song
+  Date: 2017/1/13
+  Time: 14:58
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--
+  Created by IntelliJ IDEA.
   User: sirius
   Date: 16-7-26
   Time: 下午5:16
@@ -15,6 +23,7 @@
   <link href="css/bootstrap.css" rel='stylesheet' type='text/css'/>
   <link href="css/common.css" rel="stylesheet"/>
   <link href="css/spider.css" rel="stylesheet"/>
+  <script type="text/javascript" src="js/echarts.common.min.js"></script>
   <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/common.js"></script>
@@ -38,7 +47,7 @@
         </button>
         <ul class="dropdown-menu" role="menu" id="menu1">
           <li><a href="predict.jsp">收支预测</a></li>
-          <li><a href="charge.jsp">基金缴费模型</a></li>
+          <li><a href="charge1.jsp">基金缴费模型</a></li>
           <li><a href="cost1.jsp">医疗待遇支付模型</a></li>
         </ul>
       </div>
@@ -63,65 +72,51 @@
 
   <!--切换标签页面-->
 
-
-  <div id="manager">
+  <div id="manager1">
     <div id="source_table_content" style="">
       <div class="wrap" >
         <form id="queryPredict">
+          <span class="label1" >按年份：</span>
+          <select id="year">
+            <option value="2016">2016</option>
+            <option>2017</option>
+            <option>2018</option>
+          </select>
+          <input id="query1" class="query" type="button" onclick="selectresult()" value="查询"/>
+            <br/>
+          <span class="label1">平均工资：</span>
+          <input type="text" id="avgwage" class="input">
+          <br/>
+          <span class="label1">缴费基数上限：</span>
+          <input type="text"  id="ceil" class="input">
+          <br/>
+          <span class="label1"  >缴费基数下限：</span>
+            <input type="text" id="floor" class="input">
+          <br/>
+          <span class="label1"  >缴费比例：</span>
+          <input type="text" id="ratio1" class="input">
+          <input type="text" id="ratio2" class="input">
+          <br>
+          <span class="label1"  >基金缴费金额：</span>
+          <input type="text" id="result" class="input1">&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;万元&nbsp;)
+          <br/>
         </form>
       </div>
-
-      <script src="js/echarts.common.min.js"></script>
-      <script type="text/javascript">
-        $(document).ready(function(){
-          $.ajax({
-            url:'/MIF/init',
-            type:'get',
-            dataType:'json',
-            success:function(data){
-              var model_select=$("#select_model");
-              $.each(data.modelList,function(i,item){
-                model_select.append("<option style='font-size: 20px' value='"+item.key+"'>"+item.value+"</option>");
-              });
-              var model_select=$("#select_variable");
-              $.each(data.variableList,function(i,item){
-                model_select.append("<option value='"+item.key+"'>"+item.value+"</option>");
-              });
-            }
-          });
-          $("#query").click(function(){
-            var model_selected=$("#select_model").val();
-            var variable_selected=$("#select_variable").val();
-            var params="&model="+model_selected+"&variable="+variable_selected;
-            $.ajax({
-              url:'/MIF/query',
-              type:'get',
-              data:params,
-              dataType:'json',
-              success:function(data){
-                $(data).each(function(i,value){
-                  plot(value);
-                });
-              }
-            });
-          });
-        });
-      </script>
     </div>
   </div>
 
-  <!--右部显示详细信息-->
-  <div id="well">
-    <div id="detail-information">
-    </div>
+<div id="well">
+  <div id="detail-information">
   </div>
+</div>
+</div>
 </div>
 <div class="footer1_bg">
   <div class="copy">
     <p class="link">Copyright &copy; 华东师范大学.<a target="_blank" href="http://www.ecnu.edu.cn/"></a></p>
   </div>
 </div>
-
+<script type="text/javascript" src="js/charge.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
 

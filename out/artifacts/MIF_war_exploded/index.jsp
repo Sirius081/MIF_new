@@ -38,8 +38,8 @@
         </button>
         <ul class="dropdown-menu" role="menu" id="menu1">
           <li><a href="predict.jsp">收支预测</a></li>
-          <li><a href="mif.jsp">基金缴费模型</a></li>
-          <li><a href="cost.jsp">医疗待遇支付模型</a></li>
+          <li><a href="charge.jsp">基金缴费模型</a></li>
+          <li><a href="cost1.jsp">医疗待遇支付模型</a></li>
         </ul>
       </div>
       <div class="btn-group" id="btn-group2">
@@ -70,8 +70,6 @@
         <form id="queryPredict">
         </form>
       </div>
-
-
 
       <script src="js/echarts.common.min.js"></script>
       <script type="text/javascript">

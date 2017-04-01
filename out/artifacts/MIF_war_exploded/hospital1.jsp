@@ -51,6 +51,9 @@
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo.png"/>
             </a>
+            <div class="right-div">
+                <a href="#" class="btn btn-danger pull-right">关于平台</a>
+            </div>
 
         </div>
     </div>

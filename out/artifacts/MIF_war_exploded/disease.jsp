@@ -37,8 +37,8 @@
         </button>
         <ul class="dropdown-menu" role="menu" id="menu1">
           <li><a href="predict.jsp">收支预测</a></li>
-          <li><a href="charge.jsp">基金缴费模型</a></li>
-          <li><a href="cost.jsp">医疗待遇支付模型</a></li>
+          <li><a href="charge1.jsp">基金缴费模型</a></li>
+          <li><a href="cost1.jsp">医疗待遇支付模型</a></li>
         </ul>
       </div>
       <div class="btn-group" id="btn-group2">
