@@ -6,20 +6,30 @@ package Entity;
 public class AgeDistribution {
     int year;//年份
     int ageId;//年龄段
+    int identity;//身份  职工 or 居民
     int c_count;//参保人数
     int m_count;//门诊人数
     int h_count;//住院人数
     double m_fees;//门诊统筹费用
     double h_fees;//住院统筹
 
-    public AgeDistribution(int year, int ageId, int c_count, int m_count, int h_count, double m_fees, double h_fees) {
+    public AgeDistribution(int year, int ageId, int identity, int c_count, int m_count, int h_count, double m_fees, double h_fees) {
         this.year = year;
         this.ageId = ageId;
+        this.identity = identity;
         this.c_count = c_count;
         this.m_count = m_count;
         this.h_count = h_count;
         this.m_fees = m_fees;
         this.h_fees = h_fees;
+    }
+
+    public int getIdentity() {
+        return identity;
+    }
+
+    public void setIdentity(int identity) {
+        this.identity = identity;
     }
 
     public int getYear() {

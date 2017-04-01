@@ -20,7 +20,9 @@ public class StatisticAction extends ActionSupport implements ServletRequestAwar
      * @return tts
      */
     public String totalTrend(){
-        tts=dao.getTotalTrend();
+        int identity=Integer.parseInt(request.getParameter("identity"));
+        TotalTrend condition=new TotalTrend(-1,identity,-1,-1,-1,-1,-1,-1);
+        tts=dao.getTotalTrend(condition);
         return SUCCESS;
     }
 
@@ -29,12 +31,16 @@ public class StatisticAction extends ActionSupport implements ServletRequestAwar
      * @return ads
      */
     public String ageDistribution(){
-        ads=dao.getAgeDistribution();
+        int identity=Integer.parseInt(request.getParameter("identity"));
+        AgeDistribution condition=new AgeDistribution(-1,-1,identity,-1,-1,-1,-1,-1);
+        ads=dao.getAgeDistribution(condition);
         return SUCCESS;
     }
 
     public String feesDetail(){
-        fds=dao.getFeesDetail();
+        int identity=Integer.parseInt(request.getParameter("identity"));
+        FeesDetail condition=new FeesDetail(-1,identity,"",-1,-1,-1,-1,-1);
+        fds=dao.getFeesDetail(condition);
         return SUCCESS;
     }
     private StatisticDao dao=new StatisticDao();
