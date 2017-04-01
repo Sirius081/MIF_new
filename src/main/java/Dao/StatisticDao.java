@@ -19,22 +19,28 @@ public class StatisticDao {
      * get totalTrend by year
      * @return
      */
-    public List<TotalTrend> getTotalTrend(){
+    public List<TotalTrend> getTotalTrend(TotalTrend condition){
         List<TotalTrend> list=new ArrayList<TotalTrend>();
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
-        String sql="select * from totalTrend where 1=1";
-
+        StringBuffer sql=new StringBuffer("select * from totalTrend where 1=1 ");
+        if(condition.getIdentity()!=-1){//query by identity
+            sql.append("and identity="+condition.getIdentity());
+        }
         try {
-            stmt=con.prepareStatement(sql);
+            stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
                 list.add(new TotalTrend(rs.getInt("year")
+                        ,rs.getInt("identiy")
                         , rs.getDouble("income")
                         ,rs.getDouble("cost")
                         ,rs.getInt("numbers")
-                        ,rs.getInt("avgwage")));
+                        ,rs.getInt("avgwage")
+                        ,rs.getInt("working")
+                        ,rs.getInt("retired")
+                ));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -49,15 +55,17 @@ public class StatisticDao {
         return list;
     }
 
-    public List<FeesDetail> getFeesDetail(){
+    public List<FeesDetail> getFeesDetail(FeesDetail condition){
         List<FeesDetail> list=new ArrayList<FeesDetail>();
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
-        String sql="select * from feesDetail where 1=1";
-
+        StringBuffer sql=new StringBuffer("select * from feesDetail where 1=1 ");
+        if(condition.getIdentity()!=-1){//query by identity
+            sql.append(" and identity="+condition.getIdentity());
+        }
         try {
-            stmt=con.prepareStatement(sql);
+            stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
                 list.add(new FeesDetail(rs.getInt("year")
@@ -83,18 +91,21 @@ public class StatisticDao {
         return list;
     }
 
-    public List<AgeDistribution> getAgeDistribution(){
+    public List<AgeDistribution> getAgeDistribution(AgeDistribution condition){
         List<AgeDistribution> list=new ArrayList<AgeDistribution>();
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
-        String sql="select * from ageDistribution where 1=1";
-
+        StringBuffer sql=new StringBuffer("select * from ageDistribution where 1=1 ");
+        if(condition.getIdentity()!=-1){//query by identity
+            sql.append("and identity="+condition.getIdentity());
+        }
         try {
-            stmt=con.prepareStatement(sql);
+            stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
                 list.add(new AgeDistribution(rs.getInt("year")
+                        ,rs.getInt("identity")
                         ,rs.getInt("ageId")
                         ,rs.getInt("c_count")
                         ,rs.getInt("m_count")
@@ -116,6 +127,5 @@ public class StatisticDao {
         return list;
     }
     public static void main(String[] args) {
-        new StatisticDao().getTotalTrend();
     }
 }
