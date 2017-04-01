@@ -24,16 +24,18 @@ public class StatisticDao {
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
+        //sql string
         StringBuffer sql=new StringBuffer("select * from totalTrend where 1=1 ");
         if(condition.getIdentity()!=-1){//query by identity
             sql.append("and identity="+condition.getIdentity());
         }
+
         try {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
                 list.add(new TotalTrend(rs.getInt("year")
-                        ,rs.getInt("identiy")
+                        ,rs.getInt("identity")
                         , rs.getDouble("income")
                         ,rs.getDouble("cost")
                         ,rs.getInt("numbers")
@@ -60,10 +62,18 @@ public class StatisticDao {
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
-        StringBuffer sql=new StringBuffer("select * from feesDetail where 1=1 ");
+        //sql string
+        StringBuffer sql=new StringBuffer("select year,identity,h.grade as grade,m_fees,h_fees,m_count,h_count,drugfees" +
+                " from feesDetail f " +
+                " left join hgrade h on h.id=f.grade" +
+                " where 1=1 ");
         if(condition.getIdentity()!=-1){//query by identity
             sql.append(" and identity="+condition.getIdentity());
         }
+        sql.append("");
+        sql.append(" order by year, h.id");
+
+
         try {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
@@ -78,6 +88,7 @@ public class StatisticDao {
                         ,rs.getDouble("drugfees")
                 ));
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {
@@ -100,13 +111,14 @@ public class StatisticDao {
         if(condition.getIdentity()!=-1){//query by identity
             sql.append("and identity="+condition.getIdentity());
         }
+        sql.append(" order by year, ageId");
         try {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
                 list.add(new AgeDistribution(rs.getInt("year")
-                        ,rs.getInt("identity")
                         ,rs.getInt("ageId")
+                        ,rs.getInt("identity")
                         ,rs.getInt("c_count")
                         ,rs.getInt("m_count")
                         ,rs.getInt("h_count")
