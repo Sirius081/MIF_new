@@ -61,7 +61,7 @@
       <div class="col-md-12">
         <div class="navbar-collapse collapse ">
           <ul id="menu-top" class="nav navbar-nav navbar-right">
-            <li><a href="index.html">主页</a></li>
+            <li><a href="index.jsp">主页</a></li>
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">统计分析 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
