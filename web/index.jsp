@@ -83,8 +83,8 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">区县</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital1.jsp">医院</a>
                 </li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">病种</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">药品</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
               </ul>
             </li>
             <li><a href="index.html">联系我们</a></li>

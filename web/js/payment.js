@@ -35,7 +35,7 @@ function getCity() {
         if (sltProvince.selectedIndex == 1) {
             sltCity[0] = new Option(provinceCity[0], "income");
             sltCity[1] = new Option(provinceCity[1], "cost");
-            sltCity[2] = new Option(provinceCity[2], "numbers");
+            sltCity[2] = new Option(provinceCity[3], "numbers");
         }
         else {
             sltCity[0] = new Option(provinceCity[0], "c_count");
