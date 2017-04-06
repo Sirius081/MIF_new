@@ -2,6 +2,7 @@ package Action;
 
 import Dao.DiseaseDao;
 import Entity.Disease;
+import Entity.DiseaseHospital;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
@@ -14,6 +15,7 @@ import java.util.List;
 public class DiseaseAction extends ActionSupport implements ServletRequestAware {
     //get
     private List<Disease> diseases;
+    private List<DiseaseHospital> diseaseHospitals;
     //set
     private HttpServletRequest request;
 
@@ -24,28 +26,65 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
     }
 
     /**
-     * query diseases by name,year
+     * query diseases by name,year,identity
      * @return
      */
     public String query(){
         String name= request.getParameter("name");
-        int year=0;
+        int year=-1;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
-        Disease disease=new Disease(0,name,year,0,0,0);
-        diseases=dao.getDisease(disease);
+        int identity=-1;
+        if(request.getParameter("identity")!=null){
+            identity=Integer.parseInt(request.getParameter("identity"));
+        }
+        Disease condition=new Disease();
+        condition.setIdentity(identity);
+        condition.setYear(year);
+        condition.setName(name);
+        diseases=dao.getDisease(condition);
         return  SUCCESS;
     }
     public String top10(){
         String orderBy=request.getParameter("orderBy");
-        int year=Integer.parseInt(request.getParameter("year"));
-        diseases=dao.getTop10(orderBy,year);
+        int year=-1;
+        if(request.getParameter("year")!=null){
+            year=Integer.parseInt(request.getParameter("year"));
+        }
+        int identity=-1;
+        if(request.getParameter("identity")!=null){
+            identity=Integer.parseInt(request.getParameter("identity"));
+        }
+        Disease condition=new Disease();
+        condition.setIdentity(identity);
+        condition.setYear(year);
+        diseases=dao.getTop10(orderBy,condition);
         return SUCCESS;
     }
-
+    public String details(){
+        String name= request.getParameter("d_name");
+        int year=-1;
+        if(request.getParameter("year")!=null){
+            year=Integer.parseInt(request.getParameter("year"));
+        }
+        int identity=-1;
+        if(request.getParameter("identity")!=null){
+            identity=Integer.parseInt(request.getParameter("identity"));
+        }
+        Disease condition=new Disease();
+        condition.setIdentity(identity);
+        condition.setYear(year);
+        condition.setName(name);
+        diseaseHospitals=dao.getDetails(condition);
+        return SUCCESS;
+    }
     public List<Disease> getDiseases() {
         return diseases;
+    }
+
+    public List<DiseaseHospital> getDiseaseHospitals() {
+        return diseaseHospitals;
     }
 
     public void setServletRequest(HttpServletRequest httpServletRequest) {
