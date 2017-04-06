@@ -70,29 +70,23 @@ public class RegionDao {
         PreparedStatement stmt=null;
         ResultSet rs=null;
         StringBuffer sql=new StringBuffer();
-        if(condition.getIdentity()==-1&&condition.getYear()==-1&&condition.getName()==null){
-            sql.append("select a.year,a.identity,a.r_name as name,sum(a.m_count) as m_count" +
-                    ",sum(a.h_count) as h_count,sum(a.h_fees) as h_fees,sum(a.h_groupfees) as h_groupfees" +
-                    ",sum(a.m_fees) as m_fees,sum(a.m_groupfees) as m_groupfees" +
-                    " from hospital a " +
-                    " group by r_name,year,identity");
+        sql.append("select a.year,a.identity,a.r_name as name,sum(a.m_count) as m_count" +
+                ",sum(a.h_count) as h_count,sum(a.h_fees) as h_fees,sum(a.h_groupfees) as h_groupfees" +
+                ",sum(a.m_fees) as m_fees,sum(a.m_groupfees) as m_groupfees" +
+                " from hospital a " +
+                " where 1=1");
 
-        }else{
-            sql.append("select a.year,a.identity,a.r_name as name,a.m_count" +
-                    ",a.h_count,a.h_fees,a.h_groupfees,a.m_fees,a.m_groupfees" +
-                    " from hospital a " +
-                    " where 1=1");
-
-            if(condition.getIdentity()!=-1){
-                sql.append(" and identity="+condition.getIdentity());
-            }
-            if(condition.getYear()!=-1) {
-                sql.append(" and year="+condition.getYear());
-            }
-            if(condition.getName()!=null){
-                sql.append(" and r_name like '%"+condition.getName()+"%'");
-            }
+        if(condition.getIdentity()!=-1){
+            sql.append(" and identity="+condition.getIdentity());
         }
+        if(condition.getYear()!=-1) {
+            sql.append(" and year="+condition.getYear());
+        }
+        if(condition.getName()!=null){
+            sql.append(" and r_name like '%"+condition.getName()+"%'");
+        }
+        sql.append(" group by r_name,year,identity");
+
 
         try {
             stmt=con.prepareStatement(sql.toString());
