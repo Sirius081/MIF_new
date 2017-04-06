@@ -86,7 +86,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">异常检测 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">区县</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital1.jsp">医院</a>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital.jsp">医院</a>
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">病种</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#">药品</a></li>
