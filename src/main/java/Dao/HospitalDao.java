@@ -33,13 +33,13 @@ public class HospitalDao {
             sql.append(" and year="+condition.getYear());
         }
         if(condition.getGrade()!=null){
-            sql.append(" and level='"+condition.getGrade()+"'");
+            sql.append(" and grade.grade='"+condition.getGrade()+"'");
         }
         try {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
-                hospitals.add(new Hospital(rs.getInt("year")
+                Hospital h=new Hospital(rs.getInt("year")
                         , rs.getInt("identity")
                         ,rs.getString("r_name")
                         ,rs.getString("h_name")
@@ -50,7 +50,16 @@ public class HospitalDao {
                         ,rs.getDouble("h_groupfees")
                         ,rs.getDouble("m_fees")
                         ,rs.getDouble("m_groupfees")
-                        ,rs.getDouble("drugfees")));
+                        ,rs.getDouble("drugfees"));
+                if(h.getM_count()>0){
+                    h.setAvg_mfees(h.getM_fees()/h.getM_count());
+                    h.setAvg_mgroupfees(h.getM_groupfees()/h.getM_count());
+                }
+                if(h.getH_count()>0){
+                    h.setAvg_hfees(h.getH_fees()/h.getH_count());
+                    h.setAvg_hgroupfees(h.getH_groupfees()/h.getH_count());
+                }
+                hospitals.add(h);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -83,7 +92,7 @@ public class HospitalDao {
 
             rs=stmt.executeQuery();
             while(rs.next()){
-                hospitals.add(new Hospital(rs.getInt("year")
+                Hospital h=new Hospital(rs.getInt("year")
                         , rs.getInt("identity")
                         ,rs.getString("r_name")
                         ,rs.getString("h_name")
@@ -94,7 +103,16 @@ public class HospitalDao {
                         ,rs.getDouble("h_groupfees")
                         ,rs.getDouble("m_fees")
                         ,rs.getDouble("m_groupfees")
-                        ,rs.getDouble("drugfees")));
+                        ,rs.getDouble("drugfees"));
+                if(h.getM_count()>0){
+                    h.setAvg_mfees(h.getM_fees()/h.getM_count());
+                    h.setAvg_mgroupfees(h.getM_groupfees()/h.getM_count());
+                }
+                if(h.getH_count()>0){
+                    h.setAvg_hfees(h.getH_fees()/h.getH_count());
+                    h.setAvg_hgroupfees(h.getH_groupfees()/h.getH_count());
+                }
+                hospitals.add(h);
             }
         } catch (SQLException e) {
             e.printStackTrace();
