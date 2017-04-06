@@ -42,21 +42,16 @@
 <body onload="loadtop10()">
 <div class="navbar navbar-inverse set-radius-zero">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">
-                <img src="img/logo.png"/>
-            </a>
-            <div class="right-div">
-                <a href="#" class="btn btn-danger pull-right">关于平台</a>
+        <div class="header_bg">
+            <div class="logo">
+                <span class="font-style">泸州市医保基金监管平台</span>
             </div>
-
+            <div class="right-div">
+                <a href="#" class="btn btn-danger pull-right">about</a>
+            </div>
         </div>
     </div>
+</div>
 </div>
 <!-- LOGO HEADER END-->
 <section class="menu-section">
@@ -65,20 +60,25 @@
             <div class="col-md-12">
                 <div class="navbar-collapse collapse ">
                     <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">主页</a></li>
+                        <li><a href="index.jsp">主页</a></li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">统计分析 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">参保信息模块</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">住院缴费信息模块</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="payment.jsp">基金收入模块</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="expense.jsp">费用支出模块</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">收支建模 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">收支走向预测</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">基金缴费模型</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">医疗待遇支付模型</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="predict.jsp">收支走向预测</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a>
+                                </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -145,7 +145,6 @@
                                     <option value="drugfees">住院人次</option>
                                 </select>
                                 <input id="query1" class="query" type="button" onclick="updatetop10()" value="查询"/>
-                                <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
                                 <div class="grid_relative" >
                                     <table id="grid-table"></table>
                                     <!--jqGrid 浏览导航栏所在-->
@@ -184,7 +183,7 @@
                     <span class="label1">按医疗机构代码：</span>
                     <input type="text" class="input1" id="hospitalnum">
                     <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
-                    <%--<input id="query3" class="query" type="button" onclick="back()" value="返回"/>--%>
+                    <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
 
                     <div class="grid_relative1">
                         <table id="grid-table2"></table>

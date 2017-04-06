@@ -104,7 +104,7 @@ function selectResult()
                 data:newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份','编号',"医院等级","住院费用","住院统筹支付","门诊人次","住院人次"],
+                colNames: ['年份','医疗机构代码',"医院等级","住院费用","住院统筹支付","门诊人次","住院人次"],
                 colModel:
                     [
                         { name: 'year', index: "year", width: "10%",align:"center", editable: true},
@@ -130,7 +130,6 @@ function selectResult()
                 onCellSelect:function(rowid,iCol,cellcontent,e){
                     var h_name=cellcontent;
                     var param="&identity="+identity+'&grade='+grade+'&h_name='+h_name+'&year='+year;
-                    alert(param)
                     $.ajax({
                         url: '/MIF/hospital/getDetails',
                         type: 'get',
@@ -146,7 +145,6 @@ function selectResult()
                                 newjson[i].d_name = data.diseaseHospitals[i].d_name;
                                 newjson[i].h_fees = data.diseaseHospitals[i].h_fees;
                                 newjson[i].h_groupfees =data.diseaseHospitals[i].h_groupfees;
-                                newjson[i].m_count =data.diseaseHospitals[i].m_count;
                                 newjson[i].h_count = data.diseaseHospitals[i].h_count;
                             }
                             var grid_selector = "#grid-table2";
@@ -156,16 +154,15 @@ function selectResult()
                                 data: newjson,
                                 datatype: "local",
                                 height: "auto",
-                                colNames: ['年份','编号',"医院等级","疾病名称","住院费用","住院统筹支付","门诊人次","住院人次"],
+                                colNames: ['年份','医疗机构代码',"医院等级","疾病名称","住院费用","住院统筹支付","住院人次"],
                                 colModel:
                                     [
                                         { name: 'year', index: "year", width: "10%",align:"center", editable: true},
-                                        { name: 'h_name', index: 'h_name', width: "40%",align:"center",editable: true },
+                                        { name: 'h_name', index: 'h_name', width: "20%",align:"center",editable: true },
                                         { name: 'grade', index: 'grade', width: "10%",align:"center", editable: true},
-                                        { name: 'd_name', index: 'd_name', width: "40%",align:"center",editable: true },
-                                        { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true},
-                                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
-                                        { name: 'm_count', index: 'm_count', width: "10%",align:"center", editable: true},
+                                        { name: 'd_name', index: 'd_name', width: "20%",align:"center",editable: true },
+                                        { name: 'h_fees', index: 'fees', width: "15%", align:"center",editable: true},
+                                        { name: 'h_groupfees', index: 'h_groupfees', width: "15%",align:"center", editable: true},
                                         { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
                                     ],
                                 rowNum: 10, //每页显示记录数
@@ -265,7 +262,6 @@ function back(){
                 onCellSelect:function(rowid,iCol,cellcontent,e){
                     var h_name=cellcontent;
                     var param="&identity="+identity+'&grade='+grade+'&h_name='+h_name+'&year='+year;
-                    alert(param)
                     $.ajax({
                         url: '/MIF/hospital/getDetails',
                         type: 'get',
@@ -291,7 +287,7 @@ function back(){
                                 data: newjson,
                                 datatype: "local",
                                 height: "auto",
-                                colNames: ['年份','编号',"医院等级","疾病名称","住院费用","住院统筹支付","门诊人次","住院人次"],
+                                colNames: ['年份','编号',"医院等级","疾病名称","住院费用","住院统筹支付","住院人次"],
                                 colModel:
                                     [
                                         { name: 'year', index: "year", width: "10%",align:"center", editable: true},
@@ -300,7 +296,6 @@ function back(){
                                         { name: 'd_name', index: 'd_name', width: "40%",align:"center",editable: true },
                                         { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true},
                                         { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
-                                        { name: 'm_count', index: 'm_count', width: "10%",align:"center", editable: true},
                                         { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
                                     ],
                                 rowNum: 10, //每页显示记录数
@@ -308,7 +303,6 @@ function back(){
                                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                                 viewrecords: true,
                                 multiselect: true,
-                                subGrid: true,
                                 altRows: true, //设置为交替行表格,默认为false
                                 loadonce: true,
                                 multiboxonly: true, //是否只能点击复选框多选
