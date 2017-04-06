@@ -12,9 +12,10 @@ function loadtop10(){
 
 function updatetop10()
 {
+    var identity=$("#identity").val();
     var year=$("#year").val();
     var orderBy =$("#orderBy").val();
-    var params="&year="+year+"&orderBy="+orderBy;
+    var params="&identity="+identity+"&year="+year+"&orderBy="+orderBy;
     $.ajax({
         url:'/MIF/hospital/getTop10',
         type:'get',
@@ -24,9 +25,9 @@ function updatetop10()
             var newjson=[];                             ///只展示其中的几列
             for(var i = 0; i <data.hospitals.length; i++){
                 newjson[i] = new Object();
-                newjson[i].num = data.hospitals[i].num;
+                newjson[i].h_name = data.hospitals[i].h_name;
                 newjson[i].year = data.hospitals[i].year;
-                newjson[i].fees = data.hospitals[i].fees;
+                newjson[i].h_fees= data.hospitals[i][orderBy];
             }
             var grid_selector = "#grid-table";
             var pager_selector = "#grid-pager";
@@ -38,9 +39,9 @@ function updatetop10()
                 colNames: ['编号','年份','费用'],
                 colModel:
                     [
-                        { name: 'num', index: 'num', width: "60%",align:"center",editable: true },
+                        { name: 'h_name', index: 'h_name', width: "60%",align:"center",editable: true },
                         { name: 'year', index: "year", width: "20%",align:"center", editable: true},
-                        { name: 'fees', index: 'fees', width: "20%",align:"center"},
+                        { name: "h_fees", index: "h_fees", width: "20%",align:"center"},
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
@@ -74,11 +75,11 @@ function updatetop10()
 
 function selectResult()
 {
-
+    var identity=$("#identity1").val();
     var year=$("#hospitalyear").val();
-    var level=$("#hospitallevel").val();
+    var grade=$("#hospitallevel").val();
     var num=$("#hospitalnum").val();
-    var param='&level='+level+'&num='+num+'&year='+year;
+    var param="&identity="+identity+'&grade='+grade+'&num='+num+'&year='+year;
     $.ajax({
         url:'/MIF/hospital/query',
         type:'get',
@@ -88,13 +89,13 @@ function selectResult()
             var newjson=[];                             ///只展示其中的几列
             for(var i = 0; i <data.hospitals.length; i++){
                 newjson[i] = new Object();
-                newjson[i].num = data.hospitals[i].num;
                 newjson[i].year = data.hospitals[i].year;
-                newjson[i].fees = data.hospitals[i].fees;
-                newjson[i].groupFees = data.hospitals[i].groupFees;
+                newjson[i].h_name = data.hospitals[i].h_name;
+                newjson[i].grade = data.hospitals[i].grade;
+                newjson[i].h_fees = data.hospitals[i].h_fees;
+                newjson[i].h_groupfees = data.hospitals[i].h_groupfees;
                 newjson[i].m_count = data.hospitals[i].m_count;
                 newjson[i].h_count = data.hospitals[i].h_count;
-                newjson[i].level = data.hospitals[i].level;
             }
             var grid_selector = "#grid-table2";
             var pager_selector = "#grid-pager2";
@@ -103,16 +104,16 @@ function selectResult()
                 data:newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['编号','年份','费用',"统筹支付","门诊人次","住院人次","医院等级"],
+                colNames: ['年份','编号',"医院等级","住院费用","住院统筹支付","门诊人次","住院人次",,],
                 colModel:
                     [
-                        { name: 'num', index: 'num', width: "40%",align:"center",editable: true },
                         { name: 'year', index: "year", width: "10%",align:"center", editable: true},
-                        { name: 'fees', index: 'fees', width: "10%", align:"center",editable: true},
-                        { name: 'groupFees', index: 'groupFees', width: "10%",align:"center", editable: true},
+                        { name: 'h_name', index: 'num', width: "40%",align:"center",editable: true },
+                        { name: 'grade', index: 'grade', width: "10%",align:"center", editable: true},
+                        { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true},
+                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
                         { name: 'm_count', index: 'm_count', width: "10%",align:"center", editable: true},
                         { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
-                        { name: 'level', index: 'level', width: "10%",align:"center", editable: true}
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
