@@ -75,4 +75,12 @@
             <result type="json"></result>
         </action>
     </package>
+    <package name="region" namespace="/region" extends="json-default">
+        <action name="query" class="Action.RegionAction" method="query">
+            <result type="json"></result>
+        </action>
+        <action name="getDetails" class="Action.RegionAction" method="details">
+            <result type="json"></result>
+        </action>
+    </package>
 </struts>
