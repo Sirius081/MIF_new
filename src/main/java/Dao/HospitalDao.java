@@ -4,6 +4,7 @@ import Entity.Disease;
 import Entity.DiseaseHospital;
 import Entity.Hospital;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -52,12 +53,12 @@ public class HospitalDao {
                         ,rs.getDouble("m_groupfees")
                         ,rs.getDouble("drugfees"));
                 if(h.getM_count()>0){
-                    h.setAvg_mfees(h.getM_fees()/h.getM_count());
-                    h.setAvg_mgroupfees(h.getM_groupfees()/h.getM_count());
+                    h.setAvg_mfees(new BigDecimal(h.getM_fees()/h.getM_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+                    h.setAvg_mgroupfees(new BigDecimal(h.getM_groupfees()/h.getM_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
                 }
                 if(h.getH_count()>0){
-                    h.setAvg_hfees(h.getH_fees()/h.getH_count());
-                    h.setAvg_hgroupfees(h.getH_groupfees()/h.getH_count());
+                    h.setAvg_hfees(new BigDecimal(h.getH_fees()/h.getH_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+                    h.setAvg_hgroupfees(new BigDecimal(h.getH_groupfees()/h.getH_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
                 }
                 hospitals.add(h);
             }
@@ -105,12 +106,12 @@ public class HospitalDao {
                         ,rs.getDouble("m_groupfees")
                         ,rs.getDouble("drugfees"));
                 if(h.getM_count()>0){
-                    h.setAvg_mfees(h.getM_fees()/h.getM_count());
-                    h.setAvg_mgroupfees(h.getM_groupfees()/h.getM_count());
+                    h.setAvg_mfees(new BigDecimal(h.getM_fees()/h.getM_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+                    h.setAvg_mgroupfees(new BigDecimal(h.getM_groupfees()/h.getM_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
                 }
                 if(h.getH_count()>0){
-                    h.setAvg_hfees(h.getH_fees()/h.getH_count());
-                    h.setAvg_hgroupfees(h.getH_groupfees()/h.getH_count());
+                    h.setAvg_hfees(new BigDecimal(h.getH_fees()/h.getH_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+                    h.setAvg_hgroupfees(new BigDecimal(h.getH_groupfees()/h.getH_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
                 }
                 hospitals.add(h);
             }
