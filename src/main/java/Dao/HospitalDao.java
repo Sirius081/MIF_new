@@ -70,20 +70,17 @@ public class HospitalDao {
         PreparedStatement stmt=null;
         ResultSet rs=null;
         StringBuffer sql=new StringBuffer("select a.*,grade.grade from hospital a " +
-                " left join hgrade grade on a.grade=grade.id" +
-                " where year=? and identity=? " +
-                " order by "+orderBy+" desc limit 10");
+                " left join hgrade grade on a.grade=grade.id where 1=1");
+        if(condition.getIdentity()!=-1){
+            sql.append(" and identity="+condition.getIdentity());
+        }
+        if(condition.getYear()!=-1) {
+            sql.append(" and year="+condition.getYear());
+        }
+        sql.append(" order by "+orderBy+" desc limit 10");
         try {
             stmt=con.prepareStatement(sql.toString());
-            if(condition.getIdentity()!=-1){
-                sql.append( "and identity="+condition.getIdentity());
-            }
-            if(condition.getYear()!=-1) {
-                stmt.setInt(1, condition.getYear());
-            }
-            if(condition.getIdentity()!=-1){
-                stmt.setInt(2,condition.getIdentity());
-            }
+
             rs=stmt.executeQuery();
             while(rs.next()){
                 hospitals.add(new Hospital(rs.getInt("year")
