@@ -22,17 +22,21 @@ public class DrugDao {
         if(drug.getName()!=null){
             sql.append(" and name like '%"+drug.getName()+"%' ");
         }
-        if(drug.getYear()!=0){
+        if(drug.getIdentity()!=-1){
+            sql.append(" and identity="+drug.getIdentity());
+        }
+
+        if(drug.getYear()!=-1){
             sql.append(" and year="+drug.getYear());
         }
         try {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
-                drugs.add(new Drug(rs.getInt("id")
-                        , rs.getInt("year")
+                drugs.add(new Drug(rs.getInt("year")
+                        ,rs.getInt("identity")
                         ,rs.getString("name")
-                        ,rs.getFloat("fees")));
+                        ,rs.getDouble("drugfees")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -57,10 +61,10 @@ public class DrugDao {
             stmt.setInt(1,year);
             rs=stmt.executeQuery();
             while(rs.next()){
-                drugs.add(new Drug(rs.getInt("id")
-                        ,rs.getInt("year")
+                drugs.add(new Drug(rs.getInt("year")
+                        ,rs.getInt("identity")
                         ,rs.getString("name")
-                        ,rs.getFloat("fees")));
+                        ,rs.getDouble("drugfees")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -75,7 +79,7 @@ public class DrugDao {
         return drugs;
     }
     public static void main(String[] args) {
-//        new DrugDao().getDrugs(new Drug());
-        new DrugDao().getTop10("fees",2015);
+        new DrugDao().getDrugs(new Drug());
+//        new DrugDao().getTop10("drugfees",2015);
     }
 }
