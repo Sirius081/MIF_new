@@ -111,7 +111,7 @@ public class DiseaseDao {
             sql.append(" and identity="+d.getIdentity());
         }
         if(d.getName()!=null){
-            sql.append(" and name like '%"+d.getName()+"%'");
+            sql.append(" and d_name like '%"+d.getName()+"%'");
         }
         if(d.getYear()!=-1){
             sql.append(" and year="+d.getYear());
