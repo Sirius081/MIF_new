@@ -27,7 +27,7 @@ public class HospitalDao {
             sql.append( "and identity="+condition.getIdentity());
         }
         if(condition.getH_name()!=null){
-            sql.append(" and num like '%"+condition.getH_name()+"%' ");
+            sql.append(" and h_name like '%"+condition.getH_name()+"%' ");
         }
         if(condition.getYear()!=-1){
             sql.append(" and year="+condition.getYear());
