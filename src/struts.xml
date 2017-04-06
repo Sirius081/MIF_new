@@ -46,6 +46,9 @@
         <action name="getTop10" class="Action.HospitalAction" method="top10">
             <result type="json"></result>
         </action>
+        <action name="getDetails" class="Action.HospitalAction" method="details">
+            <result type="json"></result>
+        </action>
     </package>
 
     <package name="charge" namespace="/charge" extends="json-default">

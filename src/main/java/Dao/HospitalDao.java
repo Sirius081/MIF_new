@@ -15,7 +15,7 @@ import java.util.List;
  * Created by sirius on 17-1-11.
  */
 public class HospitalDao {
-    public List<Hospital> getHospitals(Hospital hospital){
+    public List<Hospital> getHospitals(Hospital condition){
         List<Hospital> hospitals=new ArrayList<Hospital>();
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
@@ -23,14 +23,17 @@ public class HospitalDao {
         StringBuffer sql=new StringBuffer("select a.*,grade.grade from hospital a " +
                 " left join hgrade grade on grade.id=a.grade" +
                 " where 1=1 ");
-        if(hospital.getH_name()!=null){
-            sql.append(" and num like '%"+hospital.getH_name()+"%' ");
+        if(condition.getIdentity()!=-1){
+            sql.append( "and identity="+condition.getIdentity());
         }
-        if(hospital.getYear()!=-1){
-            sql.append(" and year="+hospital.getYear());
+        if(condition.getH_name()!=null){
+            sql.append(" and num like '%"+condition.getH_name()+"%' ");
         }
-        if(hospital.getGrade()!=null){
-            sql.append(" and level='"+hospital.getGrade()+"'");
+        if(condition.getYear()!=-1){
+            sql.append(" and year="+condition.getYear());
+        }
+        if(condition.getGrade()!=null){
+            sql.append(" and level='"+condition.getGrade()+"'");
         }
         try {
             stmt=con.prepareStatement(sql.toString());
@@ -72,6 +75,9 @@ public class HospitalDao {
                 " order by "+orderBy+" desc limit 10");
         try {
             stmt=con.prepareStatement(sql.toString());
+            if(condition.getIdentity()!=-1){
+                sql.append( "and identity="+condition.getIdentity());
+            }
             if(condition.getYear()!=-1) {
                 stmt.setInt(1, condition.getYear());
             }
@@ -105,7 +111,7 @@ public class HospitalDao {
         }
         return hospitals;
     }
-    List<DiseaseHospital> getDetails(Hospital condition){
+    public List<DiseaseHospital> getDetails(Hospital condition){
         List<DiseaseHospital> hospitals=new ArrayList<DiseaseHospital>();
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
@@ -113,8 +119,12 @@ public class HospitalDao {
         StringBuffer sql=new StringBuffer("select a.*,grade.grade from disease_hospital a " +
                 " left join hgrade grade on grade.id=a.grade" +
                 " where 1=1 ");
+
+        if(condition.getIdentity()!=-1){
+            sql.append( "and identity="+condition.getIdentity());
+        }
         if(condition.getH_name()!=null){
-            sql.append(" and num like '%"+condition.getH_name()+"%' ");
+            sql.append(" and h_name like '%"+condition.getH_name()+"%' ");
         }
         if(condition.getYear()!=-1){
             sql.append(" and year="+condition.getYear());
