@@ -28,13 +28,15 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
      * @return
      */
     public String query(){
-        String num=request.getParameter("num");
+        String h_name=request.getParameter("h_name");
         int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
         String level=request.getParameter("level");
-        hospitals=dao.getHospitals(new Hospital(0,num,year,0,0,0,0,level));
+        Hospital condition=new Hospital();
+
+        //hospitals=dao.getHospitals(new Hospital(0,num,year,0,0,0,0,level));
         return SUCCESS;
     }
 
@@ -44,8 +46,13 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
      */
     public String top10(){
         String orderBy=request.getParameter("orderBy");
+        int identity=Integer.parseInt(request.getParameter("identity"));
         int year=Integer.parseInt(request.getParameter("year"));
-        hospitals=dao.getTop10(orderBy, year);
+
+        Hospital condition=new Hospital();
+        condition.setIdentity(identity);
+        condition.setYear(year);
+        hospitals=dao.getTop10(orderBy, condition);
         return SUCCESS;
     }
 

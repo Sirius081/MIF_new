@@ -1,5 +1,7 @@
 package Dao;
 
+import Entity.Disease;
+import Entity.DiseaseHospital;
 import Entity.Hospital;
 
 import java.sql.Connection;
@@ -18,28 +20,34 @@ public class HospitalDao {
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
-        StringBuffer sql=new StringBuffer("select * from hospital where 1=1 ");
-        if(hospital.getNum()!=null){
-            sql.append(" and num like '%"+hospital.getNum()+"%' ");
+        StringBuffer sql=new StringBuffer("select a.*,grade.grade from hospital a " +
+                " left join hgrade grade on grade.id=a.grade" +
+                " where 1=1 ");
+        if(hospital.getH_name()!=null){
+            sql.append(" and num like '%"+hospital.getH_name()+"%' ");
         }
-        if(hospital.getYear()!=0){
+        if(hospital.getYear()!=-1){
             sql.append(" and year="+hospital.getYear());
         }
-        if(hospital.getLevel()!=null){
-            sql.append(" and level='"+hospital.getLevel()+"\r'");
+        if(hospital.getGrade()!=null){
+            sql.append(" and level='"+hospital.getGrade()+"'");
         }
         try {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
-                hospitals.add(new Hospital(rs.getInt("id")
-                        , rs.getString("num")
-                        ,rs.getInt("year")
-                        ,rs.getFloat("fees")
-                        ,rs.getFloat("groupfees")
+                hospitals.add(new Hospital(rs.getInt("year")
+                        , rs.getInt("identity")
+                        ,rs.getString("r_name")
+                        ,rs.getString("h_name")
+                        ,rs.getString("grade.grade")
                         ,rs.getInt("m_count")
                         ,rs.getInt("h_count")
-                        ,rs.getString("level")));
+                        ,rs.getDouble("h_fees")
+                        ,rs.getDouble("h_groupfees")
+                        ,rs.getDouble("m_fees")
+                        ,rs.getDouble("m_groupfees")
+                        ,rs.getDouble("drugfees")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,25 +61,76 @@ public class HospitalDao {
         }
         return hospitals;
     }
-    public List<Hospital> getTop10(String orderBy,int year){
+    public List<Hospital> getTop10(String orderBy,Hospital condition){
         List<Hospital> hospitals=new ArrayList<Hospital>();
         Connection con=DBtool.getConnection();
         PreparedStatement stmt=null;
         ResultSet rs=null;
-        StringBuffer sql=new StringBuffer("select * from hospital where year=? order by "+orderBy+" desc limit 10");
+        StringBuffer sql=new StringBuffer("select a.*,grade.grade from hospital a " +
+                " left join hgrade grade on a.grade=grade.id" +
+                " where year=? and identity=? " +
+                " order by "+orderBy+" desc limit 10");
         try {
             stmt=con.prepareStatement(sql.toString());
-            stmt.setInt(1,year);
+            if(condition.getYear()!=-1) {
+                stmt.setInt(1, condition.getYear());
+            }
+            if(condition.getIdentity()!=-1){
+                stmt.setInt(2,condition.getIdentity());
+            }
             rs=stmt.executeQuery();
             while(rs.next()){
-                hospitals.add(new Hospital(rs.getInt("id")
-                        , rs.getString("num")
-                        ,rs.getInt("year")
-                        ,rs.getFloat("fees")
-                        ,rs.getFloat("groupfees")
+                hospitals.add(new Hospital(rs.getInt("year")
+                        , rs.getInt("identity")
+                        ,rs.getString("r_name")
+                        ,rs.getString("h_name")
+                        ,rs.getString("grade.grade")
                         ,rs.getInt("m_count")
                         ,rs.getInt("h_count")
-                        ,rs.getString("level")));
+                        ,rs.getDouble("h_fees")
+                        ,rs.getDouble("h_groupfees")
+                        ,rs.getDouble("m_fees")
+                        ,rs.getDouble("m_groupfees")
+                        ,rs.getDouble("drugfees")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                stmt.close();
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return hospitals;
+    }
+    List<DiseaseHospital> getDetails(Hospital condition){
+        List<DiseaseHospital> hospitals=new ArrayList<DiseaseHospital>();
+        Connection con=DBtool.getConnection();
+        PreparedStatement stmt=null;
+        ResultSet rs=null;
+        StringBuffer sql=new StringBuffer("select a.*,grade.grade from disease_hospital a " +
+                " left join hgrade grade on grade.id=a.grade" +
+                " where 1=1 ");
+        if(condition.getH_name()!=null){
+            sql.append(" and num like '%"+condition.getH_name()+"%' ");
+        }
+        if(condition.getYear()!=-1){
+            sql.append(" and year="+condition.getYear());
+        }
+        try {
+            stmt=con.prepareStatement(sql.toString());
+            rs=stmt.executeQuery();
+            while(rs.next()){
+                hospitals.add(new DiseaseHospital(rs.getInt("year")
+                        , rs.getInt("identity")
+                        ,rs.getString("h_name")
+                        ,rs.getString("grade.grade")
+                        ,rs.getString("d_name")
+                        ,rs.getInt("h_count")
+                        ,rs.getDouble("h_fees")
+                        ,rs.getDouble("h_groupfees")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -86,6 +145,10 @@ public class HospitalDao {
         return hospitals;
     }
     public static void main(String[] args) {
-        new HospitalDao().getHospitals(new Hospital());
+        Hospital h=new Hospital();
+        h.setYear(2011);
+        HospitalDao d=new HospitalDao();
+        d.getHospitals(h);
+        d.getDetails(h);
     }
 }
