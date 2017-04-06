@@ -24,6 +24,9 @@
         <action name="getTop10" class="Action.DiseaseAction" method="top10">
             <result type="json"></result>
         </action>
+        <action name="getDetails" class="Action.DiseaseAction" method="details">
+            <result type="json"></result>
+        </action>
     </package>
     <package name="drug" namespace="/drug" extends="json-default">
         <action name="init" class="Action.DrugAction" method="init">
