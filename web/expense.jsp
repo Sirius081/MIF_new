@@ -26,9 +26,11 @@
   <link href="css/style.css" rel="stylesheet"/>
   <script type="text/javascript" src="js/common.js"></script>
   <!-- GOOGLE FONT -->
+  <script type="text/javascript" src="js/echarts.common.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
   <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/echarts.js"></script>
 
 </head>
 <body>
@@ -53,7 +55,7 @@
       <div class="col-md-12">
         <div class="navbar-collapse collapse ">
           <ul id="menu-top" class="nav navbar-nav navbar-right">
-            <li><a href="index.html">主页</a></li>
+            <li><a href="index.jsp">主页</a></li>
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">统计分析 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
@@ -76,11 +78,11 @@
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">异常检测 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">区县</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="region.jsp">区县</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital1.jsp">医院</a>
                 </li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">病种</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">药品</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
               </ul>
             </li>
             <li><a href="index.html">联系我们</a></li>
@@ -94,7 +96,7 @@
 <div class="content-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-5 col-sm-5 col-xs-12">
+      <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="panel-body">
           <form id="queryPredict" name="form1">
             <span style="font-size:25px">选择保险类型：</span>
@@ -120,7 +122,7 @@
         </div>
       </div>
       <!--图形展示-->
-      <div class="col-md-7 col-sm-7 col-xs-12">
+      <div class="col-md-8 col-sm-8 col-xs-12">
         <div id="detail-information" class="plotsize">
         </div>
       </div>
