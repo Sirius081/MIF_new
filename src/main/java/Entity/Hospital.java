@@ -18,6 +18,11 @@ public class Hospital {
     double m_fees;//门诊费用
     double m_groupfees;//门诊统筹支付费用
     double drugfees;//药品费
+
+    double avg_hfees;//平均住院费用
+    double avg_hgroupfees;//平均统筹支付费用
+    double avg_mfees;//平均门诊费用
+    double avg_mgroupfees;//平均门诊统筹支付费用
     public Hospital(){
         this.year = -1;
         this.identity = -1;
@@ -138,5 +143,37 @@ public class Hospital {
 
     public void setDrugfees(double drugfees) {
         this.drugfees = drugfees;
+    }
+
+    public double getAvg_hfees() {
+        return avg_hfees;
+    }
+
+    public void setAvg_hfees(double avg_hfees) {
+        this.avg_hfees = avg_hfees;
+    }
+
+    public double getAvg_hgroupfees() {
+        return avg_hgroupfees;
+    }
+
+    public void setAvg_hgroupfees(double avg_hgroupfees) {
+        this.avg_hgroupfees = avg_hgroupfees;
+    }
+
+    public double getAvg_mfees() {
+        return avg_mfees;
+    }
+
+    public void setAvg_mfees(double avg_mfees) {
+        this.avg_mfees = avg_mfees;
+    }
+
+    public double getAvg_mgroupfees() {
+        return avg_mgroupfees;
+    }
+
+    public void setAvg_mgroupfees(double avg_mgroupfees) {
+        this.avg_mgroupfees = avg_mgroupfees;
     }
 }

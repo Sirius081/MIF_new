@@ -34,12 +34,17 @@ public class DiseaseDao {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
-                diseases.add(new Disease(rs.getInt("year")
+                Disease di=new Disease(rs.getInt("year")
                         , rs.getInt("identity")
                         ,rs.getString("name")
                         ,rs.getInt("h_count")
                         ,rs.getDouble("h_fees")
-                        ,rs.getDouble("h_groupfees")));
+                        ,rs.getDouble("h_groupfees"));
+                if(d.getH_count()>0){
+                    d.setAvg_hfees(d.getH_fees()/d.getH_count());
+                    d.setAvg_groupfees(d.getH_groupfees()/d.getH_count());
+                }
+                diseases.add(di);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -70,12 +75,17 @@ public class DiseaseDao {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
             while(rs.next()){
-                diseases.add(new Disease(rs.getInt("year")
+                Disease d=new Disease(rs.getInt("year")
                         , rs.getInt("identity")
                         ,rs.getString("name")
                         ,rs.getInt("h_count")
                         ,rs.getDouble("h_fees")
-                        ,rs.getDouble("h_groupfees")));
+                        ,rs.getDouble("h_groupfees"));
+                if(d.getH_count()>0){
+                    d.setAvg_hfees(d.getH_fees()/d.getH_count());
+                    d.setAvg_groupfees(d.getH_groupfees()/d.getH_count());
+                }
+                diseases.add(d);
             }
         } catch (SQLException e) {
             e.printStackTrace();
