@@ -145,6 +145,7 @@
                                     <option value="drugfees">住院人次</option>
                                 </select>
                                 <input id="query1" class="query" type="button" onclick="updatetop10()" value="查询"/>
+                                <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
                                 <div class="grid_relative" >
                                     <table id="grid-table"></table>
                                     <!--jqGrid 浏览导航栏所在-->
@@ -173,17 +174,17 @@
                     </select>
                     <span class="label1">按医院等级：</span>
                     <select id="hospitallevel" class="select_relative">
-                        <option>无等级</option>
                         <option >一级</option>
                         <option >二级</option>
                         <option >三级</option>
+                        <option>无等级</option>
                         <option >异地</option>
                         <option >社区</option>
                     </select>
                     <span class="label1">按医疗机构代码：</span>
                     <input type="text" class="input1" id="hospitalnum">
                     <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
-
+                    <%--<input id="query3" class="query" type="button" onclick="back()" value="返回"/>--%>
 
                     <div class="grid_relative1">
                         <table id="grid-table2"></table>

@@ -49,7 +49,7 @@
         </button>
         <ul class="dropdown-menu" role="menu">
           <li><a href="drug.jsp">药品费用管理</a></li>
-          <li><a href="disease.jsp">病种费用管理</a></li>
+          <li><a href="disease1.jsp">病种费用管理</a></li>
           <li><a href="hospital.jsp">医院费用管理</a></li>
         </ul>
       </div>

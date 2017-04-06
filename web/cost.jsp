@@ -74,7 +74,7 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="region.jsp">区县</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital.jsp">医院</a>
                                 </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease1.jsp">病种</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
                             </ul>
                         </li>
