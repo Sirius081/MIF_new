@@ -104,12 +104,9 @@
 <!--切换标签页面-->
 
 <div  id="content1">
-
   </br></br></br>
 
   <!--切换标签页面-->
-
-
   <div id="manager">
     <div id="source_table_content">
       <div class="row">
@@ -117,61 +114,33 @@
           <div class="panel-body">
             <div class="panel panel-info">
               <div class="panel-heading">
-                top10
+                区县具体信息
               </div>
               <div class="panel-body">
                 <form id="queryPredict">
                   <span class="label1">选择保险类型：</span>
-                  <select id="identity" class="select_relative">
+                  <select id="identity1" class="select_relative">
                     <option value="1">职工</option>
                     <option value="2">居民</option>
                   </select>
-                  <span class="label1">按年份：</span>
-                  <select id="year" class="select_relative">
+                  <span class="label1">按年份： </span>
+                  <select id="regionyear" class="select_relative" >
                     <option>2010</option>
                     <option>2011</option>
-                    <option>2012</option>
                     <option>2013</option>
                     <option>2014</option>
                     <option>2015</option>
                   </select>
-                  <select id="orderBy" class="select_relative1">
-                    <option value="drugfees">药品费</option>
-                  </select>
-                  <input id="query1" class="query" type="button" onclick="updatetop10()" value="查询"/>
-                  <div class="grid_relative" >
+                  <span class="label1" >按区县代码：</span>
+                  <input type="text" id="regionname" class="input">
+                  <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
+                  <div class="grid_relative1">
                     <table id="grid-table"></table>
                     <!--jqGrid 浏览导航栏所在-->
                     <div id="grid-pager"></div>
                   </div>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-7 col-sm-7 col-xs-12">
-          <div class="alert alert-info text-center">
-            <span class="label1">选择保险类型：</span>
-            <select id="identity1" class="select_relative">
-              <option value="1">职工</option>
-              <option value="2">居民</option>
-            </select>
-            <span class="label1">按年份： </span>
-            <select id="drugyear" class="select_relative" >
-              <option>2010</option>
-              <option>2011</option>
-              <option>2013</option>
-              <option>2014</option>
-              <option>2015</option>
-            </select>
-            <span class="label1" >按药品名称：</span>
-            <input type="text" id="drugname" class="input">
-            <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
-
-            <div class="grid_relative1">
-              <table id="grid-table2"></table>
-              <!--jqGrid 浏览导航栏所在-->
-              <div id="grid-pager2"></div>
             </div>
           </div>
         </div>
@@ -190,7 +159,7 @@
   </div>
 </section>
 
-<script type="text/javascript" src="js/drug.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/region.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
 <script type="text/javascript" src="js/display.js"></script>

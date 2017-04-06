@@ -79,7 +79,7 @@ function selectResult()
     var year=$("#hospitalyear").val();
     var grade=$("#hospitallevel").val();
     var h_name=$("#hospitalnum").val();
-    var param="&identity="+identity+'&grade='+grade+'&year='+year;
+    var param="&identity="+identity+'&grade='+grade+'&h_name='+h_name+'&year='+year;
     $.ajax({
         url:'/MIF/hospital/query',
         type:'get',
@@ -108,7 +108,7 @@ function selectResult()
                 colModel:
                     [
                         { name: 'year', index: "year", width: "10%",align:"center", editable: true},
-                        { name: 'h_name', index: 'num', width: "40%",align:"center",editable: true },
+                        { name: 'h_name', index: 'h_name', width: "40%",align:"center",editable: true },
                         { name: 'grade', index: 'grade', width: "10%",align:"center", editable: true},
                         { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true},
                         { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
@@ -129,7 +129,143 @@ function selectResult()
                 },
                 onCellSelect:function(rowid,iCol,cellcontent,e){
                     var h_name=cellcontent;
-                    var param="&identity="+identity+'&h_name='+h_name+'&year='+year;
+                    var param="&identity="+identity+'&grade='+grade+'&h_name='+h_name+'&year='+year;
+                    alert(param)
+                    $.ajax({
+                        url: '/MIF/hospital/getDetails',
+                        type: 'get',
+                        data: param,
+                        dataType: 'json',
+                        success: function (data) {
+                            var newjson = [];                             ///只展示其中的几列
+                            for (var i = 0; i < data.diseaseHospitals.length; i++) {
+                                newjson[i] = new Object();
+                                newjson[i].year = data.diseaseHospitals[i].year;
+                                newjson[i].h_name = data.diseaseHospitals[i].h_name;
+                                newjson[i].grade = data.diseaseHospitals[i].grade;
+                                newjson[i].d_name = data.diseaseHospitals[i].d_name;
+                                newjson[i].h_fees = data.diseaseHospitals[i].h_fees;
+                                newjson[i].h_groupfees =data.diseaseHospitals[i].h_groupfees;
+                                newjson[i].m_count =data.diseaseHospitals[i].m_count;
+                                newjson[i].h_count = data.diseaseHospitals[i].h_count;
+                            }
+                            var grid_selector = "#grid-table2";
+                            var pager_selector = "#grid-pager2";
+                            $('#grid-table2').jqGrid('GridUnload');          ///刷新grid框架
+                            $("#grid-table2").jqGrid({
+                                data: newjson,
+                                datatype: "local",
+                                height: "auto",
+                                colNames: ['年份','编号',"医院等级","疾病名称","住院费用","住院统筹支付","门诊人次","住院人次"],
+                                colModel:
+                                    [
+                                        { name: 'year', index: "year", width: "10%",align:"center", editable: true},
+                                        { name: 'h_name', index: 'h_name', width: "40%",align:"center",editable: true },
+                                        { name: 'grade', index: 'grade', width: "10%",align:"center", editable: true},
+                                        { name: 'd_name', index: 'd_name', width: "40%",align:"center",editable: true },
+                                        { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true},
+                                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
+                                        { name: 'm_count', index: 'm_count', width: "10%",align:"center", editable: true},
+                                        { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
+                                    ],
+                                rowNum: 10, //每页显示记录数
+                                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
+                                pager: pager_selector, //分页、按钮所在的浏览导航栏
+                                viewrecords: true,
+                                multiselect: true,
+                                subGrid: true,
+                                altRows: true, //设置为交替行表格,默认为false
+                                loadonce: true,
+                                multiboxonly: true, //是否只能点击复选框多选
+                                caption: "详细信息", //表名
+                                autowidth: true ,//自动宽
+                                subGridRowExpanded: function(subgrid_id, row_id) {
+                                    alert("hello")
+                                    var subgrid_table_id, pager_id;
+                                    subgrid_table_id = subgrid_id+"_t";
+                                    pager_id = "p_"+subgrid_table_id;
+                                    $("#"+subgrid_id).html("<table id='"+subgrid_table_id+"' class='scroll'></table><div id='"+pager_id+"' class='scroll'></div>");
+                                    $("#"+subgrid_table_id).jqGrid({
+                                        data:newjson,
+                                        datatype: "local",
+                                        colNames: ['年份','名称','费用'],
+                                        colModel:
+                                            [
+                                                { name: 'year', index: 'id', width:200,align:"center", editable: true},
+                                                { name: 'name', index: 'name', width:150,align:"center",editable: true },
+                                                { name: 'fees', index: 'year', width: 100,align:"center", editable: true}
+                                            ],
+                                        rowNum:5,
+                                        pager: pager_id,
+                                        height: '100%'
+                                    });
+                                    jQuery("#"+subgrid_table_id).jqGrid('navGrid',"#"+pager_id,{edit:false,add:false,del:false})
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        }
+    });
+}
+function back(){
+    var identity=$("#identity1").val();
+    var year=$("#hospitalyear").val();
+    var grade=$("#hospitallevel").val();
+    var h_name=$("#hospitalnum").val();
+    var param="&identity="+identity+'&grade='+grade+'&h_name='+h_name+'&year='+year;
+    $.ajax({
+        url:'/MIF/hospital/query',
+        type:'get',
+        data:param,
+        dataType:'json',
+        success:function(data){
+            var newjson=[];                             ///只展示其中的几列
+            for(var i = 0; i <data.hospitals.length; i++){
+                newjson[i] = new Object();
+                newjson[i].year = data.hospitals[i].year;
+                newjson[i].h_name = data.hospitals[i].h_name;
+                newjson[i].grade = data.hospitals[i].grade;
+                newjson[i].h_fees = data.hospitals[i].h_fees;
+                newjson[i].h_groupfees = data.hospitals[i].h_groupfees;
+                newjson[i].m_count = data.hospitals[i].m_count;
+                newjson[i].h_count = data.hospitals[i].h_count;
+            }
+            var grid_selector = "#grid-table2";
+            var pager_selector = "#grid-pager2";
+            $('#grid-table2').jqGrid('GridUnload');          ///刷新grid框架
+            $("#grid-table2").jqGrid({
+                data:newjson,
+                datatype: "local",
+                height: "auto",
+                colNames: ['年份','编号',"医院等级","住院费用","住院统筹支付","门诊人次","住院人次"],
+                colModel:
+                    [
+                        { name: 'year', index: "year", width: "10%",align:"center", editable: true},
+                        { name: 'h_name', index: 'h_name', width: "40%",align:"center",editable: true },
+                        { name: 'grade', index: 'grade', width: "10%",align:"center", editable: true},
+                        { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true},
+                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
+                        { name: 'm_count', index: 'm_count', width: "10%",align:"center", editable: true},
+                        { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
+                    ],
+                viewrecords: true, //是否在浏览导航栏显示记录总数
+                rowNum: 10, //每页显示记录数
+                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
+                pager: pager_selector, //分页、按钮所在的浏览导航栏
+                autowidth: true, //自动宽
+                loadComplete: function() {
+                    var grid = $("#grid-table2");
+                    var ids = grid.getDataIDs();
+                    for (var i = 0; i <=ids.length; i++) {
+                        grid.setRowData ( ids[i], false, {height: 20+i*1.15} );
+                    }
+                },
+                onCellSelect:function(rowid,iCol,cellcontent,e){
+                    var h_name=cellcontent;
+                    var param="&identity="+identity+'&grade='+grade+'&h_name='+h_name+'&year='+year;
+                    alert(param)
                     $.ajax({
                         url: '/MIF/hospital/getDetails',
                         type: 'get',
