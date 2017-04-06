@@ -33,7 +33,7 @@ public class HospitalDao {
             sql.append(" and year="+condition.getYear());
         }
         if(condition.getGrade()!=null){
-            sql.append(" and level='"+condition.getGrade()+"'");
+            sql.append(" and grade.grade='"+condition.getGrade()+"'");
         }
         try {
             stmt=con.prepareStatement(sql.toString());
