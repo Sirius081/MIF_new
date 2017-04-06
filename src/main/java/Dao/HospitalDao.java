@@ -144,6 +144,7 @@ public class HospitalDao {
         if(condition.getYear()!=-1){
             sql.append(" and year="+condition.getYear());
         }
+        sql.append(" order by a.h_fees/a.h_count desc");
         try {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
