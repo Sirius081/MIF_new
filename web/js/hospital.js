@@ -362,8 +362,4 @@ $(function() {
     $("#hospitalnum").autocomplete({
         source: availableTags
     });
-<<<<<<< HEAD
-});
-=======
-});
->>>>>>> song
+
