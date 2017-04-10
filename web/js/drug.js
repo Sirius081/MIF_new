@@ -34,7 +34,8 @@ function updatetop10(){
                     [
                         { name: 'year', index: 'year', width: "20%",align:"center",editable: true},
                         { name: 'name', index: 'name', width: "40%",align:"center",editable: true },
-                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true,sorttype:'integer',formatter:'integer'}
+                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true}
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数

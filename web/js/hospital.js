@@ -42,6 +42,9 @@ function updatetop10()
                         { name: 'h_name', index: 'h_name',width:320,align:"center",editable: true },
                         { name: 'year', index: "year",width:40,align:"center", editable: true},
                         { name: "h_fees", index: "h_fees",width:150,align:"center",sorttype:'integer',formatter:'integer'},
+
+                        { name: "h_fees", index: "h_fees",width:150,align:"center"},
+
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
@@ -359,3 +362,6 @@ $(function() {
         source: availableTags
     });
 });
+
+
+
