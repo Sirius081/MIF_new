@@ -29,17 +29,19 @@ public class DrugAction extends ActionSupport implements ServletRequestAware {
      */
     public String query(){
         String name=request.getParameter("name");
-        int year=0;
+        int year=-1;
         if (request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
-        Drug drug=new Drug(0,year,name,0);
+        Drug drug=new Drug();
+        drug.setName(name);
+        drug.setYear(year);
         drugs=dao.getDrugs(drug);
         return SUCCESS;
     }
     public String top10(){
-        String orderBy="fees";
-        int year=0;
+        String orderBy="drugfees";
+        int year=-1;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }

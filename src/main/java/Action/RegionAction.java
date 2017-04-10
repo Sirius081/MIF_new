@@ -1,8 +1,8 @@
 package Action;
 
-import Dao.HospitalDao;
-import Entity.DiseaseHospital;
+import Dao.RegionDao;
 import Entity.Hospital;
+import Entity.Region;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
@@ -10,18 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * Created by sirius on 17-1-10.
+ * Created by sirius on 17-4-6.
  */
-public class HospitalAction extends ActionSupport implements ServletRequestAware {
-    private HospitalDao dao=new HospitalDao();
+public class RegionAction extends ActionSupport implements ServletRequestAware {
+    private RegionDao dao=new RegionDao();
     //get
+    private List<Region> regions;
     private List<Hospital> hospitals;
-    private List<DiseaseHospital> diseaseHospitals;
     //set
     private HttpServletRequest request;
 
     public String init(){
-        hospitals=dao.getHospitals(new Hospital());
+        regions=dao.getRegions(new Region());
         return SUCCESS;
     }
 
@@ -35,41 +35,21 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
-        String h_name=request.getParameter("h_name");
+        String r_name=request.getParameter("r_name");
         int year=-1;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
-        String grade=request.getParameter("grade");
-        Hospital condition=new Hospital();
+        Region condition=new Region();
         condition.setIdentity(identity);
         condition.setYear(year);
-        condition.setGrade(grade);
-        condition.setH_name(h_name);
+        condition.setName(r_name);
 
 
-        hospitals=dao.getHospitals(condition);
+        regions=dao.getRegions(condition);
         return SUCCESS;
     }
 
-    /**
-     * orderBy:
-     * @return
-     */
-    public String top10(){
-        String orderBy=request.getParameter("orderBy");
-        int identity=-1;
-        if(request.getParameter("identity")!=null){
-            identity=Integer.parseInt(request.getParameter("identity"));
-        }
-        int year=Integer.parseInt(request.getParameter("year"));
-
-        Hospital condition=new Hospital();
-        condition.setIdentity(identity);
-        condition.setYear(year);
-        hospitals=dao.getTop10(orderBy, condition);
-        return SUCCESS;
-    }
 
     /**
      *
@@ -82,17 +62,17 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
             identity=Integer.parseInt(request.getParameter("identity"));
         }
 
-        String h_name=request.getParameter("h_name");
+        String r_name=request.getParameter("r_name");
         int year=-1;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
-        Hospital condition=new Hospital();
+        Region condition=new Region();
         condition.setIdentity(identity);
         condition.setYear(year);
-        condition.setH_name(h_name);
+        condition.setName(r_name);
 
-        diseaseHospitals=dao.getDetails(condition);
+        hospitals=dao.getRegionDetails(condition);
         return SUCCESS;
     }
     public void setServletRequest(HttpServletRequest httpServletRequest) {
@@ -103,7 +83,7 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         return hospitals;
     }
 
-    public List<DiseaseHospital> getDiseaseHospitals() {
-        return diseaseHospitals;
+    public List<Region> getRegions() {
+        return regions;
     }
 }

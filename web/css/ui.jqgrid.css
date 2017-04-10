@@ -4,7 +4,7 @@
 /* caption*/
 .ui-jqgrid .ui-jqgrid-titlebar {padding: .3em .2em .2em .3em; position: relative; font-size: 12px; border-left: 0 none;border-right: 0 none; border-top: 0 none;}
 .ui-jqgrid .ui-jqgrid-caption {text-align: left;}
-.ui-jqgrid .ui-jqgrid-title { margin: .1em 0 .2em; }
+.ui-jqgrid .ui-jqgrid-title { font-size:15px; margin: .1em 0 .2em; height:30px;}
 .ui-jqgrid .ui-jqgrid-titlebar-close { position: absolute;top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height:18px; cursor:pointer;}
 .ui-jqgrid .ui-jqgrid-titlebar-close span { display: block; margin: 1px; }
 .ui-jqgrid .ui-jqgrid-titlebar-close:hover { padding: 0; }
@@ -26,7 +26,7 @@
 .ui-jqgrid .ui-icon-desc {margin-top:3px;height:12px;}
 .ui-jqgrid .ui-i-asc {margin-top:0;height:16px;}
 .ui-jqgrid .ui-i-desc {margin-top:0;margin-left:13px;height:16px;}
-.ui-jqgrid .ui-jqgrid-sortable {cursor:pointer;}
+.ui-jqgrid .ui-jqgrid-sortable {cursor:pointer;font-size:15px;height:25px;}
 .ui-jqgrid tr.ui-search-toolbar th { border-top-width: 1px !important; border-top-color: inherit !important; border-top-style: ridge !important }
 tr.ui-search-toolbar input {margin: 1px 0 0 0}
 tr.ui-search-toolbar select {margin: 1px 0 0 0}

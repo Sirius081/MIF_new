@@ -1,20 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: song
-  Date: 2017/1/13
-  Time: 14:57
+  Date: 2017/3/27
+  Time: 21:50
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: sirius
-  Date: 16-7-26
-  Time: 下午5:16
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="zh-cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -27,19 +19,28 @@
   <!-- BOOTSTRAP CORE STYLE  -->
   <link href="css/bootstrap.css" rel="stylesheet"/>
   <!-- FONT AWESOME STYLE  -->
+  <link href="css/common.css" rel="stylesheet"/>
   <link href="css/font-awesome.css" rel="stylesheet"/>
   <!-- CUSTOM STYLE  -->
-  <link href="css/common.css" rel="stylesheet"/>
+
   <link href="css/spider.css" rel="stylesheet"/>
   <link href="css/style.css" rel="stylesheet"/>
-  <script type="text/javascript" src="js/common.js"></script>
   <!-- GOOGLE FONT -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
-  <script type="text/javascript" src="js/echarts.common.min.js"></script>
-  <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css"/>
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
+  <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 
-</head><body>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/sub-menu.js"></script>
+  <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+</head>
+<body onload="loadtop10()">
 <div class="navbar navbar-inverse set-radius-zero">
   <div class="container">
     <div class="header_bg">
@@ -54,7 +55,6 @@
 </div>
 </div>
 <!-- LOGO HEADER END-->
-
 <section class="menu-section">
   <div class="container">
     <div class="row ">
@@ -85,11 +85,11 @@
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">异常检测 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">区县</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="region.jsp">区县</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital.jsp">医院</a>
                 </li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">病种</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">药品</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
               </ul>
             </li>
             <li><a href="index.html">联系我们</a></li>
@@ -99,70 +99,56 @@
     </div>
   </div>
 </section>
-<div  id="content">
+<!-- MENU SECTION END-->
 
-  </br></br></br>
+</br></br>
+<!--切换标签页面-->
 
+<div  id="content1">
   <!--切换标签页面-->
-
-
-  <div id="manager1">
-    <div id="source_table_content" style="">
-      <div class="wrap" >
-        <form id="queryPredict">
-          <span style="font-size:25px" >选择模型：</span>
-          <select id="select_model" class="form-control select_style" ></select>
-          <span style="font-size:25px">选择变量：</span>
-          <select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>
-          <input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>
-        </form>
+  <div id="manager">
+    <div id="source_table_content">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="panel-body">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                区县具体信息
+              </div>
+              <div class="panel-body">
+                <form id="queryPredict">
+                  <span class="label1">选择保险类型：</span>
+                  <select id="identity1" class="select_relative">
+                    <option value="1">职工</option>
+                    <option value="2">居民</option>
+                  </select>
+                  <span class="label1">按年份： </span>
+                  <select id="regionyear" class="select_relative" >
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                  </select>
+                  <span class="label1" >按区县代码：</span>
+                  <style>.ui-autocomplete {  max-height: 100px;overflow-y: auto;/* 防止水平滚动条 */  overflow-x: auto; width:80px;background-color: #ffff00}</style>
+                  <input type="text" id="regionname" class="input" maxlength="50" >
+                  <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
+                  <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
+                  <div class="grid_relative1">
+                    <table id="grid-table"></table>
+                    <!--jqGrid 浏览导航栏所在-->
+                    <div id="grid-pager"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-
-      <script src="js/echarts.common.min.js"></script>
-      <script type="text/javascript">
-        $(document).ready(function(){
-          $.ajax({
-            url:'/MIF/init',
-            type:'get',
-            dataType:'json',
-            success:function(data){
-              var model_select=$("#select_model");
-              $.each(data.modelList,function(i,item){
-                model_select.append("<option style='font-size: 20px' value='"+item.key+"'>"+item.value+"</option>");
-              });
-              var model_select=$("#select_variable");
-              $.each(data.variableList,function(i,item){
-                model_select.append("<option value='"+item.key+"'>"+item.value+"</option>");
-              });
-            }
-          });
-          $("#query").click(function(){
-            var model_selected=$("#select_model").val();
-            var variable_selected=$("#select_variable").val();
-            var params="&model="+model_selected+"&variable="+variable_selected;
-            $.ajax({
-              url:'/MIF/query',
-              type:'get',
-              data:params,
-              dataType:'json',
-              success:function(data){
-                $(data).each(function(i,value){
-                  plot(value);
-                });
-              }
-            });
-          });
-        });
-      </script>
     </div>
   </div>
-
-  <!--右部显示详细信息-->
-  <div id="well">
-    <div id="detail-information">
-    </div>
-  </div>
+</div>
 </div>
 <section class="footer-section">
   <div class="container">
@@ -174,8 +160,9 @@
   </div>
 </section>
 
+<script type="text/javascript" src="js/region.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
-
+<script type="text/javascript" src="js/display.js"></script>
 </body>
 </html>

@@ -29,7 +29,7 @@ public class StatisticDao {
         if(condition.getIdentity()!=-1){//query by identity
             sql.append("and identity="+condition.getIdentity());
         }
-
+        sql.append(" order by year");
         try {
             stmt=con.prepareStatement(sql.toString());
             rs=stmt.executeQuery();
