@@ -32,19 +32,18 @@ function updatetop10(){
                 colNames: ['年份','名称','费用'],
                 colModel:
                     [
-                        { name: 'year', index: 'year', width: 40,align:"center",editable: true},
-                        { name: 'name', index: 'name', width: 120,align:"center",editable: true },
-                        { name: 'drugfees', index: 'drugfees', width: 80,align:"center", editable: true}
+                        { name: 'year', index: 'year', width: "20%",align:"center",editable: true},
+                        { name: 'name', index: 'name', width: "40%",align:"center",editable: true },
+                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true}
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 altRows: true, //设置为交替行表格,默认为false
                 multiselect: true, //是否多选
                 multiboxonly: true, //是否只能点击复选框多选
-                caption: "top10", //表名
                 autowidth: true,//自动宽
+                scroll:"auto",      //设置竖直滚动条的滑动
                 loadComplete: function() {
                     var grid = $("#grid-table");
                     var ids = grid.getDataIDs();
@@ -58,7 +57,8 @@ function updatetop10(){
                             .css("text-align", "center")
                             .children("span.ui-jqgrid-title")
                             .css("float", "none");
-
+            $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
+            $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
         }
     });
 }
@@ -96,18 +96,17 @@ function selectResult(){
                         { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true}
                     ],
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 viewrecords: true,
                 multiselect: true,
-                subGrid: true,
                 altRows: true, //设置为交替行表格,默认为false
                 loadonce:true,
                 multiboxonly: true, //是否只能点击复选框多选
-                caption: "详细信息", //表名
                 autowidth: true, //自动宽
                 loadComplete: function() {
+                    $("#grid-table2").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
                     $("#grid-table2").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
+
                 }
             });
             $("#grid-table2").jqGrid('navGrid','#grid-pager2',{del:false,add:false,edit:false},{},{},{},{multipleSearch:true});
@@ -122,28 +121,30 @@ function selectResult(){
 }
 
 
+//自动补全功能的实现
+var availableTags = []
+function queryByDrugname(){
+    $.ajax({
+        url:'/MIF/drug/query',
+        type:'get',
+        async:false,
+        dataType:'json',
+        success:function(data){
+            var drugname=[];                             ///只展示其中的几列
+            for(var i = 0; i <data.drugs.length; i++){
+                drugname.push(data.drugs[i].name);
+            }
+            availableTags = drugname;
+        }
+    });
+}
+$(function() {
+    queryByDrugname();
+    $("#drugname").autocomplete({
+        source: availableTags
+    });
+});
 
-////var availableTags = []
-////function queryByDrugname(){
-////    $.ajax({
-////        url:'/MIF/drug/queryByDrugname',
-////        type:'get',
-////        async:false,
-////        dataType:'json',
-////        success:function(data){
-////            availableTags = data.relatedDrugs;
-////        }
-////    });
-////}
-////
-////$(function() {
-////    queryByDrugname();
-////    alert(availableTags)
-////    $("#drugname").autocomplete({
-////        source: availableTags
-////    });
-//});
-//
 
 
 

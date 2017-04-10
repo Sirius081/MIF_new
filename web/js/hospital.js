@@ -39,17 +39,18 @@ function updatetop10()
                 colNames: ['编号','年份','费用'],
                 colModel:
                     [
-                        { name: 'h_name', index: 'h_name', width: "60%",align:"center",editable: true },
-                        { name: 'year', index: "year", width: "20%",align:"center", editable: true},
-                        { name: "h_fees", index: "h_fees", width: "20%",align:"center"},
+                        { name: 'h_name', index: 'h_name',width:320,align:"center",editable: true },
+                        { name: 'year', index: "year",width:40,align:"center", editable: true},
+                        { name: "h_fees", index: "h_fees",width:150,align:"center"},
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 multiselect: true, //是否多选
                 multiboxonly: true, //是否只能点击复选框多选
-                autowidth: true, //自动宽
+                width:450,
+                autowidth: false,
+                shrinkToFit:false,
                 loadComplete: function() {
                     var grid = $("#grid-table");
                     var ids = grid.getDataIDs();
@@ -117,7 +118,6 @@ function selectResult()
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 autowidth: true, //自动宽
                 loadComplete: function() {
@@ -166,7 +166,6 @@ function selectResult()
                                         { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
                                     ],
                                 rowNum: 10, //每页显示记录数
-                                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                                 viewrecords: true,
                                 multiselect: true,
@@ -249,7 +248,6 @@ function back(){
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 autowidth: true, //自动宽
                 loadComplete: function() {
@@ -299,7 +297,6 @@ function back(){
                                         { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
                                     ],
                                 rowNum: 10, //每页显示记录数
-                                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                                 viewrecords: true,
                                 multiselect: true,
@@ -338,3 +335,27 @@ function back(){
         }
     });
 }
+
+//自动补全功能的实现
+var availableTags = []
+function queryByDrugname(){
+    $.ajax({
+        url:'/MIF/hospital/query',
+        type:'get',
+        async:false,
+        dataType:'json',
+        success:function(data){
+            var h_name=[];                             ///只展示其中的几列
+            for(var i = 0; i <data.hospitals.length; i++){
+                h_name.push(data.hospitals[i].h_name);
+            }
+            availableTags = h_name;
+        }
+    });
+}
+$(function() {
+    queryByDrugname();
+    $("#hospitalnum").autocomplete({
+        source: availableTags
+    });
+});

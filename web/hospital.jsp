@@ -31,12 +31,13 @@
     <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
     <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 
-    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/sub-menu.js"></script>
     <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
 </head>
 <body onload="loadtop10()">
@@ -100,34 +101,72 @@
 </section>
 <!-- MENU SECTION END-->
 
-</br></br></br>
+</br>
 <!--切换标签页面-->
 
-<div  id="content1">
-
-    </br></br></br>
-
+<div id="content1">
     <!--切换标签页面-->
 
 
     <div id="manager">
         <div id="source_table_content">
-        <div class="row">
-            <div class="col-md-5 col-sm-5 col-xs-12">
-                <div class="panel-body">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            top10
+            <div class="row">
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="panel-body">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                top10
+                            </div>
+                            <div class="panel-body">
+                                <form id="queryPredict">
+                                    <span class="label1">保险：</span>
+                                    <select id="identity" class="select_relative">
+                                        <option value="1">职工</option>
+                                        <option value="2">居民</option>
+                                    </select>
+                                    <span class="label1">按年份：</span>
+                                    <select id="year" class="select_relative">
+                                        <option>2010</option>
+                                        <option>2011</option>
+                                        <option>2012</option>
+                                        <option>2013</option>
+                                        <option>2014</option>
+                                        <option>2015</option>
+                                    </select>
+                                    <select id="orderBy" class="select_relative1">
+                                        <option value="h_fees">住院费用</option>
+                                        <option value="h_groupfees">住院统筹支付</option>
+                                        <option value="m_fees">门诊费用</option>
+                                        <option value="m_groupfees">门诊统筹支付</option>
+                                        <option value="m_count">门诊人次</option>
+                                        <option value="h_count">住院人次</option>
+                                        <option value="drugfees">住院人次</option>
+                                    </select>
+                                    <input id="query1" class="query" type="button" onclick="updatetop10()" value="查询"/>
+
+                                    <div class="grid_relative">
+                                        <table id="grid-table"></table>
+                                        <!--jqGrid 浏览导航栏所在-->
+                                        <div id="grid-pager"></div>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        <div class="panel-body">
-                            <form id="queryPredict">
-                                <span class="label1">选择保险类型：</span>
-                                <select id="identity" class="select_relative">
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-12">
+                    <div class="panel-body">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                详细信息
+                            </div>
+                                <span class="label1">保险：</span>
+                                <select id="identity1" class="select_relative">
                                     <option value="1">职工</option>
                                     <option value="2">居民</option>
                                 </select>
                                 <span class="label1">按年份：</span>
-                                <select id="year" class="select_relative">
+                                <select id="hospitalyear" class="select_relative">
                                     <option>2010</option>
                                     <option>2011</option>
                                     <option>2012</option>
@@ -135,67 +174,35 @@
                                     <option>2014</option>
                                     <option>2015</option>
                                 </select>
-                                <select id="orderBy" class="select_relative1">
-                                    <option value="h_fees">住院费用</option>
-                                    <option value="h_groupfees">住院统筹支付</option>
-                                    <option value="m_fees">门诊费用</option>
-                                    <option value="m_groupfees">门诊统筹支付</option>
-                                    <option value="m_count">门诊人次</option>
-                                    <option value="h_count">住院人次</option>
-                                    <option value="drugfees">住院人次</option>
+                                <span class="label1">按医院等级：</span>
+                                <select id="hospitallevel" class="select_relative">
+                                    <option>一级</option>
+                                    <option>二级</option>
+                                    <option>三级</option>
+                                    <option>无等级</option>
+                                    <option>异地</option>
+                                    <option>社区</option>
                                 </select>
-                                <input id="query1" class="query" type="button" onclick="updatetop10()" value="查询"/>
-                                <div class="grid_relative" >
-                                    <table id="grid-table"></table>
+                            <br/>
+                                <span class="label1">按医疗机构代码：</span>
+                            <style>.ui-autocomplete {  max-height: 100px;overflow-y: auto;/* 防止水平滚动条 */  overflow-x: auto; width:80px;background-color: #ffff00}</style>
+                                <input type="text" class="input1" id="hospitalnum">
+                                <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
+                                <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
+
+                                <div class="grid_relative1">
+                                    <table id="grid-table2"></table>
                                     <!--jqGrid 浏览导航栏所在-->
-                                    <div id="grid-pager"></div>
+                                    <div id="grid-pager2"></div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 col-sm-7 col-xs-12">
-                <div class="alert alert-info text-center">
-                    <span class="label1">选择保险类型：</span>
-                    <select id="identity1" class="select_relative">
-                        <option value="1">职工</option>
-                        <option value="2">居民</option>
-                    </select>
-                    <span class="label1">按年份：</span>
-                    <select id="hospitalyear" class="select_relative">
-                        <option>2010</option>
-                        <option>2011</option>
-                        <option>2012</option>
-                        <option>2013</option>
-                        <option>2014</option>
-                        <option>2015</option>
-                    </select>
-                    <span class="label1">按医院等级：</span>
-                    <select id="hospitallevel" class="select_relative">
-                        <option >一级</option>
-                        <option >二级</option>
-                        <option >三级</option>
-                        <option>无等级</option>
-                        <option >异地</option>
-                        <option >社区</option>
-                    </select>
-                    <span class="label1">按医疗机构代码：</span>
-                    <input type="text" class="input1" id="hospitalnum">
-                    <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
-                    <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
-
-                    <div class="grid_relative1">
-                        <table id="grid-table2"></table>
-                        <!--jqGrid 浏览导航栏所在-->
-                        <div id="grid-pager2"></div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            </div>
         </div>
     </div>
+</div>
 </div>
 <section class="footer-section">
     <div class="container">
