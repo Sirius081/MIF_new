@@ -31,12 +31,13 @@
   <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
   <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 
-  <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/sub-menu.js"></script>
   <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
   <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
 </head>
 <body onload="loadtop10()">
@@ -100,12 +101,10 @@
 </section>
 <!-- MENU SECTION END-->
 
-</br></br></br>
+</br></br>
 <!--切换标签页面-->
 
 <div  id="content1">
-  </br></br></br>
-
   <!--切换标签页面-->
   <div id="manager">
     <div id="source_table_content">
@@ -132,7 +131,8 @@
                     <option>2015</option>
                   </select>
                   <span class="label1" >按区县代码：</span>
-                  <input type="text" id="regionname" class="input">
+                  <style>.ui-autocomplete {  max-height: 100px;overflow-y: auto;/* 防止水平滚动条 */  overflow-x: auto; width:80px;background-color: #ffff00}</style>
+                  <input type="text" id="regionname" class="input" maxlength="50" >
                   <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
                   <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
                   <div class="grid_relative1">

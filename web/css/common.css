@@ -128,7 +128,7 @@ hr {
 }
 
 .label1{
-    font-size:20px;
+    font-size:15px;
     margin-top:20px;
     margin-left:8px;
 }
@@ -255,19 +255,19 @@ nav {
 .query {
     font-size:15px;
     position: relative;
-    margin-left:5px;
+    margin-left:1px;
     margin-top: 20px;
 }
 
 .grid_relative{
     position: relative;
-    top: 50px;
+    top: 20px;
     background-color:#AAAAAA;
 }
 
 .grid_relative1{
     position: relative;
-    top: 30px;
+    top: 20px;
 }
 
 #btn-group1{
@@ -281,7 +281,7 @@ nav {
 }
 
 .input {
-    width: 120px;
+    width: 350px;
     height: 28px;
     padding: 6px 12px;
     font-size: 14px;
@@ -301,6 +301,24 @@ nav {
 
 .input1 {
     width: 180px;
+    height: 28px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left:5px;
+    margin-top: 20px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
+}
+.input2 {
+    width: 120px;
     height: 28px;
     padding: 6px 12px;
     font-size: 14px;

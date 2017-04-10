@@ -38,18 +38,17 @@ function selectResult()
                 colNames: ['年份','区县代码',"住院费用","住院统筹支付","门诊费用","门诊统筹支付","门诊人次","住院人次"],
                 colModel:
                     [
-                        { name: 'year', index: "year", width: "10%",align:"center", editable: true},
-                        { name: 'r_name', index: 'r_name', width: "40%",align:"center",editable: true },
-                        { name: 'h_fees', index: 'h_fees', width: "10%", align:"center",editable: true},
-                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
-                        { name: 'm_fees', index: 'm_fees', width: "10%", align:"center",editable: true},
-                        { name: 'm_groupfees', index: 'm_groupfees', width: "10%",align:"center", editable: true},
-                        { name: 'm_count', index: 'm_count', width: "10%",align:"center", editable: true},
-                        { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
+                        { name: 'year', index: "year", width: "5%",align:"center", editable: true},
+                        { name: 'r_name', index: 'r_name', width: "24%",align:"center",editable: true },
+                        { name: 'h_fees', index: 'h_fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'm_fees', index: 'm_fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'm_groupfees', index: 'm_groupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'm_count', index: 'm_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'h_count', index: 'h_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 autowidth: true, //自动宽
                 loadComplete: function() {
@@ -58,6 +57,8 @@ function selectResult()
                     for (var i = 0; i <=ids.length; i++) {
                         grid.setRowData ( ids[i], false, {height: 20+i*1.15} );
                     }
+                    $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
+                    $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
                 },
                 onCellSelect:function(rowid,iCol,cellcontent,e){
                     var r_name=cellcontent;
@@ -91,27 +92,24 @@ function selectResult()
                                 colNames: ['年份','医疗机构代码',"医院等级","住院统筹支付","均次住院统筹支付","门诊统筹支付","均次门诊统筹支付","住院人次","门诊人次"],
                                 colModel:
                                     [
-                                        { name: 'year', index: "year", width: "10%",align:"center", editable: true},
-                                        { name: 'h_name', index: 'h_name', width: "40%",align:"center",editable: true },
-                                        { name: 'grade', index: 'grade', width: "10%",align:"center", editable: true},
-                                        { name: 'h_groupfees', index: 'fees', width: "10%", align:"center",editable: true},
-                                        { name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "10%",align:"center", editable: true},
-                                        { name: 'm_groupfees', index: 'm_groupfees', width: "10%", align:"center",editable: true},
-                                        { name: 'avg_mgroupfees', index: 'avg_mfees', width: "10%", align:"center",editable: true},
-                                        { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
-                                        { name: 'm_count', index: 'm_count', width: "10%",align:"center", editable: true}
+                                        { name: 'year', index: "year", width: "4%",align:"center", editable: true},
+                                        { name: 'h_name', index: 'h_name', width: "28%",align:"center",editable: true },
+                                        { name: 'grade', index: 'grade', width: "8%",align:"center", editable: true},
+                                        { name: 'h_groupfees', index: 'fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "12%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'm_groupfees', index: 'm_groupfees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'avg_mgroupfees', index: 'avg_mfees', width: "12%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'h_count', index: 'h_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'm_count', index: 'm_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'}
 
                                     ],
                                 rowNum: 10, //每页显示记录数
-                                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                                 viewrecords: true,
                                 multiselect: true,
-                                subGrid: true,
                                 altRows: true, //设置为交替行表格,默认为false
                                 loadonce: true,
                                 multiboxonly: true, //是否只能点击复选框多选
-                                caption: "详细信息", //表名
                                 autowidth: true //自动宽
                             });
                         }
@@ -126,3 +124,26 @@ function back()
 {
     selectResult();
 }
+//自动补全功能的实现
+var availableTags = []
+function queryByDrugname(){
+    $.ajax({
+        url:'/MIF/region/query',
+        type:'get',
+        async:false,
+        dataType:'json',
+        success:function(data){
+            var regionname=[];                             ///只展示其中的几列
+            for(var i = 0; i <data.regions.length; i++){
+                regionname.push(data.regions[i].name);
+            }
+            availableTags = regionname;
+        }
+    });
+}
+$(function() {
+    queryByDrugname();
+    $("#regionname").autocomplete({
+        source: availableTags
+    });
+});

@@ -31,13 +31,13 @@
   <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
   <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 
-  <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/sub-menu.js"></script>
   <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
   <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
-
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 </head>
 <body onload="loadtop10()">
 <div class="navbar navbar-inverse set-radius-zero">
@@ -73,9 +73,12 @@
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">收支建模 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="ui.html">收支走向预测</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">基金缴费模型</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">医疗待遇支付模型</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="predict.jsp">收支走向预测</a>
+                </li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a>
+                </li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
+                </li>
               </ul>
             </li>
             <li>
@@ -96,21 +99,14 @@
   </div>
 </section>
 <!-- MENU SECTION END-->
-
-</br></br></br>
+</br>
 <!--切换标签页面-->
-
 <div  id="content1">
-
-  </br></br></br>
-
   <!--切换标签页面-->
-
-
   <div id="manager">
     <div id="source_table_content">
       <div class="row">
-        <div class="col-md-5 col-sm-5 col-xs-12">
+        <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="panel-body">
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -146,9 +142,13 @@
             </div>
           </div>
         </div>
-        <div class="col-md-7 col-sm-7 col-xs-12">
-          <div class="alert alert-info text-center">
-            <span class="label1">选择保险类型：</span>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="panel-body">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  详细信息
+                </div>
+            <span class="label1">保险类型：</span>
             <select id="identity1" class="select_relative">
               <option value="1">职工</option>
               <option value="2">居民</option>
@@ -162,7 +162,8 @@
               <option>2015</option>
             </select>
             <span class="label1" >按药品名称：</span>
-            <input type="text" id="drugname" class="input">
+                <style>.ui-autocomplete {  max-height: 100px;overflow-y: auto;/* 防止水平滚动条 */  overflow-x: hidden; width:20px;background-color: #ffff00}</style>
+            <input type="text" id="drugname" class="input2">
             <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
 
             <div class="grid_relative1">
@@ -173,6 +174,7 @@
           </div>
         </div>
       </div>
+        </div>
     </div>
   </div>
 </div>

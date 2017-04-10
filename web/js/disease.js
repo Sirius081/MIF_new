@@ -13,6 +13,7 @@ function updatetop10()
     var year=$("#year").val();
     var orderBy =$("#orderBy").val();
     var params="&identity="+identity+"&year="+year+'&orderBy='+orderBy;
+    var diseaseName=[];
     $.ajax({
         url:'/MIF/disease/getTop10',
         type:'get',
@@ -24,6 +25,7 @@ function updatetop10()
                 newjson[i] = new Object();
                 newjson[i].year = data.diseases[i].year;
                 newjson[i].name = data.diseases[i].name;
+                diseaseName.push(data.diseases[i].name);
                 newjson[i].h_fees= data.diseases[i][orderBy];
             }
             var grid_selector = "#grid-table";
@@ -36,30 +38,32 @@ function updatetop10()
                 colNames: ['年份','名称','费用'],
                 colModel:
                     [
-                        { name: 'year', index: "year", width: 40,align:"center", editable: true},
-                        { name: 'name', index: 'name', width: 100,align:"center",editable: true },
-                        { name: 'h_fees', index: 'h_fees', width: 100,align:"center", editable: true}
+                        { name: 'year', index: "year", width: 20,align:"center", editable: true},
+                        { name: 'name', index: 'name', width: 40,align:"center",editable: true },
+                        { name: 'h_fees', index: 'h_fees', width: 40,align:"center", editable: true,sorttype:'integer',formatter:'integer'}
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
-                caption: "top10", //表名
                 autowidth: true, //自动宽
+                scroll:"auto",
                 loadComplete: function() {
                     var grid = $("#grid-table");
                     var ids = grid.getDataIDs();
                     for (var i = 0; i <=ids.length; i++) {
                         grid.setRowData ( ids[i], false, {height: 20+i*1.15} );
                     }
+                    $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
+                    $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
+                    $('#grid-table').closest("div.ui-jqgrid-view")
+                        .children("div.ui-jqgrid-titlebar")
+                        .css("text-align", "center")
+                        .children("span.ui-jqgrid-title")
+                        .css("float", "none");
                 }
             });
-            $('#grid-table').closest("div.ui-jqgrid-view")
-                .children("div.ui-jqgrid-titlebar")
-                .css("text-align", "center")
-                .children("span.ui-jqgrid-title")
-                .css("float", "none");
         }
+
     });
 }
 
@@ -96,27 +100,29 @@ function selectResult()
                 colNames: ['年份','名称','住院费用',"均次住院费用","住院统筹支付","均次统筹支付","住院人次"],
                 colModel:
                     [
-                        { name: 'year', index: "year", width: 40, editable: true,align:"center"},
-                        { name: 'name', index: 'name', width: 150,editable: true,align:"center" },
-                        { name: 'h_fees', index: 'h_fees', width: 100, editable: true,align:"center"},
-                        { name: 'avg_hfees', index: 'avg_hfees', width: 100, editable: true,align:"center"},
-                        { name: 'h_groupfees', index: 'h_groupfees', width: 100, editable: true,align:"center"},
-                        { name: 'avg_groupfees', index: 'avg_groupfees', width: 100, editable: true,align:"center"},
-                        { name: 'h_count', index: 'h_count', width: 40, editable: true,align:"center"}
+                        { name: 'year', index: "year", width: "40", editable: true,align:"center"},
+                        { name: 'name', index: 'name', width:  "250",editable: true,align:"center" },
+                        { name: 'h_fees', index: 'h_fees', width:  "80", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_hfees', index: 'avg_hfees', width:  "120", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'h_groupfees', index: 'h_groupfees', width:  "110", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_groupfees', index: 'avg_groupfees', width:  "120", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'h_count', index: 'h_count', width:  "60", editable: true,align:"center",sorttype:'integer',formatter:'integer'}
                     ],
                 pgbuttons:true,
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
-                caption: "详细信息", //表名
-                autowidth: true,
+                width:680,
+                autowidth: false,
+                shrinkToFit:false,
                 loadComplete: function() {
                     var grid = $("#grid-table2");
                     var ids = grid.getDataIDs();
                     for (var i = 0; i <=ids.length; i++) {
                         grid.setRowData ( ids[i], false, {height: 20+i*1.15} );
                     }
+                    $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
+                    $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
                 },
                 onCellSelect:function(rowid,iCol,cellcontent,e){
                     var d_name=cellcontent;
@@ -152,17 +158,15 @@ function selectResult()
                                         { name: 'year', index: "year", width: "5%",align:"center", editable: true},
                                         { name: 'h_name', index: 'h_name', width: "40%",align:"center",editable: true },
                                         { name: 'grade', index: 'grade', width: "5%",align:"center", editable: true},
-                                        { name: 'd_name', index: 'd_name', width: "25%",align:"center",editable: true },
-                                        { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true},
-                                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
-                                        { name: 'h_count', index: 'h_count', width: "5%",align:"center", editable: true},
+                                        { name: 'd_name', index: 'd_name', width: "25%",align:"center",editable: true},
+                                        { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'h_count', index: 'h_count', width: "5%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                                     ],
                                 rowNum: 10, //每页显示记录数
-                                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                                 viewrecords: true,
                                 multiselect: true,
-                                subGrid: true,
                                 altRows: true, //设置为交替行表格,默认为false
                                 loadonce: true,
                                 multiboxonly: true, //是否只能点击复选框多选
@@ -173,12 +177,6 @@ function selectResult()
                     });
                 }
             });
-            $('#grid-table2').closest("div.ui-jqgrid-view")
-                .children("div.ui-jqgrid-titlebar")
-                .css("text-align", "center")
-                .children("span.ui-jqgrid-title")
-                .css("float", "none");
-
         }
     });
 }
@@ -216,17 +214,16 @@ function back()
                 colModel:
                     [
                         { name: 'year', index: "year", width: 40, editable: true,align:"center"},
-                        { name: 'name', index: 'name', width: 150,editable: true,align:"center" },
-                        { name: 'h_fees', index: 'h_fees', width: 100, editable: true,align:"center"},
-                        { name: 'avg_hfees', index: 'avg_hfees', width: 100, editable: true,align:"center"},
-                        { name: 'h_groupfees', index: 'h_groupfees', width: 100, editable: true,align:"center"},
-                        { name: 'avg_groupfees', index: 'avg_groupfees', width: 100, editable: true,align:"center"},
-                        { name: 'h_count', index: 'h_count', width: 40, editable: true,align:"center"}
+                        { name: 'name', index: 'name', width: 150,editable: true,align:"center"},
+                        { name: 'h_fees', index: 'h_fees', width: 100, editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_hfees', index: 'avg_hfees', width: 100, editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'h_groupfees', index: 'h_groupfees', width: 100, editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_groupfees', index: 'avg_groupfees', width: 100, editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'h_count', index: 'h_count', width: 40, editable: true,align:"center",sorttype:'integer',formatter:'integer'}
                     ],
                 pgbuttons:true,
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
-                rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 caption: "详细信息", //表名
                 autowidth: true,
@@ -269,12 +266,12 @@ function back()
                                 colModel:
                                     [
                                         { name: 'year', index: "year", width: "10%",align:"center", editable: true},
-                                        { name: 'h_name', index: 'h_name', width: "20%",align:"center",editable: true },
+                                        { name: 'h_name', index: 'h_name', width: "20%",align:"center"},
                                         { name: 'grade', index: 'grade', width: "10%",align:"center", editable: true},
-                                        { name: 'd_name', index: 'd_name', width: "20%",align:"center",editable: true },
-                                        { name: 'h_fees', index: 'fees', width: "15%", align:"center",editable: true},
-                                        { name: 'h_groupfees', index: 'h_groupfees', width: "15%",align:"center", editable: true},
-                                        { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true},
+                                        { name: 'd_name', index: 'd_name', width: "20%",align:"center",editable: true},
+                                        { name: 'h_fees', index: 'fees', width: "15%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'h_groupfees', index: 'h_groupfees', width: "15%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                                     ],
                                 rowNum: 10, //每页显示记录数
                                 rowList: [10, 20, 30], //用于改变显示行数的下拉列表框的元素数组。
@@ -300,5 +297,28 @@ function back()
 
         }
     });
-
 }
+
+//自动补全功能的实现
+var availableTags = []
+function queryByDrugname(){
+    $.ajax({
+        url:'/MIF/disease/query',
+        type:'get',
+        async:false,
+        dataType:'json',
+        success:function(data){
+            var diseasename=[];                             ///只展示其中的几列
+            for(var i = 0; i <data.diseases.length; i++){
+                diseasename.push(data.diseases[i].name);
+            }
+            availableTags = diseasename;
+        }
+    });
+}
+$(function() {
+    queryByDrugname();
+    $("#diseasename").autocomplete({
+        source: availableTags
+    });
+});
