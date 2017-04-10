@@ -34,7 +34,11 @@ function updatetop10(){
                     [
                         { name: 'year', index: 'year', width: "20%",align:"center",editable: true},
                         { name: 'name', index: 'name', width: "40%",align:"center",editable: true },
+<<<<<<< HEAD
                         { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true}
+=======
+                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true,sorttype:'integer',formatter:'integer'}
+>>>>>>> song
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
@@ -93,7 +97,7 @@ function selectResult(){
                     [
                         { name: 'year', index: 'year', width: "20%",align:"center", editable: true},
                         { name: 'name', index: 'name', width:"40%",align:"center",editable: true },
-                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true}
+                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true,sorttype:'integer',formatter:'integer'}
                     ],
                 rowNum: 10, //每页显示记录数
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
