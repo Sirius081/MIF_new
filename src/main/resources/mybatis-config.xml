@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <typeAlias alias="Hospital" type="Entity.Hospital"/>
+        <typeAlias alias="DiseaseHospital" type="Entity.DiseaseHospital"/>
+        <typeAlias alias="Drug" type="Entity.Drug"/>
+        <typeAlias type="Entity.Region" alias="Region"/>
+        <typeAlias type="Entity.Disease" alias="Disease"/>
+        <typeAlias type="Entity.FeesDetail" alias="FeesDetail"/>
+        <typeAlias type="Entity.TotalTrend" alias="TotalTrend"/>
+        <typeAlias type="Entity.AgeDistribution" alias="AgeDistribution"/>
+    </typeAliases>
+
+
+
+    <environments default="development">
+
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://10.11.1.200:3306/mif"/>
+                <property name="username" value="root"/>
+                <property name="password" value="ecnu105"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+
+    <mappers>
+        <mapper resource="mapper/Hospital_Mapper.xml"/>
+        <mapper resource="mapper/Drug_Mapper.xml"/>
+        <mapper resource="mapper/Region_Mapper.xml"/>
+        <mapper resource="mapper/Disease_Mapper.xml"/>
+        <mapper resource="mapper/Statistic_Mapper.xml"/>
+    </mappers>
+</configuration>

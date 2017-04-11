@@ -1,8 +1,9 @@
 package Action;
 
-import Dao.RegionDao;
+import Dao.MybatisUtils;
 import Entity.Hospital;
 import Entity.Region;
+import Service.IRegion;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
@@ -13,7 +14,7 @@ import java.util.List;
  * Created by sirius on 17-4-6.
  */
 public class RegionAction extends ActionSupport implements ServletRequestAware {
-    private RegionDao dao=new RegionDao();
+    private IRegion dao= MybatisUtils.getSqlSession().getMapper(IRegion.class);
     //get
     private List<Region> regions;
     private List<Hospital> hospitals;
@@ -31,12 +32,12 @@ public class RegionAction extends ActionSupport implements ServletRequestAware {
      */
     public String query(){
         //condition
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
         String r_name=request.getParameter("r_name");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
@@ -57,13 +58,13 @@ public class RegionAction extends ActionSupport implements ServletRequestAware {
      */
     public String details(){
         //condition: identity,h_name,year
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
 
         String r_name=request.getParameter("r_name");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }

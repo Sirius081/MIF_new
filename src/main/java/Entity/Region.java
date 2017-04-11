@@ -26,7 +26,6 @@ public class Region {
         this.m_groupfees = m_groupfees;
     }
     public Region(){
-        this(-1,-1,null,-1,-1,-1,-1,-1,-1);
     }
     public int getYear() {
         return year;

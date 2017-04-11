@@ -1,9 +1,11 @@
 package Action;
 
+import Dao.MybatisUtils;
 import Dao.StatisticDao;
 import Entity.AgeDistribution;
 import Entity.FeesDetail;
 import Entity.TotalTrend;
+import Service.IStatistic;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
@@ -39,11 +41,12 @@ public class StatisticAction extends ActionSupport implements ServletRequestAwar
 
     public String feesDetail(){
         int identity=Integer.parseInt(request.getParameter("identity"));
-        FeesDetail condition=new FeesDetail(-1,identity,"",-1,-1,-1,-1,-1);
+        FeesDetail condition=new FeesDetail();
+        condition.setIdentity(identity);
         fds=dao.getFeesDetail(condition);
         return SUCCESS;
     }
-    private StatisticDao dao=new StatisticDao();
+    private IStatistic dao= MybatisUtils.getSqlSession().getMapper(IStatistic.class);
     //get
     private List<TotalTrend> tts;//totalTrends
     private List<AgeDistribution> ads;//age distributions
