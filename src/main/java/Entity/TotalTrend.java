@@ -12,7 +12,7 @@ public class TotalTrend {
     int avgwage;//平均工资
     int working;//在职人数
     int retired;//离退人数
-
+    public TotalTrend(){}
     public TotalTrend(int year, int identity, double income, double cost, int numbers, int avgwage, int working, int retired) {
         this.year = year;
         this.identity = identity;

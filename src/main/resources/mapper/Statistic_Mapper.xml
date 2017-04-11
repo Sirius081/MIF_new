@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Service.IStatistic">
+
+
+    <select id="getTotalTrend" resultType="TotalTrend">
+        select * from totalTrend where 1=1
+        <if test="identity !=0">and identity=#{identity}</if>
+        order by year
+    </select>
+    <select id="getFeesDetail" resultType="FeesDetail">
+        select year,identity,h.grade as grade,m_fees,h_fees,m_count,h_count,drugfees
+        from feesDetail f
+        left join hgrade h on h.id=f.grade
+        where 1=1
+        <if test="identity !=0"> and identity=#{identity}</if>
+        order by year, h.id
+    </select>
+    <select id="getAgeDistribution" resultType="AgeDistribution">
+        select * from ageDistribution where 1=1
+        <if test="identity !=0"> and identity=#{identity}</if>
+        order by year, ageId
+    </select>
+
+</mapper>

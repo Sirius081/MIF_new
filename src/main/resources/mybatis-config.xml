@@ -9,6 +9,9 @@
         <typeAlias alias="Drug" type="Entity.Drug"/>
         <typeAlias type="Entity.Region" alias="Region"/>
         <typeAlias type="Entity.Disease" alias="Disease"/>
+        <typeAlias type="Entity.FeesDetail" alias="FeesDetail"/>
+        <typeAlias type="Entity.TotalTrend" alias="TotalTrend"/>
+        <typeAlias type="Entity.AgeDistribution" alias="AgeDistribution"/>
     </typeAliases>
 
 
@@ -33,5 +36,6 @@
         <mapper resource="mapper/Drug_Mapper.xml"/>
         <mapper resource="mapper/Region_Mapper.xml"/>
         <mapper resource="mapper/Disease_Mapper.xml"/>
+        <mapper resource="mapper/Statistic_Mapper.xml"/>
     </mappers>
 </configuration>
