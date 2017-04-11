@@ -7,6 +7,7 @@
         <typeAlias alias="Hospital" type="Entity.Hospital"/>
         <typeAlias alias="DiseaseHospital" type="Entity.DiseaseHospital"/>
         <typeAlias alias="Drug" type="Entity.Drug"/>
+        <typeAlias type="Entity.Region" alias="Region"/>
     </typeAliases>
 
 
@@ -29,5 +30,6 @@
     <mappers>
         <mapper resource="mapper/Hospital_Mapper.xml"/>
         <mapper resource="mapper/Drug_Mapper.xml"/>
+        <mapper resource="mapper/Region_Mapper.xml"/>
     </mappers>
 </configuration>
