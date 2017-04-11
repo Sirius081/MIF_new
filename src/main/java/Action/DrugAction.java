@@ -1,8 +1,10 @@
 package Action;
 
-import Dao.DrugDao;
+import Dao.MybatisUtils;
 import Entity.Drug;
+import Service.IDrug;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +14,8 @@ import java.util.List;
  * Created by sirius on 17-1-11.
  */
 public class DrugAction extends ActionSupport implements ServletRequestAware {
-    private DrugDao dao=new DrugDao();
+    private SqlSession s= MybatisUtils.getSqlSession();
+    private IDrug dao=s.getMapper(IDrug.class);
     //get
     private List<Drug> drugs;
     //set

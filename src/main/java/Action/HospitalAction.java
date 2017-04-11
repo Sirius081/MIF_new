@@ -1,9 +1,11 @@
 package Action;
 
-import Dao.HospitalDao;
+import Dao.MybatisUtils;
 import Entity.DiseaseHospital;
 import Entity.Hospital;
+import Service.IHospital;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +15,8 @@ import java.util.List;
  * Created by sirius on 17-1-10.
  */
 public class HospitalAction extends ActionSupport implements ServletRequestAware {
-    private HospitalDao dao=new HospitalDao();
+    SqlSession s= MybatisUtils.getSqlSession();
+    private IHospital dao=s.getMapper(IHospital.class);
     //get
     private List<Hospital> hospitals;
     private List<DiseaseHospital> diseaseHospitals;
@@ -31,12 +34,12 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
      */
     public String query(){
         //condition
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
         String h_name=request.getParameter("h_name");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
@@ -58,7 +61,7 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
      */
     public String top10(){
         String orderBy=request.getParameter("orderBy");
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
@@ -67,7 +70,7 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         Hospital condition=new Hospital();
         condition.setIdentity(identity);
         condition.setYear(year);
-        hospitals=dao.getTop10(orderBy, condition);
+        hospitals=dao.getTop10(orderBy, year,identity);
         return SUCCESS;
     }
 
@@ -77,13 +80,13 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
      */
     public String details(){
         //condition: identity,h_name,year
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
 
         String h_name=request.getParameter("h_name");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
@@ -105,5 +108,15 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
 
     public List<DiseaseHospital> getDiseaseHospitals() {
         return diseaseHospitals;
+    }
+
+    public static void main(String[] args) {
+        HospitalAction h=new HospitalAction();
+        Hospital hos=new Hospital();
+        hos.setYear(2015);
+        hos.setIdentity(1);
+//        h.dao.getHospitals(hos);
+        List<Hospital> hs=h.dao.getTop10("h_fees",2015,1);
+        System.out.println();
     }
 }

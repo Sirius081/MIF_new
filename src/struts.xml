@@ -76,6 +76,9 @@
         </action>
     </package>
     <package name="region" namespace="/region" extends="json-default">
+        <action name="init" class="Action.RegionAction" method="init">
+            <result type="json"></result>
+        </action>
         <action name="query" class="Action.RegionAction" method="query">
             <result type="json"></result>
         </action>

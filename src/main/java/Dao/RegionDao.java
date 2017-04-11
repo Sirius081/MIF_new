@@ -118,54 +118,54 @@ public class RegionDao {
     }
     public List<Hospital> getRegionDetails(Region condition){
         List<Hospital> hospitals=new ArrayList<Hospital>();
-        Connection con=DBtool.getConnection();
-        PreparedStatement stmt=null;
-        ResultSet rs=null;
-        StringBuffer sql=new StringBuffer("select a.*,grade.grade from hospital a " +
-                " left join hgrade grade on grade.id=a.grade" +
-                " where 1=1 ");
-        if(condition.getName()!=null){
-            sql.append(" and  a.r_name like '%"+condition.getName()+"%'");
-        }
-        if(condition.getYear()!=-1){
-            sql.append(" and a.year="+condition.getYear());
-        }
-        try {
-            stmt=con.prepareStatement(sql.toString());
-            rs=stmt.executeQuery();
-            while(rs.next()){
-                Hospital h=new Hospital(rs.getInt("year")
-                        , rs.getInt("identity")
-                        ,rs.getString("r_name")
-                        ,rs.getString("h_name")
-                        ,rs.getString("grade.grade")
-                        ,rs.getInt("m_count")
-                        ,rs.getInt("h_count")
-                        ,rs.getDouble("h_fees")
-                        ,rs.getDouble("h_groupfees")
-                        ,rs.getDouble("m_fees")
-                        ,rs.getDouble("m_groupfees")
-                        ,rs.getDouble("drugfees"));
-                if(h.getM_count()>0){
-                    h.setAvg_mfees(new BigDecimal(h.getM_fees()/h.getM_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
-                    h.setAvg_mgroupfees(new BigDecimal(h.getM_groupfees()/h.getM_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
-                }
-                if(h.getH_count()>0){
-                    h.setAvg_hfees(new BigDecimal(h.getH_fees()/h.getH_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
-                    h.setAvg_hgroupfees(new BigDecimal(h.getH_groupfees()/h.getH_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
-                }
-                hospitals.add(h);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }finally {
-            try {
-                stmt.close();
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+//        Connection con=DBtool.getConnection();
+//        PreparedStatement stmt=null;
+//        ResultSet rs=null;
+//        StringBuffer sql=new StringBuffer("select a.*,grade.grade from hospital a " +
+//                " left join hgrade grade on grade.id=a.grade" +
+//                " where 1=1 ");
+//        if(condition.getName()!=null){
+//            sql.append(" and  a.r_name like '%"+condition.getName()+"%'");
+//        }
+//        if(condition.getYear()!=-1){
+//            sql.append(" and a.year="+condition.getYear());
+//        }
+//        try {
+//            stmt=con.prepareStatement(sql.toString());
+//            rs=stmt.executeQuery();
+//            while(rs.next()){
+//                Hospital h=new Hospital(rs.getInt("year")
+//                        , rs.getInt("identity")
+//                        ,rs.getString("r_name")
+//                        ,rs.getString("h_name")
+//                        ,rs.getString("grade.grade")
+//                        ,rs.getInt("m_count")
+//                        ,rs.getInt("h_count")
+//                        ,rs.getDouble("h_fees")
+//                        ,rs.getDouble("h_groupfees")
+//                        ,rs.getDouble("m_fees")
+//                        ,rs.getDouble("m_groupfees")
+//                        ,rs.getDouble("drugfees"));
+//                if(h.getM_count()>0){
+//                    h.setAvg_mfees(new BigDecimal(h.getM_fees()/h.getM_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+//                    h.setAvg_mgroupfees(new BigDecimal(h.getM_groupfees()/h.getM_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+//                }
+//                if(h.getH_count()>0){
+//                    h.setAvg_hfees(new BigDecimal(h.getH_fees()/h.getH_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+//                    h.setAvg_hgroupfees(new BigDecimal(h.getH_groupfees()/h.getH_count()).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue());
+//                }
+//                hospitals.add(h);
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }finally {
+//            try {
+//                stmt.close();
+//                rs.close();
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//        }
         return hospitals;
     }
 
