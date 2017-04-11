@@ -21,7 +21,6 @@ public class Disease {
         this.h_groupfees = h_groupfees;
     }
     public Disease() {
-        this(-1,-1,null,-1,-1,-1);
 
     }
     public int getYear() {
