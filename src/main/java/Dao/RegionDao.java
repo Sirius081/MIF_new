@@ -91,7 +91,6 @@ public class RegionDao {
 
         try {
             stmt=con.prepareStatement(sql.toString());
-
             rs=stmt.executeQuery();
             while(rs.next()){
                 regions.add(new Region(rs.getInt("year")

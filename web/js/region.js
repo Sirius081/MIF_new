@@ -40,19 +40,12 @@ function selectResult()
                     [
                         { name: 'year', index: "year", width: "5%",align:"center", editable: true},
                         { name: 'r_name', index: 'r_name', width: "24%",align:"center",editable: true },
-
                         { name: 'h_fees', index: 'h_fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'm_fees', index: 'm_fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'm_groupfees', index: 'm_groupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'm_count', index: 'm_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'h_count', index: 'h_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
-                        { name: 'h_fees', index: 'h_fees', width: "10%", align:"center",editable: true},
-                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true},
-                        { name: 'm_fees', index: 'm_fees', width: "10%", align:"center",editable: true},
-                        { name: 'm_groupfees', index: 'm_groupfees', width: "10%",align:"center", editable: true},
-                        { name: 'm_count', index: 'm_count', width: "8%",align:"center", editable: true},
-                        { name: 'h_count', index: 'h_count', width: "8%",align:"center", editable: true}
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
@@ -107,14 +100,7 @@ function selectResult()
                                         { name: 'm_groupfees', index: 'm_groupfees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
                                         { name: 'avg_mgroupfees', index: 'avg_mfees', width: "12%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
                                         { name: 'h_count', index: 'h_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
-                                        { name: 'm_count', index: 'm_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
-                                        { name: 'h_groupfees', index: 'fees', width: "10%", align:"center",editable: true},
-                                        { name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "12%",align:"center", editable: true},
-                                        { name: 'm_groupfees', index: 'm_groupfees', width: "10%", align:"center",editable: true},
-                                        { name: 'avg_mgroupfees', index: 'avg_mfees', width: "12%", align:"center",editable: true},
-                                        { name: 'h_count', index: 'h_count', width: "8%",align:"center", editable: true},
-                                        { name: 'm_count', index: 'm_count', width: "8%",align:"center", editable: true}
-
+                                        { name: 'm_count', index: 'm_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'}
 
                                     ],
                                 rowNum: 10, //每页显示记录数
@@ -151,7 +137,14 @@ function queryByDrugname(){
             for(var i = 0; i <data.regions.length; i++){
                 regionname.push(data.regions[i].name);
             }
-            availableTags = regionname;
+            //对区县名进行去重
+            var arr =[]
+            for(var i=0,l=regionname.length;i<l;i++){
+                if(arr.indexOf(regionname[i])==-1){
+                    arr.push(regionname[i])
+                }
+            }
+            availableTags =arr;
         }
     });
 }

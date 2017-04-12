@@ -42,18 +42,15 @@ function updatetop10()
                         { name: 'h_name', index: 'h_name',width:320,align:"center",editable: true },
                         { name: 'year', index: "year",width:40,align:"center", editable: true},
                         { name: "h_fees", index: "h_fees",width:150,align:"center",sorttype:'integer',formatter:'integer'},
-
-                        { name: "h_fees", index: "h_fees",width:150,align:"center"},
-
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 multiselect: true, //是否多选
                 multiboxonly: true, //是否只能点击复选框多选
-                width:450,
                 autowidth: false,
                 shrinkToFit:false,
+                width:450,
                 loadComplete: function() {
                     var grid = $("#grid-table");
                     var ids = grid.getDataIDs();
@@ -67,11 +64,8 @@ function updatetop10()
                 .css("text-align", "center")
                 .children("span.ui-jqgrid-title")
                 .css("float", "none");
-            columnModelData("#grid-table");
             //自应高度
-            $(window).resize(function () {
-                $("#grid-table").setGridHeight($(window).height() - 178);
-            });
+
         }
     });
 }
@@ -101,6 +95,7 @@ function selectResult()
                 newjson[i].m_count = data.hospitals[i].m_count;
                 newjson[i].h_count = data.hospitals[i].h_count;
             }
+
             var grid_selector = "#grid-table2";
             var pager_selector = "#grid-pager2";
             $('#grid-table2').jqGrid('GridUnload');          ///刷新grid框架
@@ -352,7 +347,14 @@ function queryByDrugname(){
             for(var i = 0; i <data.hospitals.length; i++){
                 h_name.push(data.hospitals[i].h_name);
             }
-            availableTags = h_name;
+            //对医疗机构名进行去重
+            var arr =[]
+            for(var i=0,l=h_name.length;i<l;i++){
+                if(arr.indexOf(h_name[i])==-1){
+                    arr.push(h_name[i])
+                }
+            }
+            availableTags =arr;
         }
     });
 }
@@ -361,7 +363,7 @@ $(function() {
     $("#hospitalnum").autocomplete({
         source: availableTags
     });
+    //$(window).resize(function(){
+    //    $("#grid-table").setGridWidth($(window).width());
+    //});
 });
-
-
-

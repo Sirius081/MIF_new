@@ -34,8 +34,7 @@ function updatetop10(){
                     [
                         { name: 'year', index: 'year', width: "20%",align:"center",editable: true},
                         { name: 'name', index: 'name', width: "40%",align:"center",editable: true },
-                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
-                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true}
+                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true,sorttype:'integer',formatter:'integer'}
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
@@ -82,7 +81,7 @@ function selectResult(){
                 newjson[i].name = data.drugs[i].name;
                 newjson[i].drugfees = data.drugs[i].drugfees;
             }
-            var grid_selector = "#grid-table2";
+            var grid_select;or = "#grid-table2";
             var pager_selector = "#grid-pager2";
             $('#grid-table2').jqGrid('GridUnload');          ///刷新grid框架
             $("#grid-table2").jqGrid({
@@ -135,7 +134,14 @@ function queryByDrugname(){
             for(var i = 0; i <data.drugs.length; i++){
                 drugname.push(data.drugs[i].name);
             }
-            availableTags = drugname;
+            //对drug名进行去重
+            var arr =[]
+            for(var i=0,l=drugname.length;i<l;i++){
+                if(arr.indexOf(drugname[i])==-1){
+                    arr.push(drugname[i])
+                }
+            }
+            availableTags =arr;
         }
     });
 }
