@@ -40,11 +40,7 @@ function updatetop10()
                     [
                         { name: 'year', index: "year", width: 20,align:"center", editable: true},
                         { name: 'name', index: 'name', width: 40,align:"center",editable: true },
-<<<<<<< HEAD
-                        { name: 'h_fees', index: 'h_fees', width: 40,align:"center", editable: true}
-=======
                         { name: 'h_fees', index: 'h_fees', width: 40,align:"center", editable: true,sorttype:'integer',formatter:'integer'}
->>>>>>> song
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
@@ -106,19 +102,11 @@ function selectResult()
                     [
                         { name: 'year', index: "year", width: "40", editable: true,align:"center"},
                         { name: 'name', index: 'name', width:  "250",editable: true,align:"center" },
-<<<<<<< HEAD
-                        { name: 'h_fees', index: 'h_fees', width:  "80", editable: true,align:"center"},
-                        { name: 'avg_hfees', index: 'avg_hfees', width:  "120", editable: true,align:"center"},
-                        { name: 'h_groupfees', index: 'h_groupfees', width:  "110", editable: true,align:"center"},
-                        { name: 'avg_groupfees', index: 'avg_groupfees', width:  "120", editable: true,align:"center"},
-                        { name: 'h_count', index: 'h_count', width:  "60", editable: true,align:"center"}
-=======
                         { name: 'h_fees', index: 'h_fees', width:  "80", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
                         { name: 'avg_hfees', index: 'avg_hfees', width:  "120", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
                         { name: 'h_groupfees', index: 'h_groupfees', width:  "110", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
                         { name: 'avg_groupfees', index: 'avg_groupfees', width:  "120", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
                         { name: 'h_count', index: 'h_count', width:  "60", editable: true,align:"center",sorttype:'integer',formatter:'integer'}
->>>>>>> song
                     ],
                 pgbuttons:true,
                 viewrecords: true, //是否在浏览导航栏显示记录总数
@@ -324,7 +312,14 @@ function queryByDrugname(){
             for(var i = 0; i <data.diseases.length; i++){
                 diseasename.push(data.diseases[i].name);
             }
-            availableTags = diseasename;
+            //对病种名进行去重
+            var arr =[]
+            for(var i=0,l=diseasename.length;i<l;i++){
+                if(arr.indexOf(diseasename[i])==-1){
+                    arr.push(diseasename[i])
+                }
+            }
+            availableTags =arr;
         }
     });
 }
@@ -333,8 +328,4 @@ $(function() {
     $("#diseasename").autocomplete({
         source: availableTags
     });
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> song

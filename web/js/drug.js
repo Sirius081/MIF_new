@@ -34,11 +34,7 @@ function updatetop10(){
                     [
                         { name: 'year', index: 'year', width: "20%",align:"center",editable: true},
                         { name: 'name', index: 'name', width: "40%",align:"center",editable: true },
-<<<<<<< HEAD
-                        { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true}
-=======
                         { name: 'drugfees', index: 'drugfees', width: "40%",align:"center", editable: true,sorttype:'integer',formatter:'integer'}
->>>>>>> song
                     ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
@@ -57,10 +53,10 @@ function updatetop10(){
                 }
             });
             $('#grid-table').closest("div.ui-jqgrid-view")
-                            .children("div.ui-jqgrid-titlebar")
-                            .css("text-align", "center")
-                            .children("span.ui-jqgrid-title")
-                            .css("float", "none");
+                .children("div.ui-jqgrid-titlebar")
+                .css("text-align", "center")
+                .children("span.ui-jqgrid-title")
+                .css("float", "none");
             $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
             $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
         }
@@ -85,7 +81,7 @@ function selectResult(){
                 newjson[i].name = data.drugs[i].name;
                 newjson[i].drugfees = data.drugs[i].drugfees;
             }
-            var grid_selector = "#grid-table2";
+            var grid_select;or = "#grid-table2";
             var pager_selector = "#grid-pager2";
             $('#grid-table2').jqGrid('GridUnload');          ///刷新grid框架
             $("#grid-table2").jqGrid({
@@ -138,7 +134,14 @@ function queryByDrugname(){
             for(var i = 0; i <data.drugs.length; i++){
                 drugname.push(data.drugs[i].name);
             }
-            availableTags = drugname;
+            //对drug名进行去重
+            var arr =[]
+            for(var i=0,l=drugname.length;i<l;i++){
+                if(arr.indexOf(drugname[i])==-1){
+                    arr.push(drugname[i])
+                }
+            }
+            availableTags =arr;
         }
     });
 }
@@ -148,10 +151,3 @@ $(function() {
         source: availableTags
     });
 });
-
-
-
-
-
-
-
