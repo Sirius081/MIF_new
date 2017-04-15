@@ -5,24 +5,24 @@ package Entity;
  */
 public class Hospital {
 
-    int year;//年份
-    int identity;//职工1 或 居民2
-    String r_name;//区县代码
-    String h_name;//医院代码
-    String grade;//grade of hospital
+    private int year;//年份
+    private int identity;//职工1 或 居民2
+    private String r_name;//区县代码
+    private String h_name;//医院代码
+    private String grade;//grade of hospital
 
-    int m_count;//门诊人次
-    int h_count;//住院人次
-    double h_fees;//住院总费用
-    double h_groupfees;//住院统筹支付费用
-    double m_fees;//门诊费用
-    double m_groupfees;//门诊统筹支付费用
-    double drugfees;//药品费
+    private int m_count;//门诊人次
+    private int h_count;//住院人次
+    private double h_fees;//住院总费用
+    private double h_groupfees;//住院统筹支付费用
+    private double m_fees;//门诊费用
+    private double m_groupfees;//门诊统筹支付费用
+    private double drugfees;//药品费
 
-    double avg_hfees;//平均住院费用
-    double avg_hgroupfees;//平均统筹支付费用
-    double avg_mfees;//平均门诊费用
-    double avg_mgroupfees;//平均门诊统筹支付费用
+    private double avg_hfees;//平均住院费用
+    private double avg_hgroupfees;//平均统筹支付费用
+    private double avg_mfees;//平均门诊费用
+    private double avg_mgroupfees;//平均门诊统筹支付费用
 
 
 
@@ -170,7 +170,7 @@ public class Hospital {
 
     public void setAvg_mgroupfees() {
         if(m_count!=0){
-            this.avg_mgroupfees = this.avg_mgroupfees/this.m_count;
+            this.avg_mgroupfees = this.m_groupfees/this.m_count;
             this.avg_mgroupfees=(int)(this.avg_mgroupfees*100)/100.0;
         }else{
             this.avg_mgroupfees=0;

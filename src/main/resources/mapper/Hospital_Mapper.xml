@@ -18,7 +18,7 @@
     </select>
     <select id="getTop10" resultType="Hospital">
         select a.year,a.identity,a.r_name,a.h_name,a.m_count,a.h_count,a.h_fees,a.h_groupfees
-        ,a.m_fees,a.m_groupfees,a.drugfees,grade.grade as grade
+        ,a.m_fees,a.m_groupfees,a.drugfees,grade.grade as grade,1 as avg_hfees,1 as avg_hgroupfees,1 as avg_mfees,1 as avg_mgroupfees
         from hospital a left join hgrade grade on a.grade=grade.id
         where 1=1
         <if test="year !=0"> and year=#{year}</if>

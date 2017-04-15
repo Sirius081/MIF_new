@@ -52,6 +52,12 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
 
 
         hospitals=dao.getHospitals(condition);
+        for (Hospital h : hospitals){
+            h.setAvg_hfees();
+            h.setAvg_hgroupfees();
+            h.setAvg_mfees();
+            h.setAvg_mgroupfees();
+        }
         return SUCCESS;
     }
 
@@ -71,6 +77,12 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         condition.setIdentity(identity);
         condition.setYear(year);
         hospitals=dao.getTop10(orderBy, year,identity);
+        for (Hospital h : hospitals){
+            h.setAvg_hfees();
+            h.setAvg_hgroupfees();
+            h.setAvg_mfees();
+            h.setAvg_mgroupfees();
+        }
         return SUCCESS;
     }
 
