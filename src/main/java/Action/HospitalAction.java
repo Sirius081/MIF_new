@@ -108,6 +108,9 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         condition.setH_name(h_name);
 
         diseaseHospitals=dao.getDetails(condition);
+        for(DiseaseHospital dh:diseaseHospitals){
+            dh.getAvg_hgroupfees();
+        }
         return SUCCESS;
     }
     public void setServletRequest(HttpServletRequest httpServletRequest) {
@@ -129,6 +132,8 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         hos.setIdentity(1);
 //        h.dao.getHospitals(hos);
         List<Hospital> hs=h.dao.getTop10("h_fees",2015,1);
+        hos.setH_name("FF78");
+        List<DiseaseHospital> dh=h.dao.getDetails(hos);
         System.out.println();
     }
 }
