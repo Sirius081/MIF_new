@@ -1,8 +1,9 @@
 package Action;
 
-import Dao.ForecastDao;
+import Dao.MybatisUtils;
 import Entity.Forecast;
 import Entity.KeyValue;
+import Service.IForecast;
 import Util.Dictionary;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -14,10 +15,8 @@ import java.util.List;
  * Created by sirius on 16-7-27.
  */
 public class FundAction extends ActionSupport{
-    static private ForecastDao fDao;
-    static{
-        fDao=new ForecastDao();
-    }
+    static private IForecast fDao=MybatisUtils.getSqlSession().getMapper(IForecast.class);
+
     //get,返回给前台
     private List<Forecast> forecastList;
     private List<KeyValue> modelList;
@@ -43,7 +42,12 @@ public class FundAction extends ActionSupport{
      * @return
      */
     public String query(){
-        forecastList=fDao.getForecast(model,year,variable);
+        if(year!=null){
+            forecastList=fDao.getForecast(model,Integer.parseInt(year),variable);
+        }else{
+            forecastList=fDao.getForecast(model,0,variable);
+        }
+
         return SUCCESS;
     }
 

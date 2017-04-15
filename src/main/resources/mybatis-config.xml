@@ -12,6 +12,8 @@
         <typeAlias type="Entity.FeesDetail" alias="FeesDetail"/>
         <typeAlias type="Entity.TotalTrend" alias="TotalTrend"/>
         <typeAlias type="Entity.AgeDistribution" alias="AgeDistribution"/>
+        <typeAlias type="Entity.Forecast" alias="Forecast"/>
+
     </typeAliases>
 
 
@@ -37,5 +39,7 @@
         <mapper resource="mapper/Region_Mapper.xml"/>
         <mapper resource="mapper/Disease_Mapper.xml"/>
         <mapper resource="mapper/Statistic_Mapper.xml"/>
+        <mapper resource="mapper/Forecast_Mapper.xml"/>
+        <mapper resource="mapper/Dictionary_Mapper.xml"/>
     </mappers>
 </configuration>
