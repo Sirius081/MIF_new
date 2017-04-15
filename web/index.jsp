@@ -41,9 +41,6 @@
       <div class="logo">
         <span class="font-style">泸州市医保基金监管平台</span>
       </div>
-      <div class="right-div">
-        <a href="#" class="btn btn-danger pull-right">about</a>
-      </div>
     </div>
   </div>
 </div>
@@ -78,7 +75,7 @@
               </ul>
             </li>
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">异常检测 <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">费用管理 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="region.jsp">区县</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital.jsp">医院</a>
@@ -87,7 +84,7 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
               </ul>
             </li>
-            <li><a href="index.html">联系我们</a></li>
+            <li><a href="index.html">建模背景知识</a></li>
           </ul>
         </div>
       </div>
