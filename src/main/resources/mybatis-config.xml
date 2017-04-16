@@ -13,6 +13,7 @@
         <typeAlias type="Entity.TotalTrend" alias="TotalTrend"/>
         <typeAlias type="Entity.AgeDistribution" alias="AgeDistribution"/>
         <typeAlias type="Entity.Forecast" alias="Forecast"/>
+        <typeAlias type="Entity.HospitalAD" alias="HospitalAD"/>
 
     </typeAliases>
 

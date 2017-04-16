@@ -3,6 +3,7 @@ package Action;
 import Dao.MybatisUtils;
 import Entity.DiseaseHospital;
 import Entity.Hospital;
+import Entity.HospitalAD;
 import Service.IHospital;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.ibatis.session.SqlSession;
@@ -20,6 +21,7 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
     //get
     private List<Hospital> hospitals;
     private List<DiseaseHospital> diseaseHospitals;
+    private List<HospitalAD> hospitalADs;
     //set
     private HttpServletRequest request;
 
@@ -113,6 +115,16 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         }
         return SUCCESS;
     }
+
+    /**
+     * detect avgGroupFees of hospitals
+     * @return
+     */
+    public String detectAvgGroup(){
+        String h_name=request.getParameter("h_name");
+        hospitalADs=dao.detectAvgGroup(h_name);
+        return SUCCESS;
+    }
     public void setServletRequest(HttpServletRequest httpServletRequest) {
         this.request=httpServletRequest;
     }
@@ -125,15 +137,13 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         return diseaseHospitals;
     }
 
+    public List<HospitalAD> getHospitalADs() {
+        return hospitalADs;
+    }
+
     public static void main(String[] args) {
         HospitalAction h=new HospitalAction();
-        Hospital hos=new Hospital();
-        hos.setYear(2015);
-        hos.setIdentity(1);
-//        h.dao.getHospitals(hos);
-        List<Hospital> hs=h.dao.getTop10("h_fees",2015,1);
-        hos.setH_name("FF78");
-        List<DiseaseHospital> dh=h.dao.getDetails(hos);
+        List<HospitalAD>hd=h.dao.detectAvgGroup("018FF7841008EAE36262A5C4B78AC483");
         System.out.println();
     }
 }

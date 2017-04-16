@@ -52,6 +52,9 @@
         <action name="getDetails" class="Action.HospitalAction" method="details">
             <result type="json"></result>
         </action>
+        <action name="detectAvgGroup" class="Action.HospitalAction" method="detectAvgGroup">
+            <result type="json"></result>
+        </action>
     </package>
 
     <package name="charge" namespace="/charge" extends="json-default">
