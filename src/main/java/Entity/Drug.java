@@ -16,7 +16,6 @@ public class Drug {
         this.drugfees = drugfees;
     }
     public Drug(){
-        this(-1,-1,null,-1);
     }
 
     public int getYear() {

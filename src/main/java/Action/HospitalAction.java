@@ -1,9 +1,12 @@
 package Action;
 
-import Dao.HospitalDao;
+import Dao.MybatisUtils;
 import Entity.DiseaseHospital;
 import Entity.Hospital;
+import Entity.HospitalAD;
+import Service.IHospital;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,10 +16,12 @@ import java.util.List;
  * Created by sirius on 17-1-10.
  */
 public class HospitalAction extends ActionSupport implements ServletRequestAware {
-    private HospitalDao dao=new HospitalDao();
+    SqlSession s= MybatisUtils.getSqlSession();
+    private IHospital dao=s.getMapper(IHospital.class);
     //get
     private List<Hospital> hospitals;
     private List<DiseaseHospital> diseaseHospitals;
+    private List<HospitalAD> hospitalADs;
     //set
     private HttpServletRequest request;
 
@@ -31,12 +36,12 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
      */
     public String query(){
         //condition
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
         String h_name=request.getParameter("h_name");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
@@ -49,6 +54,12 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
 
 
         hospitals=dao.getHospitals(condition);
+        for (Hospital h : hospitals){
+            h.setAvg_hfees();
+            h.setAvg_hgroupfees();
+            h.setAvg_mfees();
+            h.setAvg_mgroupfees();
+        }
         return SUCCESS;
     }
 
@@ -58,7 +69,7 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
      */
     public String top10(){
         String orderBy=request.getParameter("orderBy");
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
@@ -67,7 +78,13 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         Hospital condition=new Hospital();
         condition.setIdentity(identity);
         condition.setYear(year);
-        hospitals=dao.getTop10(orderBy, condition);
+        hospitals=dao.getTop10(orderBy, year,identity);
+        for (Hospital h : hospitals){
+            h.setAvg_hfees();
+            h.setAvg_hgroupfees();
+            h.setAvg_mfees();
+            h.setAvg_mgroupfees();
+        }
         return SUCCESS;
     }
 
@@ -77,13 +94,13 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
      */
     public String details(){
         //condition: identity,h_name,year
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
 
         String h_name=request.getParameter("h_name");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
@@ -93,6 +110,19 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         condition.setH_name(h_name);
 
         diseaseHospitals=dao.getDetails(condition);
+        for(DiseaseHospital dh:diseaseHospitals){
+            dh.setAvg_hgroupfees();
+        }
+        return SUCCESS;
+    }
+
+    /**
+     * detect avgGroupFees of hospitals
+     * @return
+     */
+    public String detectAvgGroup(){
+        String h_name=request.getParameter("h_name");
+        hospitalADs=dao.detectAvgGroup(h_name);
         return SUCCESS;
     }
     public void setServletRequest(HttpServletRequest httpServletRequest) {
@@ -105,5 +135,15 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
 
     public List<DiseaseHospital> getDiseaseHospitals() {
         return diseaseHospitals;
+    }
+
+    public List<HospitalAD> getHospitalADs() {
+        return hospitalADs;
+    }
+
+    public static void main(String[] args) {
+        HospitalAction h=new HospitalAction();
+        List<HospitalAD>hd=h.dao.detectAvgGroup("018FF7841008EAE36262A5C4B78AC483");
+        System.out.println();
     }
 }

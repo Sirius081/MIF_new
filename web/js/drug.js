@@ -53,10 +53,10 @@ function updatetop10(){
                 }
             });
             $('#grid-table').closest("div.ui-jqgrid-view")
-                            .children("div.ui-jqgrid-titlebar")
-                            .css("text-align", "center")
-                            .children("span.ui-jqgrid-title")
-                            .css("float", "none");
+                .children("div.ui-jqgrid-titlebar")
+                .css("text-align", "center")
+                .children("span.ui-jqgrid-title")
+                .css("float", "none");
             $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
             $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
         }
@@ -151,10 +151,3 @@ $(function() {
         source: availableTags
     });
 });
-
-
-
-
-
-
-

@@ -13,7 +13,10 @@ public class Region {
     double h_groupfees;//住院统筹费用
     double m_fees;//门诊费用
     double m_groupfees;//门诊统筹费用
-
+    private double avg_hfees;//平均住院费用
+    private double avg_hgroupfees;//平均统筹支付费用
+    private double avg_mfees;//平均门诊费用
+    private double avg_mgroupfees;//平均门诊统筹支付费用
     public Region(int year, int identity, String name, int m_count, int h_count, double h_fees, double h_groupfees, double m_fees, double m_groupfees) {
         this.year = year;
         this.identity = identity;
@@ -26,7 +29,6 @@ public class Region {
         this.m_groupfees = m_groupfees;
     }
     public Region(){
-        this(-1,-1,null,-1,-1,-1,-1,-1,-1);
     }
     public int getYear() {
         return year;
@@ -98,5 +100,60 @@ public class Region {
 
     public void setM_groupfees(double m_groupfees) {
         this.m_groupfees = m_groupfees;
+    }
+    public double getAvg_hfees() {
+        return avg_hfees;
+    }
+
+    public void setAvg_hfees() {
+        if(this.h_count!=0){
+            this.avg_hfees = this.h_fees/this.h_count;
+            this.avg_hfees=(int)(this.avg_hfees*100)/100.0;
+        }else{
+            this.avg_hfees=0;
+        }
+    }
+
+    public double getAvg_hgroupfees() {
+        return avg_hgroupfees;
+    }
+
+    public void setAvg_hgroupfees() {
+        if(this.h_count!=0){
+            this.avg_hgroupfees = this.h_groupfees/this.h_count;
+            this.avg_hgroupfees=(int)(this.avg_hgroupfees*100)/100.0;
+        }else{
+            this.avg_hgroupfees=0;
+        }
+
+    }
+
+    public double getAvg_mfees() {
+        return avg_mfees;
+    }
+
+    public void setAvg_mfees() {
+        if(m_count!=0){
+            this.avg_mfees = this.m_fees/this.m_count;
+            this.avg_mfees=(int)(this.avg_mfees*100)/100.0;
+
+        }else{
+            this.avg_mfees=0;
+        }
+
+    }
+
+    public double getAvg_mgroupfees() {
+        return avg_mgroupfees;
+    }
+
+    public void setAvg_mgroupfees() {
+        if(m_count!=0){
+            this.avg_mgroupfees = this.m_groupfees/this.m_count;
+            this.avg_mgroupfees=(int)(this.avg_mgroupfees*100)/100.0;
+        }else{
+            this.avg_mgroupfees=0;
+        }
+
     }
 }

@@ -12,7 +12,7 @@ public class FeesDetail {
     int m_count;//门诊人次
     int h_count;//住院人次
     double drugfees;//药费
-
+    public FeesDetail(){}
     public FeesDetail(int year, int identity, String grade, double m_fees, double h_fees, int m_count, int h_count, double drugfees) {
         this.year = year;
         this.identity = identity;

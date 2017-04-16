@@ -12,7 +12,7 @@ public class AgeDistribution {
     int h_count;//住院人数
     double m_fees;//门诊统筹费用
     double h_fees;//住院统筹
-
+    public AgeDistribution(){}
     public AgeDistribution(int year, int ageId, int identity, int c_count, int m_count, int h_count, double m_fees, double h_fees) {
         this.year = year;
         this.ageId = ageId;

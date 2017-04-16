@@ -1,8 +1,9 @@
 package Action;
 
-import Dao.DiseaseDao;
+import Dao.MybatisUtils;
 import Entity.Disease;
 import Entity.DiseaseHospital;
+import Service.IDisease;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
@@ -19,9 +20,13 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
     //set
     private HttpServletRequest request;
 
-    private DiseaseDao dao=new DiseaseDao();
+    private IDisease dao= MybatisUtils.getSqlSession().getMapper(IDisease.class);
     public String init() {
         diseases=dao.getDisease(new Disease());
+        for (Disease d:diseases){
+            d.setAvg_hfees();
+            d.setAvg_hgroupfees();
+        }
         return  SUCCESS;
     }
 
@@ -31,11 +36,11 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
      */
     public String query(){
         String name= request.getParameter("name");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
@@ -44,31 +49,39 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
         condition.setYear(year);
         condition.setName(name);
         diseases=dao.getDisease(condition);
+        for (Disease d:diseases){
+            d.setAvg_hfees();
+            d.setAvg_hgroupfees();
+        }
         return  SUCCESS;
     }
     public String top10(){
         String orderBy=request.getParameter("orderBy");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
         Disease condition=new Disease();
         condition.setIdentity(identity);
         condition.setYear(year);
-        diseases=dao.getTop10(orderBy,condition);
+        diseases=dao.getTop10(orderBy,year,identity);
+        for (Disease d:diseases){
+            d.setAvg_hfees();
+            d.setAvg_hgroupfees();
+        }
         return SUCCESS;
     }
     public String details(){
         String name= request.getParameter("d_name");
-        int year=-1;
+        int year=0;
         if(request.getParameter("year")!=null){
             year=Integer.parseInt(request.getParameter("year"));
         }
-        int identity=-1;
+        int identity=0;
         if(request.getParameter("identity")!=null){
             identity=Integer.parseInt(request.getParameter("identity"));
         }
@@ -77,6 +90,9 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
         condition.setYear(year);
         condition.setName(name);
         diseaseHospitals=dao.getDetails(condition);
+        for(DiseaseHospital dh:diseaseHospitals){
+            dh.setAvg_hgroupfees();
+        }
         return SUCCESS;
     }
     public List<Disease> getDiseases() {
