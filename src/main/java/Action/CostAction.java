@@ -20,9 +20,7 @@ public class CostAction extends ActionSupport implements ServletRequestAware
     //get,返回给前台
     private ArrayList<Double> result=new ArrayList<Double>();
     private double cost;
-    private ArrayList<Double> pastcost=new ArrayList<Double>();
-    //
-    private int year;
+
     private int line10;
     private int ratio10;
     private int line11;
@@ -41,7 +39,6 @@ public class CostAction extends ActionSupport implements ServletRequestAware
     private int ratio41;
 
     public String query(){
-        year=Integer.parseInt(request.getParameter("year"));
         line10=Integer.parseInt(request.getParameter("line10"));
         ratio10=Integer.parseInt(request.getParameter("ratio10"));
         line11=Integer.parseInt(request.getParameter("line11"));
@@ -58,17 +55,8 @@ public class CostAction extends ActionSupport implements ServletRequestAware
         ratio40=Integer.parseInt(request.getParameter("ratio40"));
         line41=Integer.parseInt(request.getParameter("line41"));
         ratio41=Integer.parseInt(request.getParameter("ratio41"));
-        cost=cDao.getForecast(year, line10, ratio10, line11, ratio11, line20, ratio20, line21, ratio21, line30, ratio30, line31, ratio31, line40, ratio40, line41, ratio41);
-        //得到历史费用支出数据
-        pastcost=cDao.getPastcost(line10, ratio10, line11, ratio11, line20, ratio20, line21, ratio21, line30, ratio30, line31, ratio31, line40, ratio40, line41, ratio41);
-        result.addAll(pastcost);
+        result=cDao.getPastcost(line10, ratio10, line11, ratio11, line20, ratio20, line21, ratio21, line30, ratio30, line31, ratio31, line40, ratio40, line41, ratio41);
         return SUCCESS;
-    }
-
-
-
-    public void setYear(int year) {
-        this.year = year;
     }
 
     public void setLine10(int line10) {
@@ -134,13 +122,6 @@ public class CostAction extends ActionSupport implements ServletRequestAware
     public void setRatio41(int ratio41) {
         this.ratio41 = ratio41;
 
-    }
-
-
-
-
-    public int getYear() {
-        return year;
     }
 
     public int getLine10() {
@@ -213,19 +194,9 @@ public class CostAction extends ActionSupport implements ServletRequestAware
     public double getCost() {
         return cost;
     }
-
     public void setCost(double cost) {
         this.cost = cost;
     }
-
-    public ArrayList<Double> getPastcost() {
-        return pastcost;
-    }
-
-    public void setPastcost(ArrayList<Double> pastcost) {
-        this.pastcost = pastcost;
-    }
-
     public ArrayList<Double> getResult() {
         return result;
     }

@@ -156,7 +156,6 @@
     </div>
   </div>
 </section>
-
 <script type="text/javascript" src="js/region.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>

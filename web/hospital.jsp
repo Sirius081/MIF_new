@@ -186,6 +186,8 @@
                                 <input type="text" class="input1" id="hospitalnum">
                                 <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
                                 <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
+                                <input id="query4" class="query" type="button" onclick="getDetails()" value="详细信息"/>
+                                <input id="query5" class="query" type="button" onclick="getSelecteds()" value="比较"/>
 
                                 <div class="grid_relative1">
                                     <table id="grid-table2"></table>

@@ -94,33 +94,16 @@
                         <div class="panel-body">
                             <form id="queryPredict">
                                 <div class="form-group">
-                                    <label>按照年份：</label>
-                                    <select id="year">
-                                        <option value="2016">2016</option>
-                                        <option>2017</option>
-                                        <option>2018</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>平均工资：</label>
-                                    <input class="form-control" id="avgwage" type="text"/>
-                                </div>
-                                <div class="form-group">
                                     <label>缴费上限</label>
-                                    <input class="form-control" id="ceil" type="text"/>
+                                    <input class="input" id="ceil" value='3' type="text"/>倍平均工资
                                 </div>
                                 <div class="form-group">
                                     <label>缴费下限</label>
-                                    <input class="form-control" id="floor" type="text"/>
+                                    <input class="input" id="floor" value="1" type="text"/>倍平均工资
                                 </div>
                                 <div class="form-group">
                                     <label>缴费比例</label>
-                                    <input id="ratio1" class="input" type="text"/>
-                                    <input id="ratio2" class="input" type="text"/>
-                                </div>
-                                <div class="form-group">
-                                    <label>缴费金额</label>
-                                    <input class="form-control" id="result" type="text"/>
+                                    <input id="ratio" class="input" value="9" type="text"/>
                                 </div>
                                 <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
                                        value="查询"/>
