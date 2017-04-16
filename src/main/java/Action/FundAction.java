@@ -77,5 +77,10 @@ public class FundAction extends ActionSupport{
         return forecastList;
     }
 
+    public static void main(String[] args) {
+        FundAction f=new FundAction();
+        List<Forecast> fs=f.fDao.getForecast("1",0,"1");
+        System.out.println();
+    }
 
 }
