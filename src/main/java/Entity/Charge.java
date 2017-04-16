@@ -7,59 +7,47 @@ import Util.Dictionary;
  */
 public class Charge {
     private int  year;
+    private double avgWage ;
+    private int working;
+    private int retired;
 
-    public Charge(int  year, int floor, int ceil,int number,double base) {
+    public Charge(int  year, double avgWage, int working,int retired) {
         this.year = year;
-        this.floor = floor;
-        this.ceil =ceil;
-        this.number =number;
-        this.base =base;
+        this.avgWage = avgWage;
+        this.working =working;
+        this.retired =retired;
     }
+
+
+    public int getYear() {
+        return year;
+    }
+
     public void setYear(int year) {
         this.year = year;
     }
 
-    public void setFloor(int floor) {
-        this.floor = floor;
+    public double getAvgWage() {
+        return avgWage;
     }
 
-    public void setCeil(int ceil) {
-        this.ceil = ceil;
+    public void setAvgWage(double avgWage) {
+        this.avgWage = avgWage;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public int getWorking() {
+        return working;
     }
 
-    public void setBase(double base) {
-        this.base = base;
+    public void setWorking(int working) {
+        this.working = working;
     }
 
-    public int getYear() {
-
-        return year;
+    public int getRetired() {
+        return retired;
     }
 
-    public int getFloor() {
-        return floor;
+    public void setRetired(int retired) {
+        this.retired = retired;
     }
-
-    public int getCeil() {
-        return ceil;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public double getBase() {
-        return base;
-    }
-
-    private int floor ;
-    private int ceil;
-    private int number;
-    private double base;
-
-
 }
