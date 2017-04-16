@@ -1,1 +1,9 @@
-1.药品: details返回结果，按照drugfees排序
+1、收支建模：不需要选择模型，把模型最好的放上去就行了
+2、/MIF/region/query 均次住院统筹费用、均次门诊统筹费用为0
+3、/MIF/region/getDetails 均次门诊统筹支付、门诊人次均为0
+4、/MIF/hospital/getDetails   均次统筹住院费用为0
+5、/MIF/disease/query      均次住院统筹费用为0
+6、/MIF/disease/getDetails 均次统筹住院费用为0
+7、医院的对比图
+8、哪些医院费用变化比较快
+9、参保人群住院异常费用检测
