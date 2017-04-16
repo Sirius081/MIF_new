@@ -23,6 +23,12 @@ public class RegionAction extends ActionSupport implements ServletRequestAware {
 
     public String init(){
         regions=dao.getRegions(new Region());
+        for (Region r:regions){
+            r.setAvg_hfees();
+            r.setAvg_hgroupfees();
+            r.setAvg_mfees();
+            r.setAvg_mgroupfees();
+        }
         return SUCCESS;
     }
 
@@ -48,6 +54,12 @@ public class RegionAction extends ActionSupport implements ServletRequestAware {
 
 
         regions=dao.getRegions(condition);
+        for (Region r:regions){
+            r.setAvg_hfees();
+            r.setAvg_hgroupfees();
+            r.setAvg_mfees();
+            r.setAvg_mgroupfees();
+        }
         return SUCCESS;
     }
 
@@ -74,6 +86,12 @@ public class RegionAction extends ActionSupport implements ServletRequestAware {
         condition.setName(r_name);
 
         hospitals=dao.getRegionDetails(condition);
+        for (Hospital h : hospitals){
+            h.setAvg_hfees();
+            h.setAvg_hgroupfees();
+            h.setAvg_mfees();
+            h.setAvg_mgroupfees();
+        }
         return SUCCESS;
     }
     public void setServletRequest(HttpServletRequest httpServletRequest) {

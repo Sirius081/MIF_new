@@ -11,7 +11,7 @@ public class Disease {
     double h_fees;//总费用
     double h_groupfees;//住院统筹费用
     double avg_hfees;//平均费用
-    double avg_groupfees;//平均统筹费用
+    double avg_hgroupfees;//平均统筹费用
     public Disease(int year, int identity, String name, int h_count, double h_fees, double h_groupfees) {
         this.year = year;
         this.identity = identity;
@@ -75,15 +75,26 @@ public class Disease {
         return avg_hfees;
     }
 
-    public void setAvg_hfees(double avg_hfees) {
-        this.avg_hfees = avg_hfees;
+    public void setAvg_hfees() {
+        if(this.h_count!=0){
+            this.avg_hfees = this.h_fees/this.h_count;
+            this.avg_hfees=(int)(this.avg_hfees*100)/100.0;
+        }else{
+            this.avg_hfees=0;
+        }
     }
 
-    public double getAvg_groupfees() {
-        return avg_groupfees;
+    public double getAvg_hgroupfees() {
+        return avg_hgroupfees;
     }
 
-    public void setAvg_groupfees(double avg_groupfees) {
-        this.avg_groupfees = avg_groupfees;
+    public void setAvg_hgroupfees() {
+        if(this.h_count!=0){
+            this.avg_hgroupfees = this.h_groupfees/this.h_count;
+            this.avg_hgroupfees=(int)(this.avg_hgroupfees*100)/100.0;
+        }else{
+            this.avg_hgroupfees=0;
+        }
+
     }
 }

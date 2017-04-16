@@ -106,7 +106,7 @@ public class DiseaseHospital {
         return avg_hgroupfees;
     }
 
-    public void setAvg_hgroupfees(double avg_hgroupfees) {
+    public void setAvg_hgroupfees() {
         this.avg_hgroupfees = avg_hgroupfees;
     }
 }

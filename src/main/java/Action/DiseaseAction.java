@@ -23,6 +23,10 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
     private IDisease dao= MybatisUtils.getSqlSession().getMapper(IDisease.class);
     public String init() {
         diseases=dao.getDisease(new Disease());
+        for (Disease d:diseases){
+            d.setAvg_hfees();
+            d.setAvg_hgroupfees();
+        }
         return  SUCCESS;
     }
 
@@ -45,6 +49,10 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
         condition.setYear(year);
         condition.setName(name);
         diseases=dao.getDisease(condition);
+        for (Disease d:diseases){
+            d.setAvg_hfees();
+            d.setAvg_hgroupfees();
+        }
         return  SUCCESS;
     }
     public String top10(){
@@ -61,6 +69,10 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
         condition.setIdentity(identity);
         condition.setYear(year);
         diseases=dao.getTop10(orderBy,year,identity);
+        for (Disease d:diseases){
+            d.setAvg_hfees();
+            d.setAvg_hgroupfees();
+        }
         return SUCCESS;
     }
     public String details(){
@@ -78,6 +90,9 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
         condition.setYear(year);
         condition.setName(name);
         diseaseHospitals=dao.getDetails(condition);
+        for(DiseaseHospital dh:diseaseHospitals){
+            dh.setAvg_hgroupfees();
+        }
         return SUCCESS;
     }
     public List<Disease> getDiseases() {

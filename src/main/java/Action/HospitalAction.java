@@ -111,7 +111,7 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
 
         diseaseHospitals=dao.getDetails(condition);
         for(DiseaseHospital dh:diseaseHospitals){
-            dh.getAvg_hgroupfees();
+            dh.setAvg_hgroupfees();
         }
         return SUCCESS;
     }
