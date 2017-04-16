@@ -94,22 +94,12 @@
                         </div>
                         <div class="panel-body">
                             <form id="queryPredict">
-                                <span class="label1">按年份：</span>
-                                <select id="year">
-                                    <option value="2016">2016</option>
-                                    <option>2017</option>
-                                    <option>2018</option>
-                                    <option>2019</option>
-                                    <option>2020</option>
-                                </select>
-                                <br/>
-
           <span class="label1">一级在职人员：起付线
           <input type="text" id="line10" value="500" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio10" value="90" class="input"></span>
             <br/>
             <span class="label1">一级退休人员：起付线
-          <input type="text" id="line11" value="400" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="tet" id="line11" value="400" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio11" value="96" class="input"></span>
                                 <br/>
           <span class="label1">二级在职人员：起付线
@@ -135,8 +125,6 @@
          <span class="label1">社区退休人员：起付线
           <input type="text" id="line41" value="400" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio41" value="96" class="input"></span>
-                                <br/><span class="label1">医疗费用支出金额：</span>
-                                <input type="text" id="result" class="input1">&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;万元&nbsp;)
                                 <br/>
                                 <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
                                        value="查询"/>&nbsp;&nbsp;&nbsp;&nbsp;

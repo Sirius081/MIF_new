@@ -3,27 +3,35 @@
  */
 function selectresult()
 {
-    var year=$("#year").val();
-    var avgWage=$("#avgwage").val();
     var ceil=$("#ceil").val();
     var floor=$("#floor").val();
-    var ratio1=$("#ratio1").val();
-    var ratio2=$("#ratio2").val();
-    var params="&year="+year+'&avgwage='+avgWage+'&ceil='+ceil+'&floor='+floor+'&ratio1='+ratio1+'&ratio2='+ratio2;
+    var ratio=$("#ratio").val();
+    var params='&ceil='+ceil+'&floor='+floor+'&ratio='+ratio;
     $.ajax({
         url:'/MIF/charge/query',
         type:'get',
         data:params,
         dataType:'json',
         success:function(data) {
-            if (data.result.length > 1) {
+            if(ceil!='3' || floor!='1' || ratio!='9'){
                 var line = echarts.init(document.getElementById('detail-information'));
                 option = {
                     title: {
-                        text: '泸州市医保基金预测'
+                        text: '泸州市医保基金预测（单位：万元）'
                     },
-                    tooltip: {
+                    tooltip : {
                         trigger: 'axis'
+                    },
+                    legend: {
+                        show: true,
+                        x: 'right',
+                        y: 'top',
+                        data:['之前','之后']
+                    },
+                    toolbox: {
+                        feature: {
+                            saveAsImage: {}
+                        }
                     },
                     grid: {
                         left: '3%',
@@ -31,33 +39,87 @@ function selectresult()
                         bottom: '3%',
                         containLabel: true
                     },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            boundaryGap : false,
+                            data : ['2016','2017','2018','2019','2020']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value'
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'之前',
+                            type:'line',
+                            stack: '总量1',
+                            data: data.result.slice(0,5)
+                        },
+
+                        {
+                            name:'以后',
+                            type:'line',
+                            stack: '总量2',
+                            data:data.result.slice(5,10)
+                        }
+                    ]
+                };
+                //为echarts对象加载数据
+                line.setOption(option);
+            }
+            else
+            {
+                var line = echarts.init(document.getElementById('detail-information'));
+                option = {
+                    title: {
+                        text: '泸州市医保基金预测（单位：万元）'
+                    },
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        show: true,
+                        x: 'right',
+                        y: 'top',
+                        data:['改变之前']
+                    },
                     toolbox: {
                         feature: {
                             saveAsImage: {}
                         }
                     },
-                    xAxis: {
-                        type: 'category',
-                        boundaryGap: false,
-                        data: ['缴费比例']
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
                     },
-                    yAxis: {
-                        type: 'value',
-                        min: data.result[0]
-
-                    },
-                    series: []
+                    xAxis : [
+                        {
+                            type : 'category',
+                            boundaryGap : false,
+                            data : ['2016','2017','2018','2019','2020']
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value'
+                        }
+                    ],
+                    series : [
+                        {
+                            name: '改变之前',
+                            type: 'line',
+                            stack: '总量1',
+                            data: data.result.slice(0, 5)
+                        }
+                    ]
                 };
-                option.series.push({
-                    name: '缴费金额',
-                    type: 'line',
-                    stack: '总量',
-                    data: data.result
-                });
+                //为echarts对象加载数据
                 line.setOption(option);
-            }
-            else {
-                document.getElementById("result").value = data.result;
             }
         }
     });

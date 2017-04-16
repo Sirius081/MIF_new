@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,63 +19,44 @@ import static jdk.nashorn.internal.objects.NativeMath.round;
  */
 public class ChargeDao {
 
-    public double getForecast(int year,int avgWage,int ceil,int floor,int ratio) {
-        Connection con = DBtool.getConnection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        double result=0;
-        StringBuffer sql = new StringBuffer("select * from charge where year=?");
-        try {
-            stmt = con.prepareStatement(sql.toString());
-            stmt.setInt(1,year);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-
-                int ceil_number=rs.getInt("ceil_number");
-                int floor_number=rs.getInt("floor_number");
-                int number=rs.getInt("number");
-                double base=rs.getInt("base");
-                double result1=((floor_number*avgWage+ceil_number*ceil)*ratio/100+number*base*0.04)/10000;
-                BigDecimal bg = new BigDecimal(result1);
-                result =bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                stmt.close();
-                rs.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return result;
-    }
-
-    public ArrayList<Double> getForecast(int year,int avgWage,int ceil,int floor,int ratio1,int ratio2) {
+    public ArrayList<Double> getForecast(double floor,double ceil,int ratio) {
         Connection con = DBtool.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         ArrayList<Double> result=new ArrayList<Double>();
-        StringBuffer sql = new StringBuffer("select * from charge where year=?");
+        ArrayList<Double> r1=new ArrayList<Double>();
+        ArrayList<Double> r2=new ArrayList<Double>();
+        StringBuffer sql = new StringBuffer("select * from charge");
         try {
             stmt = con.prepareStatement(sql.toString());
-            stmt.setInt(1,year);
             rs = stmt.executeQuery();
             while (rs.next()) {
-
-                int ceil_number=rs.getInt("ceil_number");
-                int floor_number=rs.getInt("floor_number");
-                int number=rs.getInt("number");
-                double base=rs.getInt("base");
-                for (double ratio=ratio1;ratio<=ratio2;ratio=ratio+0.1){
-                    double charge1=((floor_number*avgWage+ceil_number*ceil)*ratio/100+number*base*0.04)/10000;
-                    BigDecimal bg = new BigDecimal(charge1);
-                    double charge =bg.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-                    result.add(charge);
+                int year=rs.getInt("year");
+                if(year>2015 && year<2021)
+                {
+                    int avgWage=rs.getInt("avgWage");
+                    int working=rs.getInt("working");
+                    int retired=rs.getInt("retired");
+                    double charge1=((working*0.69/10000*avgWage+working*0.30/10000*avgWage*1.0+working*0.01/10000*avgWage*3)*0.09+avgWage*0.04/10000*retired);
+                    DecimalFormat df = new DecimalFormat("0.00");
+                    double charge=Double.valueOf(df.format(charge1));
+                    r1.add(charge);
                 }
-
+                if(year>2015 && year<2021)
+                {
+                    int avgWage=rs.getInt("avgWage");
+                    int working=rs.getInt("working");
+                    int retired=rs.getInt("retired");
+                    double charge1=(working*0.69/10000*avgWage+working*0.30/10000*avgWage*floor+working*0.01/10000*avgWage*ceil)*ratio/100+avgWage*0.04/10000*retired;
+                    DecimalFormat df = new DecimalFormat("0.00");
+                    double charge=Double.valueOf(df.format(charge1));
+                    r2.add(charge);
+                }
             }
+            for(int i=0;i<r1.size();i++)
+                result.add(r1.get(i));
+            for(int i=0;i<r2.size();i++)
+                result.add(r2.get(i));
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -87,8 +69,5 @@ public class ChargeDao {
         }
         return result;
     }
-    public static void main(String[] args) {
-        double result=new ChargeDao().getForecast(2016,45120,45120,135360,9);                ///测试拿数据是否成功
-        System.out.println(result);
-    }
+
 }
