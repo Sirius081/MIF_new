@@ -23,8 +23,10 @@ function selectResult()
                 newjson[i].r_name = data.regions[i].name;
                 newjson[i].h_fees = data.regions[i].h_fees;
                 newjson[i].h_groupfees = data.regions[i].h_groupfees;
+                newjson[i].avg_hgroupfees = data.regions[i].avg_hgroupfees;
                 newjson[i].m_fees = data.regions[i].m_fees;
                 newjson[i].m_groupfees = data.regions[i].m_groupfees;
+                newjson[i].avg_mgroupfees = data.regions[i].avg_mgroupfees;
                 newjson[i].m_count = data.regions[i].m_count;
                 newjson[i].h_count = data.regions[i].h_count;
             }
@@ -35,15 +37,17 @@ function selectResult()
                 data:newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份','区县代码',"住院费用","住院统筹支付","门诊费用","门诊统筹支付","门诊人次","住院人次"],
+                colNames: ['年份','区县代码',"住院费用","住院统筹支付","均次住院统筹支出","门诊费用","门诊统筹支付","均次门诊统筹支出","门诊人次","住院人次"],
                 colModel:
                     [
                         { name: 'year', index: "year", width: "5%",align:"center", editable: true},
                         { name: 'r_name', index: 'r_name', width: "24%",align:"center",editable: true },
                         { name: 'h_fees', index: 'h_fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'm_fees', index: 'm_fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'm_groupfees', index: 'm_groupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_mgroupfees', index: 'avg_mgroupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'm_count', index: 'm_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                         { name: 'h_count', index: 'h_count', width: "8%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                     ],

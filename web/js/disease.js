@@ -85,7 +85,7 @@ function selectResult()
                 newjson[i].year = data.diseases[i].year;
                 newjson[i].name = data.diseases[i].name;
                 newjson[i].h_fees = data.diseases[i].h_fees;
-                newjson[i].avg_hfees = data.diseases[i].h_fees;
+                newjson[i].avg_hfees = data.diseases[i].avg_hfees;
                 newjson[i].h_groupfees = data.diseases[i].h_groupfees;
                 newjson[i].avg_groupfees = data.diseases[i].avg_groupfees;
                 newjson[i].h_count = data.diseases[i].h_count;
@@ -97,16 +97,14 @@ function selectResult()
                 data:newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份','名称','住院费用',"均次住院费用","住院统筹支付","均次统筹支付","住院人次"],
+                colNames: ['年份','名称',"住院统筹支付","均次住院统筹支付","住院人次"],
                 colModel:
                     [
-                        { name: 'year', index: "year", width: "40", editable: true,align:"center"},
-                        { name: 'name', index: 'name', width:  "250",editable: true,align:"center" },
-                        { name: 'h_fees', index: 'h_fees', width:  "80", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
-                        { name: 'avg_hfees', index: 'avg_hfees', width:  "120", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
-                        { name: 'h_groupfees', index: 'h_groupfees', width:  "110", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
-                        { name: 'avg_groupfees', index: 'avg_groupfees', width:  "120", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
-                        { name: 'h_count', index: 'h_count', width:  "60", editable: true,align:"center",sorttype:'integer',formatter:'integer'}
+                        { name: 'year', index: "year", width: "10%", editable: true,align:"center"},
+                        { name: 'name', index: 'name', width:  "40%",editable: true,align:"center" },
+                        { name: 'h_groupfees', index: 'h_groupfees', width:  "20%", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_groupfees', index: 'avg_groupfees', width:  "20%", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'h_count', index: 'h_count', width:  "10%", editable: true,align:"center",sorttype:'integer',formatter:'integer'}
                     ],
                 pgbuttons:true,
                 viewrecords: true, //是否在浏览导航栏显示记录总数
@@ -142,6 +140,7 @@ function selectResult()
                                 newjson[i].d_name = data.diseaseHospitals[i].d_name;
                                 newjson[i].h_fees = data.diseaseHospitals[i].h_fees;
                                 newjson[i].h_groupfees =data.diseaseHospitals[i].h_groupfees;
+                                newjson[i].avg_hgroupfees =data.diseaseHospitals[i].avg_hgroupfees;
                                 newjson[i].m_count =data.diseaseHospitals[i].m_count;
                                 newjson[i].h_count = data.diseaseHospitals[i].h_count;
                             }
@@ -152,16 +151,16 @@ function selectResult()
                                 data: newjson,
                                 datatype: "local",
                                 height: "auto",
-                                colNames: ['年份','编号',"医院等级","疾病名称","住院费用","住院统筹支付","住院人次"],
+                                colNames: ['年份','编号',"医院等级","疾病名称","住院统筹支付","均次统筹支付","住院人次"],
                                 colModel:
                                     [
                                         { name: 'year', index: "year", width: "5%",align:"center", editable: true},
-                                        { name: 'h_name', index: 'h_name', width: "40%",align:"center",editable: true },
+                                        { name: 'h_name', index: 'h_name', width: "35%",align:"center",editable: true },
                                         { name: 'grade', index: 'grade', width: "5%",align:"center", editable: true},
-                                        { name: 'd_name', index: 'd_name', width: "25%",align:"center",editable: true},
-                                        { name: 'h_fees', index: 'fees', width: "10%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
-                                        { name: 'h_groupfees', index: 'h_groupfees', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
-                                        { name: 'h_count', index: 'h_count', width: "5%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'd_name', index: 'd_name', width: "15%",align:"center",editable: true},
+                                        { name: 'h_groupfees', index: 'h_groupfees', width: "15%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "15%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
                                     ],
                                 rowNum: 10, //每页显示记录数
                                 pager: pager_selector, //分页、按钮所在的浏览导航栏

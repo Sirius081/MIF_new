@@ -88,14 +88,16 @@ function selectResult() {
         data: param,
         dataType: 'json',
         success: function (data) {
-            var newjson = [];                             ///只展示其中的几列
-            for (var i = 0; i < data.hospitals.length; i++) {
+            var newjson=[];                             ///只展示其中的几列
+            for(var i = 0; i <data.hospitals.length; i++){
                 newjson[i] = new Object();
                 newjson[i].year = data.hospitals[i].year;
                 newjson[i].h_name = data.hospitals[i].h_name;
                 newjson[i].grade = data.hospitals[i].grade;
-                newjson[i].h_fees = data.hospitals[i].h_fees;
                 newjson[i].h_groupfees = data.hospitals[i].h_groupfees;
+                newjson[i].avg_hgroupfees = data.hospitals[i].avg_hgroupfees;
+                newjson[i].m_groupfees = data.hospitals[i].m_groupfees;
+                newjson[i].avg_mgroupfees = data.hospitals[i].avg_mgroupfees;
                 newjson[i].m_count = data.hospitals[i].m_count;
                 newjson[i].h_count = data.hospitals[i].h_count;
             }
@@ -106,48 +108,17 @@ function selectResult() {
                 data: newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份', '医疗机构代码', "医院等级", "住院费用", "住院统筹支付", "门诊人次", "住院人次"],
-                colModel: [
-                    {name: 'year', index: "year", width: "10%", align: "center", editable: true},
-                    {name: 'h_name', index: 'h_name', width: "40%", align: "center", editable: true},
-                    {name: 'grade', index: 'grade', width: "10%", align: "center", editable: true},
-                    {
-                        name: 'h_fees',
-                        index: 'h_fees',
-                        width: "10%",
-                        align: "center",
-                        editable: true,
-                        sorttype: 'integer',
-                        formatter: 'integer'
-                    },
-                    {
-                        name: 'h_groupfees',
-                        index: 'h_groupfees',
-                        width: "10%",
-                        align: "center",
-                        editable: true,
-                        sorttype: 'integer',
-                        formatter: 'integer'
-                    },
-                    {
-                        name: 'm_count',
-                        index: 'm_count',
-                        width: "10%",
-                        align: "center",
-                        editable: true,
-                        sorttype: 'integer',
-                        formatter: 'integer'
-                    },
-                    {
-                        name: 'h_count',
-                        index: 'h_count',
-                        width: "10%",
-                        align: "center",
-                        editable: true,
-                        sorttype: 'integer',
-                        formatter: 'integer'
-                    },
-                ],
+                colNames: ['年份','编号',"医院等级","住院统筹支付","均次住院统筹支付","门诊统筹支付","均次门诊统筹支付"],
+                colModel:
+                    [
+                        { name: 'year', index: "year", width: "5%",align:"center", editable: true},
+                        { name: 'h_name', index: 'h_name', width: "35%",align:"center",editable: true },
+                        { name: 'grade', index: 'grade', width: "8%",align:"center", editable: true},
+                        { name: 'h_groupfees', index: 'h_groupfees', width: "12%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "14%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'm_groupfees', index: 'm_groupfees', width: "12%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_mgroupfees', index: 'avg_mgroupfees', width: "14%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                    ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
@@ -277,30 +248,7 @@ function back() {
     selectResult();
 }
 
-//自动补全功能的实现
-var availableTags = []
-function queryByDrugname() {
-    $.ajax({
-        url: '/MIF/hospital/query',
-        type: 'get',
-        async: false,
-        dataType: 'json',
-        success: function (data) {
-            var h_name = [];                             ///只展示其中的几列
-            for (var i = 0; i < data.hospitals.length; i++) {
-                h_name.push(data.hospitals[i].h_name);
-            }
-            //对医疗机构名进行去重
-            var arr = []
-            for (var i = 0, l = h_name.length; i < l; i++) {
-                if (arr.indexOf(h_name[i]) == -1) {
-                    arr.push(h_name[i])
-                }
-            }
-            availableTags = arr;
-        }
-    });
-}
+
 function getSelecteds() {
 //获取多选到的id集合
     var ids = $("#grid-table2").jqGrid("getGridParam", "selarrrow");
@@ -336,8 +284,8 @@ function getDetails() {
                 newjson[i].h_name = data.diseaseHospitals[i].h_name;
                 newjson[i].grade = data.diseaseHospitals[i].grade;
                 newjson[i].d_name = data.diseaseHospitals[i].d_name;
-                newjson[i].h_fees = data.diseaseHospitals[i].h_fees;
-                newjson[i].h_groupfees = data.diseaseHospitals[i].h_groupfees;
+                newjson[i].h_groupfees =data.diseaseHospitals[i].h_groupfees;
+                newjson[i].avg_hgroupfees = data.diseaseHospitals[i].avg_hgroupfees;
                 newjson[i].h_count = data.diseaseHospitals[i].h_count;
             }
             var grid_selector = "#grid-table2";
@@ -347,40 +295,17 @@ function getDetails() {
                 data: newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份', '医疗机构代码', "医院等级", "疾病名称", "住院费用", "住院统筹支付", "住院人次"],
-                colModel: [
-                    {name: 'year', index: "year", width: "10%", align: "center", editable: true},
-                    {name: 'h_name', index: 'h_name', width: "20%", align: "center", editable: true},
-                    {name: 'grade', index: 'grade', width: "10%", align: "center", editable: true},
-                    {name: 'd_name', index: 'd_name', width: "20%", align: "center", editable: true},
-                    {
-                        name: 'h_fees',
-                        index: 'fees',
-                        width: "15%",
-                        align: "center",
-                        editable: true,
-                        sorttype: 'integer',
-                        formatter: 'integer'
-                    },
-                    {
-                        name: 'h_groupfees',
-                        index: 'h_groupfees',
-                        width: "15%",
-                        align: "center",
-                        editable: true,
-                        sorttype: 'integer',
-                        formatter: 'integer'
-                    },
-                    {
-                        name: 'h_count',
-                        index: 'h_count',
-                        width: "10%",
-                        align: "center",
-                        editable: true,
-                        sorttype: 'integer',
-                        formatter: 'integer'
-                    },
-                ],
+                colNames: ['年份','医疗机构代码',"医院等级","疾病名称","住院统筹支付","均次住院统筹费用","住院人次"],
+                colModel:
+                    [
+                        { name: 'year', index: "year", width: "5%",align:"center", editable: true},
+                        { name: 'h_name', index: 'h_name', width: "35%",align:"center",editable: true },
+                        { name: 'grade', index: 'grade', width: "5%",align:"center", editable: true},
+                        { name: 'd_name', index: 'd_name', width: "15%",align:"center",editable: true},
+                        { name: 'h_groupfees', index: 'h_groupfees', width: "15%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "15%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                        { name: 'h_count', index: 'h_count', width: "10%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                    ],
                 rowNum: 10, //每页显示记录数
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 viewrecords: true,
@@ -393,10 +318,10 @@ function getDetails() {
         }
     });
 }
-
 $(function () {
     queryByDrugname();
     $("#hospitalnum").autocomplete({
         source: availableTags
     });
 });
+
