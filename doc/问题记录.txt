@@ -1,13 +1,4 @@
-1、收支建模：不需要选择模型，把模型最好的放上去就行了
-2、/MIF/region/query 均次住院统筹费用、均次门诊统筹费用为0
-3、/MIF/region/getDetails 均次门诊统筹支付、门诊人次均为0
-4、/MIF/hospital/getDetails   均次统筹住院费用为0
-5、/MIF/disease/query      均次住院统筹费用为0
-6、/MIF/disease/getDetails 均次统筹住院费用为0
-7、医院的对比图
-8、哪些医院费用变化比较快
-<<<<<<< HEAD
-9、参保人群住院异常费用检测
-=======
-9、参保人群住院异常费用检测
->>>>>>> dev
+1、收支建模：收入和支出放在一张图里，不是分开放的
+2、/MIF/region/getDetails?&identity=1&r_name=56343B48403AEA6D97ED197E6E9A4F3F&year=2010 门诊统筹不为0，均次门诊统筹为0，门诊人次也为0？
+3、病种部分，病种为空的就不展示了吧？
+4、/MIF/region/getDetails?&identity=1&r_name=56343B48403AEA6D97ED197E6E9A4F3F&year=2010  怎么top10有15条？
