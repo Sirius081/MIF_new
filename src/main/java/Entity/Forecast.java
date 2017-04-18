@@ -15,7 +15,7 @@ public class Forecast {
     private double value;
     private double errorRate;
 
-    public Forecast(int model, int time, int variable, double value, double errorRate) {
+    public Forecast(long model, int time, long variable, double value, double errorRate) {
         this.model = Dictionary.getModelMap().get(model);
         this.time = time;
         this.variable =Dictionary.getVariableMap().get(variable);

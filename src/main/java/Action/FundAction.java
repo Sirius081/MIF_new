@@ -18,7 +18,8 @@ public class FundAction extends ActionSupport{
     static private IForecast fDao=MybatisUtils.getSqlSession().getMapper(IForecast.class);
 
     //get,返回给前台
-    private List<Forecast> forecastList;
+    private List<Forecast> incomeList;
+    private List<Forecast> costList;
     private List<KeyValue> modelList;
     private List<KeyValue> variableList;
     //set,前台传参
@@ -43,9 +44,11 @@ public class FundAction extends ActionSupport{
      */
     public String query(){
         if(year!=null){
-            forecastList=fDao.getForecast(model,Integer.parseInt(year),variable);
+            incomeList=fDao.getForecast("4",Integer.parseInt(year),1);
+            costList=fDao.getForecast("3",Integer.parseInt(year),2);
         }else{
-            forecastList=fDao.getForecast(model,0,variable);
+            incomeList=fDao.getForecast("4",0,1);
+            costList=fDao.getForecast("3",0,2);
         }
 
         return SUCCESS;
@@ -72,14 +75,18 @@ public class FundAction extends ActionSupport{
         this.variable = variable;
     }
 
-
-    public List<Forecast> getForecastList() {
-        return forecastList;
+    public List<Forecast> getIncomeList() {
+        return incomeList;
     }
+
+    public List<Forecast> getCostList() {
+        return costList;
+    }
+
 
     public static void main(String[] args) {
         FundAction f=new FundAction();
-        List<Forecast> fs=f.fDao.getForecast("1",0,"1");
+        List<Forecast> fs=f.fDao.getForecast("1",0,1);
         System.out.println();
     }
 

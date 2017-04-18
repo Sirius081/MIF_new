@@ -111,7 +111,7 @@
           <%--<select id="select_model" class="form-control select_style" ></select>--%>
           <%--<span style="font-size:25px">选择变量：</span>--%>
           <%--<select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>--%>
-          <input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>
+          <%--<input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>--%>
         </form>
       </div>
 
@@ -134,11 +134,11 @@
               });
             }
           });
-          $("#query").click(function(){
+
 //            var model_selected=$("#select_model").val();
-            var model_selected=2;//1=gm11,2=holtwinter,3=multiregression,4=arima
-            var variable_selected=$("#select_variable").val();
-            var params="&model="+model_selected+"&variable="+variable_selected;
+            var model_selected=1;//1=gm11,2=holtwinter,3=multiregression,4=arima
+
+            var params="&model="+model_selected;
             $.ajax({
               url:'/MIF/query',
               type:'get',
@@ -150,7 +150,7 @@
                 });
               }
             });
-          });
+
         });
       </script>
     </div>
