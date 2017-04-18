@@ -75,7 +75,7 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.html">建模背景知识</a></li>
+                        <li><a href="model.jsp">建模背景知识</a></li>
                     </ul>
                 </div>
             </div>
@@ -95,36 +95,36 @@
                         <div class="panel-body">
                             <form id="queryPredict">
           <span class="label1">一级在职人员：起付线
-          <input type="text" id="line10" value="500" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
-          <input type="text" id="ratio10" value="90" class="input"></span>
+          <input type="text" id="line10" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="text" id="ratio10" value="90" class="input2">%</span>
             <br/>
             <span class="label1">一级退休人员：起付线
-          <input type="tet" id="line11" value="400" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
-          <input type="text" id="ratio11" value="96" class="input"></span>
+          <input type="tet" id="line11" value="400" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="text" id="ratio11" value="96" class="input2">%</span>
                                 <br/>
           <span class="label1">二级在职人员：起付线
-          <input type="text" id="line20" value="600" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
-          <input type="text" id="ratio20" value="85" class="input"></span>
+          <input type="text" id="line20" value="600" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="text" id="ratio20" value="85" class="input2">%</span>
             <br/>
           <span class="label1">二级退休人员：起付线
-          <input type="text" id="line21" value="500" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
-          <input type="text" id="ratio21" value="92" class="input"></span>
+          <input type="text" id="line21" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="text" id="ratio21" value="92" class="input2">%</span>
                                 <br/>
           <span class="label1">三级在职人员：起付线
-          <input type="text" id="line30" value="700" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
-          <input type="text" id="ratio30" value="80" class="input"></span>
+          <input type="text" id="line30" value="700" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="text" id="ratio30" value="80" class="input2">%</span>
             <br/>
           <span class="label1">三级退休人员：起付线
-          <input type="text" id="line31" value="600" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
-          <input type="text" id="ratio31" value="88" class="input"></span>
+          <input type="text" id="line31" value="600" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="text" id="ratio31" value="88" class="input2">%</span>
                                 <br/>
           <span class="label1">社区在职人员：起付线
-          <input type="text" id="line40" value="500" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
-          <input type="text" id="ratio40" value="90" class="input"></span>
+          <input type="text" id="line40" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="text" id="ratio40" value="90" class="input2">%</span>
             <br/>
-         <span class="label1">社区退休人员：起付线
-          <input type="text" id="line41" value="400" class="input">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
-          <input type="text" id="ratio41" value="96" class="input"></span>
+          <span class="label1">社区退休人员：起付线
+          <input type="text" id="line41" value="400" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
+          <input type="text" id="ratio41" value="96" class="input2">%</span>
                                 <br/>
                                 <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
                                        value="查询"/>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -137,7 +137,7 @@
             </div>
             <!--图形展示-->
             <div class="col-md-5 col-sm-5 col-xs-5">
-                <div id="detail-information" class="plotsize">
+                <div id="detail-information">
 
                 </div>
             </div>

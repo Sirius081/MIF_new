@@ -116,10 +116,12 @@ function selectResult()
                                 multiboxonly: true, //是否只能点击复选框多选
                                 autowidth: true //自动宽
                             });
+                            $("#grid-table").jqGrid('navGrid','#grid-pager',{del:false,add:false,edit:false},{},{},{},{multipleSearch:true});
                         }
                     });
                 }
             });
+            $("#grid-table").jqGrid('navGrid','#grid-pager',{del:false,add:false,edit:false},{},{},{},{multipleSearch:true});
         }
     });
 }

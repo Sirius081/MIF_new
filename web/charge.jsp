@@ -74,7 +74,7 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.html">建模背景知识</a></li>
+                        <li><a href="model.jsp">建模背景知识</a></li>
                     </ul>
                 </div>
             </div>
@@ -91,27 +91,23 @@
                         <div class="panel-heading">
                             基金缴费模型
                         </div>
-                        <div class="panel-body">
+                        <span class="panel-body">
                             <form id="queryPredict">
-                                <div class="form-group">
-                                    <label>缴费上限</label>
-                                    <input class="input" id="ceil" value='3' type="text"/>倍平均工资
-                                </div>
-                                <div class="form-group">
-                                    <label>缴费下限</label>
-                                    <input class="input" id="floor" value="1" type="text"/>倍平均工资
-                                </div>
-                                <div class="form-group">
-                                    <label>缴费比例</label>
-                                    <input id="ratio" class="input" value="9" type="text"/>
-                                </div>
+                                <span class="label1">缴费上限：
+                                    <input class="input2" id="ceil" value='3' type="text"/>倍平均工资</span></br>
+                                <span class="label1">
+                                    缴费下限：
+                                    <input class="input2" id="floor" value="1" type="text"/>倍平均工资
+                                </span><br/>
+                                <span class="label1">
+                                    缴费比例：
+                                    <input id="ratio" class="input2" value="9" type="text"/>%</span><br/><br/>
                                 <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
                                        value="查询"/>
                                 <button type="reset" class="btn btn-primary">重置</button>
                             </form>
-                        </div>
+                            </span>
                     </div>
-
                 </div>
             </div>
             <!--图形展示-->

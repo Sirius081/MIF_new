@@ -111,8 +111,7 @@ function selectResult()
                 rowNum: 10, //每页显示记录数
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 width:680,
-                autowidth: false,
-                shrinkToFit:false,
+                autowidth: true,
                 loadComplete: function() {
                     var grid = $("#grid-table2");
                     var ids = grid.getDataIDs();
@@ -169,13 +168,14 @@ function selectResult()
                                 altRows: true, //设置为交替行表格,默认为false
                                 loadonce: true,
                                 multiboxonly: true, //是否只能点击复选框多选
-                                caption: "详细信息", //表名
                                 autowidth: true //自动宽
                             });
+                            $("#grid-table2").jqGrid('navGrid','#grid-pager2',{del:false,add:false,edit:false},{},{},{},{multipleSearch:true});
                         }
                     });
                 }
             });
+            $("#grid-table2").jqGrid('navGrid','#grid-pager2',{del:false,add:false,edit:false},{},{},{},{multipleSearch:true});
         }
     });
 }

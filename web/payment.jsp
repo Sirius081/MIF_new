@@ -84,7 +84,7 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.html">建模背景知识</a></li>
+                        <li><a href="model.jsp">建模背景知识</a></li>
                     </ul>
                 </div>
             </div>

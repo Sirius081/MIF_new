@@ -178,10 +178,6 @@ function plot_statistic() {
                 success: function (data) {
                     var newjson = [];                             ///只展示其中的几列
                     for (var i = 0; i < data.ads.length; i++) {
-                        //newjson[i] = new Object();
-                        //newjson[i].year = data.ads[i].year;
-                        //newjson[i].ageId = data.ads[i].ageId;
-                        //newjson[i].c_count = data.ads[i].c_count;
                         newjson.push(data.ads[i].c_count);
                     }
                     //var json=JSON.stringify(newjson);

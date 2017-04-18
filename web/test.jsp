@@ -1,6 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
   User: song
+  Date: 2017/4/17
+  Time: 16:03
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: song
   Date: 2017/3/27
   Time: 21:50
   To change this template use File | Settings | File Templates.
@@ -32,6 +39,7 @@
   <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 
   <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/echarts.common.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/sub-menu.js"></script>
@@ -89,7 +97,7 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
               </ul>
             </li>
-            <li><a href="model.jsp">建模背景知识</a></li>
+            <li><a href="index.html">建模背景知识</a></li>
           </ul>
         </div>
       </div>
@@ -98,65 +106,13 @@
 </section>
 <!-- MENU SECTION END-->
 
-</br></br>
+</br>
 <!--切换标签页面-->
 
-<div  id="content1">
+<div id="content1">
   <!--切换标签页面-->
-  <div id="manager">
-    <div id="source_table_content">
-      <div class="row">
-        <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="panel-body">
-            <div class="panel panel-info">
-              <div class="panel-heading">
-                区县具体信息
-              </div>
-              <div class="panel-body">
-                <form id="queryPredict">
-                  <span class="label1">选择保险类型：</span>
-                  <select id="identity1" class="select_relative">
-                    <option value="1">职工</option>
-                    <option value="2">居民</option>
-                  </select>
-                  <span class="label1">按年份： </span>
-                  <select id="regionyear" class="select_relative" >
-                    <option>2010</option>
-                    <option>2011</option>
-                    <option>2013</option>
-                    <option>2014</option>
-                    <option>2015</option>
-                  </select>
-                  <span class="label1" >按区县代码：</span>
-                  <style>.ui-autocomplete {  max-height: 100px;overflow-y: auto;/* 防止水平滚动条 */  overflow-x: auto; width:80px;background-color: #ffff00}</style>
-                  <input type="text" id="regionname" class="input" maxlength="50" >
-                  <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
-                  <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
-                  <div class="grid_relative1">
-                    <table id="grid-table"></table>
-                    <!--jqGrid 浏览导航栏所在-->
-                    <div id="grid-pager"></div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
-</div>
-</div>
-<section class="footer-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12" align="center">
-        Copyright &copy; 华东师范大学.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
-      </div>
-    </div>
-  </div>
-</section>
-<script type="text/javascript" src="js/region.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/hospital.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
 <script type="text/javascript" src="js/display.js"></script>
