@@ -16,7 +16,8 @@
         group by r_name,year,identity
     </select>
     <select id="getRegionDetails" resultType="Hospital">
-        select a.*,grade.grade from hospital a
+        select a.year,a.identity,a.r_name,a.h_name,a.m_count,a.h_count,a.h_fees,a.h_groupfees
+        ,a.m_fees,a.m_groupfees,a.drugfees,grade.grade from hospital a
         left join hgrade grade on grade.id=a.grade
         where 1=1
         <if test="name !=''"> and a.r_name like "%" #{name}"%"</if>

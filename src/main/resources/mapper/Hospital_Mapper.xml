@@ -23,7 +23,7 @@
         where 1=1
         <if test="year !=0"> and year=#{year}</if>
         <if test="identity !=0"> and identity=#{identity}</if>
-        order by ${orderBy} desc limit 15
+        order by ${orderBy} desc limit 10
     </select>
     <select id="getDetails" resultType="DiseaseHospital">
         select a.year,a.identity,a.h_name,a.d_name as d_name,a.h_count,a.h_fees,a.h_groupfees,grade.grade as grade
@@ -35,7 +35,7 @@
         order by a.h_fees,a.h_count desc
     </select>
     <select id="detectAvgGroup" resultType="HospitalAD">
-        select h.h_name,h.year,coalesce(h.h_groupfees/h.h_count,0) as actual,
+        select h.h_name,h.year,cast(coalesce(h.h_groupfees/h.h_count,0) as decimal(50,2)) as actual,
         ad.predict,ad.error_rate
         from hospital h
         left join hospitalAD ad on h.h_name=ad.h_name and h.year=ad.year

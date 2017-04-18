@@ -109,8 +109,8 @@
         <form id="queryPredict">
           <%--<span style="font-size:25px" >选择模型：</span>--%>
           <%--<select id="select_model" class="form-control select_style" ></select>--%>
-          <span style="font-size:25px">选择变量：</span>
-          <select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>
+          <%--<span style="font-size:25px">选择变量：</span>--%>
+          <%--<select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>--%>
           <input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>
         </form>
       </div>
