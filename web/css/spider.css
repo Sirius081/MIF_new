@@ -38,11 +38,20 @@ body {
     margin-right:10%
 }
 
+
 #content1{
     width : 95%;
     height : 78%;
     margin-left:2.5%;
     margin-right:2.5%
+}
+
+#content2{
+    width : 60%;
+    height : 78%;
+    margin-left:20%;
+    margin-top:5%;
+    margin-right:20%
 }
 
 .footer1_bg {
@@ -66,10 +75,18 @@ body {
 
 
 #detail-information{
+    margin-top:5%;
     height: 80%;
 }
 
+#detail-information1{
+    margin-top:5%;
+    height: 80%;
+}
 
+.factor{
+    width:50%;
+}
 
 #page{
     height: 10%;

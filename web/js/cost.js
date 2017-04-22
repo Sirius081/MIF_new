@@ -87,7 +87,6 @@ function selectresult()
                     ]
                 }
                 //为echarts对象加载数据
-                alert("hello")
                 line.setOption(option);
             }
             else

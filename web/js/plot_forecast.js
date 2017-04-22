@@ -1,32 +1,20 @@
 function plot(forecastList){
     var line = echarts.init(document.getElementById('detail-information'));
-    incomeList=forecastList.incomeList
-    costList=forecastList.costList
-    var income=[];
-    var cost=[];
-    for(var o in incomeList){
-        income.push(incomeList[o].value);
-    }
-    for(var o in costList){
-        cost.push(costList[o].value);
-    }
-
-    option = {
+    var option = {
         title: {
-            text: '医保基金收入与支出走势预测'
+            text: '堆叠区域图',
+            textStyle:{
+                fontSize:30
+            }
         },
+
         tooltip : {
             trigger: 'axis'
         },
-        legend: {
-            show: true,
-            x: 'right',
-            y: 'top',
-            data:['收入','支出']
-        },
+
         toolbox: {
             feature: {
-
+                saveAsImage: {}
             }
         },
         grid: {
@@ -39,35 +27,37 @@ function plot(forecastList){
             {
                 type : 'category',
                 boundaryGap : false,
-                data : ['2006','2007','2008','2009','2010','2011','2012'
-                    ,'2013','2014','2015','2016','2017','2018','2019','2020']
+                data : []
             }
         ],
         yAxis : [
-            {
+             {
                 type : 'value'
             }
         ],
         series : [
-            {
-                name:'收入',
-                type:'line',
-                stack: '总量1',
-                data: income
-            },
-
-            {
-                name:'支出',
-                type:'line',
-                stack: '总量2',
-                data:cost
-            }
         ]
     };
-
-    //为echarts对象加载数据
+    var data=[];
+    var years=[];
+    forecastList=forecastList.forecastList
+    for(var o in forecastList){
+        years.push(forecastList[o].time);
+        data.push(forecastList[o].value);
+    }
+    var variable=forecastList[1].variable;
+    //设置折线数据
+    option.series.push({
+        name:variable,
+        type:'line',
+        stack: '总量',
+        areaStyle: {normal: {}},
+        data:data
+    });
+    option.title.text='泸州市医保基金'+variable+'预测(单位：万元)';
+    //设置x轴 名称：年份
+    option.xAxis[0].data=years;
     line.setOption(option);
-
 }
 
 

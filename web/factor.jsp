@@ -34,7 +34,7 @@
   <script type="text/javascript" src="js/echarts.js"></script>
 
 </head>
-<body>
+<body onload="load()">
 <div class="navbar navbar-inverse set-radius-zero">
   <div class="container">
     <div class="header_bg">
@@ -72,6 +72,8 @@
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                 </li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
+                </li>
               </ul>
             </li>
             <li>
@@ -84,7 +86,6 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
               </ul>
             </li>
-            <li><a href="model.jsp">建模背景知识</a></li>
           </ul>
         </div>
       </div>
@@ -92,7 +93,18 @@
   </div>
 </section>
 <!-- MENU SECTION END-->
-<div class="content-wrapper">
+<div id="content1">
+     <div class="row ">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+       <div id="detail-information">
+        </div>
+      </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+           <div id="detail-information1">
+           </div>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <section class="footer-section">
@@ -104,6 +116,8 @@
     </div>
   </div>
 </section>
-<script type="text/javascript" src="js/payment.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/factor.js" charset="utf-8"></script>
 </body>
 </html>
+
+

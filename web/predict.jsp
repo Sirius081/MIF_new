@@ -77,6 +77,8 @@
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                 </li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
+                </li>
               </ul>
             </li>
             <li>
@@ -89,7 +91,6 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
               </ul>
             </li>
-            <li><a href="model.jsp">建模背景知识</a></li>
           </ul>
         </div>
       </div>
@@ -109,9 +110,9 @@
         <form id="queryPredict">
           <%--<span style="font-size:25px" >选择模型：</span>--%>
           <%--<select id="select_model" class="form-control select_style" ></select>--%>
-          <%--<span style="font-size:25px">选择变量：</span>--%>
-          <%--<select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>--%>
-          <%--<input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>--%>
+          <span style="font-size:25px">选择变量：</span>
+          <select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>
+          <input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>
         </form>
       </div>
 
@@ -134,11 +135,11 @@
               });
             }
           });
-
+          $("#query").click(function(){
 //            var model_selected=$("#select_model").val();
-            var model_selected=1;//1=gm11,2=holtwinter,3=multiregression,4=arima
-
-            var params="&model="+model_selected;
+            var model_selected=2;//1=gm11,2=holtwinter,3=multiregression,4=arima
+            var variable_selected=$("#select_variable").val();
+            var params="&model="+model_selected+"&variable="+variable_selected;
             $.ajax({
               url:'/MIF/query',
               type:'get',
@@ -150,7 +151,7 @@
                 });
               }
             });
-
+          });
         });
       </script>
     </div>
