@@ -64,8 +64,9 @@ function selectResult()
                     $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
                     $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
                 },
-                onCellSelect:function(rowid,iCol,cellcontent,e){
-                    var r_name=cellcontent;
+                onSelectRow: function(id,status,e){
+                    var row = $("#grid-table").jqGrid('getRowData',id);
+                    var r_name=row.r_name;
                     var param="&identity="+identity+'&r_name='+r_name+'&year='+year;
                     $.ajax({
                         url: '/MIF/region/getDetails',

@@ -104,7 +104,7 @@
   <div id="manager">
     <div id="source_table_content">
       <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12" id="left">
+        <div class="col-md-5 col-sm-5 col-xs-12" id="left">
           <div class="panel-body">
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -126,9 +126,6 @@
                     <option>2014</option>
                     <option>2015</option>
                   </select>
-                  <select id="orderBy" class="select_relative1">
-                    <option value="drugfees">药品费</option>
-                  </select>
                   <input id="query1" class="query" type="button" onclick="updatetop10()" value="查询"/>
                   <div class="grid_relative" >
                     <table id="grid-table"></table>
@@ -140,7 +137,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-7 col-sm-7 col-xs-12">
             <div class="panel-body">
               <div class="panel panel-info">
                 <div class="panel-heading">
