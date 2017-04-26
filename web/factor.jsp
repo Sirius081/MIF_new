@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: song
   Date: 2017/3/28
-  Time: 17:04
+  Time: 16:57
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -26,6 +26,7 @@
   <link href="css/style.css" rel="stylesheet"/>
   <script type="text/javascript" src="js/common.js"></script>
   <!-- GOOGLE FONT -->
+
   <script type="text/javascript" src="js/echarts.common.min.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
   <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
@@ -33,7 +34,7 @@
   <script type="text/javascript" src="js/echarts.js"></script>
 
 </head>
-<body>
+<body onload="load()">
 <div class="navbar navbar-inverse set-radius-zero">
   <div class="container">
     <div class="header_bg">
@@ -67,7 +68,8 @@
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="predict.jsp">收支走向预测</a>
                 </li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a>
+                </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
@@ -91,38 +93,15 @@
   </div>
 </section>
 <!-- MENU SECTION END-->
-<div class="content-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-4 col-xs-12">
-        <div class="panel-body">
-          <form id="queryPredict" name="form1">
-            <span style="font-size:25px">选择保险类型：</span>
-            <select  id="identity" class="form-control select_style">
-              <option ></option>
-              <option value="1">城镇职工</option>
-              <option value="2">城镇居民</option>
-            </select>
-            <span style="font-size:25px">选择内容：</span>
-            <select name="feesDetail" id="feesDetail" class="form-control select_style"
-                    onChange="getCity()">
-              <option ></option>
-              <option   value="feesDetail">医院等级</option>
-              <option   value="ageGroup">参保人群</option>
-            </select>
-            <span style="font-size:25px">选择查看：</span>
-            <select id="selectBy" name="selectBy" class="form-control select_style"
-                    style="width:200px;margin-left: 100px">
-            </select>
-            <input id="query" class="btn" type="button" value="查询" onclick="plot_statistic()"
-                   style="font-size: 20px; margin-left: 100px;margin-top:20px "/>
-          </form>
+<div id="content1">
+     <div class="row ">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+       <div id="detail-information">
         </div>
       </div>
-      <!--图形展示-->
-      <div class="col-md-8 col-sm-8 col-xs-12">
-        <div id="detail-information" class="plotsize">
-        </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+           <div id="detail-information1">
+           </div>
       </div>
     </div>
   </div>
@@ -137,7 +116,8 @@
     </div>
   </div>
 </section>
-
-<script type="text/javascript" src="js/expense.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/factor.js" charset="utf-8"></script>
 </body>
 </html>
+
+

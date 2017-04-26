@@ -79,6 +79,8 @@
                                 </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                                 </li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -91,7 +93,6 @@
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.html">建模背景知识</a></li>
                     </ul>
                 </div>
             </div>
@@ -102,7 +103,6 @@
 
 </br>
 <!--切换标签页面-->
-
 <div id="content1">
     <!--切换标签页面-->
 

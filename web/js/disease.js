@@ -87,7 +87,7 @@ function selectResult()
                 newjson[i].h_fees = data.diseases[i].h_fees;
                 newjson[i].avg_hfees = data.diseases[i].avg_hfees;
                 newjson[i].h_groupfees = data.diseases[i].h_groupfees;
-                newjson[i].avg_groupfees = data.diseases[i].avg_groupfees;
+                newjson[i].avg_hgroupfees = data.diseases[i].avg_hgroupfees;
                 newjson[i].h_count = data.diseases[i].h_count;
             }
             var grid_selector = "#grid-table2";
@@ -103,7 +103,7 @@ function selectResult()
                         { name: 'year', index: "year", width: "10%", editable: true,align:"center"},
                         { name: 'name', index: 'name', width:  "40%",editable: true,align:"center" },
                         { name: 'h_groupfees', index: 'h_groupfees', width:  "20%", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
-                        { name: 'avg_groupfees', index: 'avg_groupfees', width:  "20%", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
+                        { name: 'avg_hgroupfees', index: 'avg_hgroupfees', width:  "20%", editable: true,align:"center",sorttype:'integer',formatter:'integer'},
                         { name: 'h_count', index: 'h_count', width:  "10%", editable: true,align:"center",sorttype:'integer',formatter:'integer'}
                     ],
                 pgbuttons:true,

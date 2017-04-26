@@ -33,27 +33,17 @@ function updatetop10()
                 data: newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['编号', '年份', '费用'],
+                colNames: ['编号', '费用'],
                 colModel: [
-                    {name: 'h_name', index: 'h_name', width: 320, align: "center", editable: true},
-                    {name: 'year', index: "year", width: 40, align: "center", editable: true},
-                    {
-                        name: "h_fees",
-                        index: "h_fees",
-                        width: 150,
-                        align: "center",
-                        sorttype: 'integer',
-                        formatter: 'integer'
-                    },
+                    {name: 'h_name', index: 'h_name', width: "70%", align: "center", editable: true},
+                    {name: "h_fees", index: "h_fees", width: "30%", align: "center", sorttype: 'integer', formatter: 'integer'},
                 ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
                 rowNum: 10, //每页显示记录数
                 pager: pager_selector, //分页、按钮所在的浏览导航栏
                 multiselect: true, //是否多选
                 multiboxonly: true, //是否只能点击复选框多选
-                autowidth: false,
-                shrinkToFit: false,
-                width: 450,
+                autowidth: true,
                 loadComplete: function () {
                     var grid = $("#grid-table");
                     var ids = grid.getDataIDs();
@@ -122,6 +112,7 @@ function selectResult()
                 loadonce:true,
                 multiboxonly: true, //是否只能点击复选框多选
                 autowidth: true, //自动宽
+                multiselect:true,
                 loadComplete: function() {
                     var grid = $("#grid-table2");
                     var ids = grid.getDataIDs();
