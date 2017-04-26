@@ -8,7 +8,7 @@
     <select id="getDisease" resultType="Disease">
         select * from disease where 1=1
         <if test="identity !=0"> and identity=#{identity}</if>
-        <if test="name !=''"> and h_name like "%" #{h_name}"%"</if>
+        <if test="name !=null"> and name like "%" #{name}"%"</if>
         <if test="year !=0"> and year=#{year}</if>
 
     </select>
@@ -23,8 +23,7 @@
         left join hgrade grade on grade.id=a.grade
         where 1=1
         <if test="identity !=0"> and identity=#{identity}</if>
-        <if test="name !=null"> and d_name like "%" #{name}"%"</if>
+        <if test="name !=null"> and d_name=#{name}</if>
         <if test="year !=0"> and year=#{year}</if>
     </select>
-
 </mapper>

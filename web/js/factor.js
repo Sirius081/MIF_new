@@ -93,5 +93,4 @@ function load()
         ]
     };
     line1.setOption(option1);
-
 }

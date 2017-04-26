@@ -124,24 +124,28 @@ function selectResult(){
 //自动补全功能的实现
 var availableTags = []
 function queryByDrugname(){
+    var identity=$("#identity1").val();
+    var name=$("#drugname").val();
+    var params="&identity="+identity+"&year="+0+"&name="+name;
     $.ajax({
         url:'/MIF/drug/query',
         type:'get',
+        data:params,
         async:false,
         dataType:'json',
-        success:function(data){
-            var drugname=[];                             ///只展示其中的几列
-            for(var i = 0; i <data.drugs.length; i++){
+        success:function(data) {
+            var drugname = [];                             ///只展示其中的几列
+            for (var i = 0; i < data.drugs.length; i++) {
                 drugname.push(data.drugs[i].name);
             }
             //对drug名进行去重
-            var arr =[]
-            for(var i=0,l=drugname.length;i<l;i++){
-                if(arr.indexOf(drugname[i])==-1){
+            var arr = []
+            for (var i = 0, l = drugname.length; i < l; i++) {
+                if (arr.indexOf(drugname[i]) == -1) {
                     arr.push(drugname[i])
                 }
             }
-            availableTags =arr;
+            availableTags = arr;
         }
     });
 }
