@@ -211,10 +211,13 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-5 col-sm-5 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div id="detail-information1">
+            </div>
     </div>
-    <div class="col-md-7 col-sm-7 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-12">
     <div id="detail-information">
+       </div>
     </div>
 </div>
 </div>

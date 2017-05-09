@@ -21,6 +21,9 @@
         <action name="query" class="Action.DiseaseAction" method="query">
             <result type="json"></result>
         </action>
+        <action name="diseaseTrend" class="Action.DiseaseAction" method="diseaseTrend">
+            <result type="json"></result>
+        </action>
         <action name="getTop10" class="Action.DiseaseAction" method="top10">
             <result type="json"></result>
         </action>
