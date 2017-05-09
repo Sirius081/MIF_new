@@ -91,26 +91,27 @@
   </div>
 </section>
 <!-- MENU SECTION END-->
+<div id="content1">
 <div class="content-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="panel-body">
           <form id="queryPredict" name="form1">
-            <span style="font-size:25px">选择保险类型：</span>
+            <span style="font-size:20px">选择保险类型：</span>
             <select  id="identity" class="form-control select_style">
               <option ></option>
               <option value="1">城镇职工</option>
               <option value="2">城镇居民</option>
             </select>
-            <span style="font-size:25px">选择内容：</span>
+            <span style="font-size:20px">选择内容：</span>
             <select name="feesDetail" id="feesDetail" class="form-control select_style"
                     onChange="getCity()">
               <option ></option>
-              <option   value="feesDetail">医院等级</option>
-              <option   value="ageGroup">参保人群</option>
+              <option  value="feesDetail">医院等级</option>
+              <option  value="ageGroup">参保人群</option>
             </select>
-            <span style="font-size:25px">选择查看：</span>
+            <span style="font-size:20px">选择查看：</span>
             <select id="selectBy" name="selectBy" class="form-control select_style"
                     style="width:200px;margin-left: 100px">
             </select>
@@ -127,6 +128,7 @@
     </div>
   </div>
 </div>
+  </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <section class="footer-section">
   <div class="container">

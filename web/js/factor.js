@@ -30,7 +30,7 @@ function load()
             {
                 type : 'category',
                 data : ['身份', '性质', '年龄', '性别', '年度工资', '医院等级', '住院天数',
-                '药品费','起付线','报销比例','是否患有慢性病'],
+                    '药品费','起付线','报销比例','是否患有慢性病'],
                 axisTick: {
                     alignWithLabel: true
                 }
@@ -47,9 +47,9 @@ function load()
             }
         ]
     };
-      line.setOption(option);
-      var line1= echarts.init(document.getElementById('detail-information1'))
-      option1 = {
+    line.setOption(option);
+    var line1= echarts.init(document.getElementById('detail-information1'))
+    option1 = {
         title: {
             text: '病人住院费用病种影响因素分析'
         },
@@ -93,5 +93,4 @@ function load()
         ]
     };
     line1.setOption(option1);
-
 }
