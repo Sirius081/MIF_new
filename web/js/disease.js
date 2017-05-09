@@ -329,7 +329,7 @@ function selectResult()
 function back()
 {
     window.location.reload();
-  selectResult();
+    selectResult();
 }
 
 //自动补全功能的实现
