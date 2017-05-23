@@ -67,11 +67,11 @@
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="predict.jsp">收支走向预测</a>
                 </li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a>
+                </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                 </li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
-                </li>
+
               </ul>
             </li>
             <li>
@@ -82,6 +82,8 @@
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -89,28 +91,28 @@
       </div>
     </div>
   </div>
-</section>
-<!-- MENU SECTION END-->
+</section><!-- MENU SECTION END-->
+<div id="content1">
 <div class="content-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="panel-body">
           <form id="queryPredict" name="form1">
-            <span style="font-size:25px">选择保险类型：</span>
+            <span style="font-size:20px">选择保险类型：</span>
             <select  id="identity" class="form-control select_style">
               <option ></option>
               <option value="1">城镇职工</option>
               <option value="2">城镇居民</option>
             </select>
-            <span style="font-size:25px">选择内容：</span>
+            <span style="font-size:20px">选择内容：</span>
             <select name="feesDetail" id="feesDetail" class="form-control select_style"
                     onChange="getCity()">
               <option ></option>
-              <option   value="feesDetail">医院等级</option>
-              <option   value="ageGroup">参保人群</option>
+              <option  value="feesDetail">医院等级</option>
+              <option  value="ageGroup">参保人群</option>
             </select>
-            <span style="font-size:25px">选择查看：</span>
+            <span style="font-size:20px">选择查看：</span>
             <select id="selectBy" name="selectBy" class="form-control select_style"
                     style="width:200px;margin-left: 100px">
             </select>
@@ -127,6 +129,7 @@
     </div>
   </div>
 </div>
+  </div>
 <!-- CONTENT-WRAPPER SECTION END-->
 <section class="footer-section">
   <div class="container">

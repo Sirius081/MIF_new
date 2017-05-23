@@ -55,6 +55,27 @@ public class DiseaseAction extends ActionSupport implements ServletRequestAware 
         }
         return  SUCCESS;
     }
+    public String diseaseTrend(){
+        String name= request.getParameter("name");
+        int year=0;
+        if(request.getParameter("year")!=null){
+            year=Integer.parseInt(request.getParameter("year"));
+        }
+        int identity=0;
+        if(request.getParameter("identity")!=null){
+            identity=Integer.parseInt(request.getParameter("identity"));
+        }
+        Disease condition=new Disease();
+        condition.setIdentity(identity);
+        condition.setYear(year);
+        condition.setName(name);
+        diseases=dao.getDiseaseTrend(condition);
+        for (Disease d:diseases){
+            d.setAvg_hfees();
+            d.setAvg_hgroupfees();
+        }
+        return  SUCCESS;
+    }
     public String top10(){
         String orderBy=request.getParameter("orderBy");
         int year=0;

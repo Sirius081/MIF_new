@@ -58,6 +58,26 @@ public class CostAction extends ActionSupport implements ServletRequestAware
         result=cDao.getPastcost(line10, ratio10, line11, ratio11, line20, ratio20, line21, ratio21, line30, ratio30, line31, ratio31, line40, ratio40, line41, ratio41);
         return SUCCESS;
     }
+    public String queryGroup(){
+        line10=Integer.parseInt(request.getParameter("line10"));
+        ratio10=Integer.parseInt(request.getParameter("ratio10"));
+        line11=Integer.parseInt(request.getParameter("line11"));
+        ratio11=Integer.parseInt(request.getParameter("ratio11"));
+        line20=Integer.parseInt(request.getParameter("line20"));
+        ratio20=Integer.parseInt(request.getParameter("ratio20"));
+        line21=Integer.parseInt(request.getParameter("line21"));
+        ratio21=Integer.parseInt(request.getParameter("ratio21"));
+        line30=Integer.parseInt(request.getParameter("line30"));
+        ratio30=Integer.parseInt(request.getParameter("ratio30"));
+        line31=Integer.parseInt(request.getParameter("line31"));
+        ratio31=Integer.parseInt(request.getParameter("ratio31"));
+        line40=Integer.parseInt(request.getParameter("line40"));
+        ratio40=Integer.parseInt(request.getParameter("ratio40"));
+        line41=Integer.parseInt(request.getParameter("line41"));
+        ratio41=Integer.parseInt(request.getParameter("ratio41"));
+        result=cDao.getGroup(line10, ratio10, line11, ratio11, line20, ratio20, line21, ratio21, line30, ratio30, line31, ratio31, line40, ratio40, line41, ratio41);
+        return SUCCESS;
+    }
 
     public void setLine10(int line10) {
         this.line10 = line10;

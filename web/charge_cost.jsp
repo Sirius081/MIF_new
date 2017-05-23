@@ -37,6 +37,7 @@
 </div>
 </div>
 <!-- LOGO HEADER END-->
+
 <section class="menu-section">
     <div class="container">
         <div class="row ">
@@ -62,7 +63,8 @@
                                 </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                                 </li>
-
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge_cost.jsp">收支模型</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -87,18 +89,44 @@
 <div class="content-wrapper">
     <div class="container">
         <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-5">
+                <div class="panel-body">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            统筹基金收入预测
+                        </div>
+                        <span class="panel-body">
+                            <form id="queryPredict2">
+                                <span class="label1">缴费上限：
+                                    <input class="input2" id="ceil" value='3' type="text"/>倍平均工资</span></br>
+                                <span class="label1">
+                                    缴费下限：
+                                    <input class="input2" id="floor" value="1" type="text"/>倍平均工资
+                                </span><br/>
+                                <span class="label1">
+                                    缴费比例：
+                                    <input id="ratio" class="input2" value="9" type="text"/>%</span><br/><br/>
+                                <input id="query2" class="btn btn-primary" type="button" onclick="predictIncome()"
+                                       value="查询"/>
+                                <button type="reset" class="btn btn-primary">重置</button>
+                                </br></br></br></br></br></br>
+                            </form>
+                            </span>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-7 col-sm-7 col-xs-12">
                 <div class="panel-body">
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            医疗待遇支付模型
+                            统筹费用支出预测
                         </div>
                         <div class="panel-body">
                             <form id="queryPredict">
           <span class="label1">一级在职人员：起付线
           <input type="text" id="line10" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio10" value="90" class="input2">%</span>
-            <br/>
+                                <br/>
             <span class="label1">一级退休人员：起付线
           <input type="tet" id="line11" value="400" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio11" value="96" class="input2">%</span>
@@ -106,7 +134,7 @@
           <span class="label1">二级在职人员：起付线
           <input type="text" id="line20" value="600" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio20" value="85" class="input2">%</span>
-            <br/>
+                                <br/>
           <span class="label1">二级退休人员：起付线
           <input type="text" id="line21" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio21" value="92" class="input2">%</span>
@@ -114,7 +142,7 @@
           <span class="label1">三级在职人员：起付线
           <input type="text" id="line30" value="700" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio30" value="80" class="input2">%</span>
-            <br/>
+                                <br/>
           <span class="label1">三级退休人员：起付线
           <input type="text" id="line31" value="600" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio31" value="88" class="input2">%</span>
@@ -122,31 +150,31 @@
           <span class="label1">社区在职人员：起付线
           <input type="text" id="line40" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio40" value="90" class="input2">%</span>
-            <br/>
+                                <br/>
           <span class="label1">社区退休人员：起付线
           <input type="text" id="line41" value="400" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio41" value="96" class="input2">%</span>
                                 <br/>
-                                <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
+                                <input id="query1" class="btn btn-primary" type="button" onclick="predictCost()"
                                        value="查询"/>&nbsp;&nbsp;&nbsp;&nbsp;
                                 <button type="reset" class="btn btn-primary">重置</button>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
             <!--图形展示-->
-            <div class="col-md-5 col-sm-5 col-xs-5">
-                <div id="detail-information">
-
-                </div>
-            </div>
-
         </div>
-
+    </div>
+    <div id="content2">
+        <div class="row">
+            <div id="detail-information">
+            </div>
+        </div>
     </div>
 </div>
+</div>
+
 <!-- CONTENT-WRAPPER SECTION END-->
 <section class="footer-section">
     <div class="container">
@@ -161,7 +189,7 @@
 <script src="assets/js/jquery-1.10.2.js"></script>
 <!-- BOOTSTRAP SCRIPTS  -->
 <script src="assets/js/bootstrap.js"></script>
-<script type="text/javascript" src="js/cost.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/charge_cost.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
 </body>

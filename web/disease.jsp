@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
     <link rel="stylesheet" type="text/css" href="css/theme.css"/>
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
@@ -37,6 +38,7 @@
     <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/echarts.common.min.js"></script>
 
 
 </head>
@@ -77,8 +79,7 @@
                                 </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                                 </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li>
@@ -89,6 +90,8 @@
                                 </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -98,10 +101,13 @@
     </div>
 </section>
 <!-- MENU SECTION END-->
-<!--切换标签页面-->
-<br/>
 
+</br>
+<!--切换标签页面-->
 <div id="content1">
+    <!--切换标签页面-->
+
+
     <div id="manager">
         <div id="source_table_content">
             <div class="row">
@@ -169,7 +175,6 @@
                             <input type="text" class="input1" id="diseasename">
                             <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
                             <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
-
                             <div class="grid_relative1">
                                 <table id="grid-table2"></table>
                                 <!--jqGrid 浏览导航栏所在-->
@@ -182,12 +187,25 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div id="detail-information1">
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div id="detail-information">
+        </div>
+    </div>
+</div>
+</div>
 </div>
 </div>
 <section class="footer-section">
-    <div class="row">
-        <div class="col-md-12" align="center">
-            Copyright &copy; 华东师范大学.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" align="center">
+                Copyright &copy; 华东师范大学.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+            </div>
         </div>
     </div>
 </section>

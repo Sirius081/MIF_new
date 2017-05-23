@@ -76,8 +76,7 @@
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                 </li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
-                </li>
+
               </ul>
             </li>
             <li>
@@ -88,6 +87,8 @@
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -95,8 +96,7 @@
       </div>
     </div>
   </div>
-</section>
-<!-- MENU SECTION END-->
+</section><!-- MENU SECTION END-->
 </br>
 <!--切换标签页面-->
 <div  id="content1">
@@ -104,7 +104,7 @@
   <div id="manager">
     <div id="source_table_content">
       <div class="row">
-        <div class="col-md-6 col-sm-6 col-xs-12" id="left">
+        <div class="col-md-5 col-sm-5 col-xs-12" id="left">
           <div class="panel-body">
             <div class="panel panel-info">
               <div class="panel-heading">
@@ -126,9 +126,6 @@
                     <option>2014</option>
                     <option>2015</option>
                   </select>
-                  <select id="orderBy" class="select_relative1">
-                    <option value="drugfees">药品费</option>
-                  </select>
                   <input id="query1" class="query" type="button" onclick="updatetop10()" value="查询"/>
                   <div class="grid_relative" >
                     <table id="grid-table"></table>
@@ -140,7 +137,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="col-md-7 col-sm-7 col-xs-12">
             <div class="panel-body">
               <div class="panel panel-info">
                 <div class="panel-heading">

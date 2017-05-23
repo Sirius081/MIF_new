@@ -79,8 +79,7 @@
                                 </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                                 </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li>
@@ -91,6 +90,8 @@
                                 </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
@@ -100,7 +101,6 @@
     </div>
 </section>
 <!-- MENU SECTION END-->
-
 </br>
 <!--切换标签页面-->
 <div id="content1">
@@ -211,10 +211,13 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-5 col-sm-5 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div id="detail-information1">
+            </div>
     </div>
-    <div class="col-md-7 col-sm-7 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-12">
     <div id="detail-information">
+       </div>
     </div>
 </div>
 </div>
