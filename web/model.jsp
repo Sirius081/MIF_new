@@ -1,20 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: song
-  Date: 2017/1/13
-  Time: 14:57
+  Date: 2017/3/28
+  Time: 16:57
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: sirius
-  Date: 16-7-26
-  Time: 下午5:16
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="zh-cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
@@ -34,12 +26,15 @@
   <link href="css/style.css" rel="stylesheet"/>
   <script type="text/javascript" src="js/common.js"></script>
   <!-- GOOGLE FONT -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
+
   <script type="text/javascript" src="js/echarts.common.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
   <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/echarts.js"></script>
 
-</head><body>
+</head>
+<body>
 <div class="navbar navbar-inverse set-radius-zero">
   <div class="container">
     <div class="header_bg">
@@ -51,6 +46,7 @@
 </div>
 </div>
 <!-- LOGO HEADER END-->
+
 <section class="menu-section">
   <div class="container">
     <div class="row ">
@@ -76,8 +72,6 @@
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                 </li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge_cost.jsp">收支模型</a>
-                </li>
               </ul>
             </li>
             <li>
@@ -88,70 +82,19 @@
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
-                </li>
               </ul>
             </li>
+            <li><a href="model.jsp">建模背景知识</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 </section>
-<div  id="content2">
-  <!--切换标签页面-->
-    <div id="source_table_content" style="">
-      <div class="wrap" >
-        <form id="queryPredict">
-          <!--右部显示详细信息-->
-            <div id="detail-information">
-            </div>
-          <%--<span style="font-size:25px" >选择模型：</span>--%>
-          <%--<select id="select_model" class="form-control select_style" ></select>--%>
-          <%--<span style="font-size:25px">选择变量：</span>--%>
-          <%--<select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>--%>
-          <%--<input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>--%>
-        </form>
-    </div>
-  </div>
+<!-- MENU SECTION END-->
+<div class="content-wrapper">
 </div>
-  <script src="js/echarts.common.min.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $.ajax({
-        url:'/MIF/init',
-        type:'get',
-        dataType:'json',
-        success:function(data){
-          var model_select=$("#select_model");
-          $.each(data.modelList,function(i,item){
-            model_select.append("<option style='font-size: 20px' value='"+item.key+"'>"+item.value+"</option>");
-          });
-          var model_select=$("#select_variable");
-          $.each(data.variableList,function(i,item){
-            model_select.append("<option value='"+item.key+"'>"+item.value+"</option>");
-          });
-        }
-      });
-
-//            var model_selected=$("#select_model").val();
-      var model_selected=1;//1=gm11,2=holtwinter,3=multiregression,4=arima
-
-      var params="&model="+model_selected;
-      $.ajax({
-        url:'/MIF/query',
-        type:'get',
-        data:params,
-        dataType:'json',
-        success:function(data){
-          $(data).each(function(i,value){
-            plot(value);
-          });
-        }
-      });
-
-    });
-  </script>
+<!-- CONTENT-WRAPPER SECTION END-->
 <section class="footer-section">
   <div class="container">
     <div class="row">
@@ -161,9 +104,6 @@
     </div>
   </div>
 </section>
-
-<script type="text/javascript" src="js/spider.js"></script>
-<script type="text/javascript" src="js/plot_forecast.js"></script>
-
+<script type="text/javascript" src="js/payment.js" charset="utf-8"></script>
 </body>
 </html>

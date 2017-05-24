@@ -30,9 +30,7 @@
                 <property name="password" value="ecnu105"/>
             </dataSource>
         </environment>
-
     </environments>
-
 
     <mappers>
         <mapper resource="mapper/Hospital_Mapper.xml"/>

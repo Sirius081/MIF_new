@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface IDisease {
     public List<Disease> getDisease(Disease d);
+    public List<Disease> getDiseaseTrend(Disease d);
     public List<Disease> getTop10(@Param("orderBy") String orderBy, @Param("year") int year, @Param("identity") int identity);
     public List<DiseaseHospital> getDetails(Disease d);
 }

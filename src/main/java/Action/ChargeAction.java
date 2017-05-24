@@ -60,6 +60,15 @@ public class ChargeAction extends ActionSupport implements ServletRequestAware
         return SUCCESS;
     }
 
+    public String queryGroup()
+    {
+        ceil=Double.valueOf(request.getParameter("ceil"));
+        floor=Double.valueOf(request.getParameter("floor"));
+        ratio=Integer.parseInt(request.getParameter("ratio"));
+        result=cDao.getGroup(ceil, floor,ratio);
+        return SUCCESS;
+    }
+
     public ArrayList<Double> getResult() {
         return result;
     }
