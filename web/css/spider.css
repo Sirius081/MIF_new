@@ -54,12 +54,15 @@ body {
     margin-right:20%
 }
 
+<<<<<<< HEAD
 #content3{
     width :100%;
     height : 78%;
 
 }
 
+=======
+>>>>>>> 06307bdb4313b3fc40c944b668dfb48f57cfdaf7
 .footer1_bg {
     position : fixed;
     width : 100%;
@@ -82,6 +85,14 @@ body {
 
 #detail-information{
     margin-top:5%;
+<<<<<<< HEAD
+    height: 80%;
+}
+
+#detail-information1{
+    margin-top:5%;
+    height: 80%;
+=======
     height: 80%;
 }
 
@@ -93,8 +104,18 @@ body {
 #detail-information2{
     margin-top:5%;
     height: 60%;
+>>>>>>> 06307bdb4313b3fc40c944b668dfb48f57cfdaf7
 }
 
+#detail-information2{
+    margin-top:5%;
+    height: 60%;
+}
+
+
+.factor{
+    width:50%;
+}
 
 .factor{
     width:50%;

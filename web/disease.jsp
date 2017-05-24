@@ -182,7 +182,6 @@
                             <input type="text" class="input1" id="diseasename">
                             <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
                             <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
-
                             <div class="grid_relative1">
                                 <table id="grid-table2"></table>
                                 <!--jqGrid 浏览导航栏所在-->

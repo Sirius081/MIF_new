@@ -232,7 +232,7 @@ function selectResult()
                     },
                     data:[]
                 })
-               option.series[0].data[i]={name:data.regions[i].name.substring(0,10),value:data.regions[i].h_groupfees}
+                option.series[0].data[i]={name:data.regions[i].name.substring(0,10),value:data.regions[i].h_groupfees}
             }
             //为echarts对象加载数据
             var line = echarts.init(document.getElementById('detail-information'))
