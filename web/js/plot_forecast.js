@@ -64,9 +64,8 @@ function plot(forecastList){
             }
         ]
     };
+
     //为echarts对象加载数据
     line.setOption(option);
-
 }
-
 
