@@ -76,7 +76,8 @@
                 </li>
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                 </li>
-
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge_cost.jsp">收支模型</a>
+                </li>
               </ul>
             </li>
             <li>

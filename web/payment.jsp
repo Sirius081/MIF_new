@@ -72,7 +72,8 @@
                                 </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                                 </li>
-
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge_cost.jsp">收支模型</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -100,21 +101,21 @@
             <div class="col-md-5 col-sm-5 col-xs-12">
                 <div class="panel-body">
                     <form id="queryPredict" name="form1">
-                        <span style="font-size:25px">选择保险类型：</span>
-                        <select  id="identity" class="form-control select_style">
-                            <option ></option>
+                        <span style="font-size:20px">选择保险类型：</span>
+                        <select id="identity" class="form-control select_style">
+                            <option></option>
                             <option value="1">城镇职工</option>
                             <option value="2">城镇居民</option>
                         </select>
-                        <span style="font-size:25px">选择内容：</span>
+                        <span style="font-size:20px">选择内容：</span>
                         <select name="totalTrend" id="totalTrend" class="form-control select_style"
                                 onChange="getCity()">
-                            <option ></option>
+                            <option></option>
                             <option value="totalTrend">总体趋势</option>
                             <option value="ageGroup">参保人群细分</option>
                         </select>
-                        <span style="font-size:25px">选择查看：</span>
-                        <select id="selectBy"  name="selectBy" class="form-control select_style"
+                        <span style="font-size:20px">选择查看：</span>
+                        <select id="selectBy" name="selectBy" class="form-control select_style"
                                 style="width:200px;margin-left: 100px">
                         </select>
                         <input id="query" class="btn" type="button" value="查询" onclick="plot_statistic()"

@@ -46,7 +46,7 @@ function selectresult()
                         show: true,
                         x: 'right',
                         y: 'top',
-                        data:['之前','之后']
+                        data:['改变之前','改变之后']
                     },
                     toolbox: {
                         feature: {
@@ -73,13 +73,13 @@ function selectresult()
                     ],
                     series : [
                         {
-                            name:'之前',
+                            name:'改变之前',
                             type:'line',
                             stack: '总量1',
                             data: data.result.slice(0,5)
                         },
                         {
-                            name:'之后',
+                            name:'改变之后',
                             type:'line',
                             stack: '总量2',
                             data:data.result.slice(5,10)
@@ -87,7 +87,6 @@ function selectresult()
                     ]
                 }
                 //为echarts对象加载数据
-                alert("hello")
                 line.setOption(option);
             }
             else

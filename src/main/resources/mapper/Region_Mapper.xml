@@ -23,6 +23,4 @@
         <if test="name !=''"> and a.r_name like "%" #{name}"%"</if>
         <if test="year !=0"> and a.year=#{year}</if>
     </select>
-
-
 </mapper>

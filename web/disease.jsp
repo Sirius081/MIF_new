@@ -79,7 +79,8 @@
                                 </li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
                                 </li>
-
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge_cost.jsp">收支模型</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -171,10 +172,17 @@
                                 <option>2015</option>
                             </select>
                             <span class="label1">按病种：</span>
-                            <style>.ui-autocomplete {  max-height: 100px;overflow-y: auto;/* 防止水平滚动条 */  overflow-x: hidden; width:20px;background-color: #ffff00}</style>
+                            <style>.ui-autocomplete {
+                                max-height: 100px;
+                                overflow-y: auto; /* 防止水平滚动条 */
+                                overflow-x: hidden;
+                                width: 20px;
+                                background-color: #ffff00
+                            }</style>
                             <input type="text" class="input1" id="diseasename">
                             <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
                             <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
+
                             <div class="grid_relative1">
                                 <table id="grid-table2"></table>
                                 <!--jqGrid 浏览导航栏所在-->
