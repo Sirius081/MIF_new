@@ -1,0 +1,10 @@
+1、收支建模：收入和支出放在一张图里，不是分开放的
+
+2、/MIF/region/getDetails?&identity=1&r_name=56343B48403AEA6D97ED197E6E9A4F3F&year=2010 门诊统筹不为0，均次门诊统筹为0，门诊人次也为0？
+统计数据有问题 等等再重新统计
+3、病种部分，病种为空的就不展示了吧？
+已删
+4、hospital  top10有15条？
+已改
+5、/MIF/hospital/detectAvgGroup?h_name=018FF7841008EAE36262A5C4B78AC483    返回的均次统筹费用，保留两位小数
+已改
