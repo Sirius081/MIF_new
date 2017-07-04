@@ -520,7 +520,7 @@ function getDetails() {
             var y_value=dataMap[flag];
             option = {
                 title: {
-                    text: year+'年'+h_grade+'医院均次统筹费用分布频率直方图'
+                    text: year+'年'+h_grade+'医院均次统筹费用分布频率图'
                 },
                 color: ['#3398DB'],
                 tooltip : {

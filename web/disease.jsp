@@ -95,6 +95,16 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">建模方法介绍 <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                           href="e_smoothing.jsp">指数平滑法</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="arima.jsp">ARIMA方法</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -182,6 +192,7 @@
                             <input type="text" class="input1" id="diseasename">
                             <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
                             <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
+
                             <div class="grid_relative1">
                                 <table id="grid-table2"></table>
                                 <!--jqGrid 浏览导航栏所在-->
@@ -211,7 +222,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12" align="center">
-                Copyright &copy; 华东师范大学.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+                Copyright &copy;泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
             </div>
         </div>
     </div>

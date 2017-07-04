@@ -213,7 +213,7 @@ function selectResult()
                             var line1 = echarts.init(document.getElementById('detail-information1'))
                             option = {
                                 title: {
-                                    text: diseaseyear+'年'+d_name+'均次统筹费用支出频率直方图'
+                                    text: diseaseyear+'年'+d_name+'均次统筹费用支出频率图'
                                 },
                                 color: ['#3398DB'],
                                 tooltip : {
