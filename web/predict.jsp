@@ -91,6 +91,14 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
                 </li>
               </ul>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">建模方法介绍 <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="e_smoothing.jsp">指数平滑法</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="arima.jsp">ARIMA方法</a>
+                </li>
+              </ul>
+            </li>
             </li>
           </ul>
         </div>
