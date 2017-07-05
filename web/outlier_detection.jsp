@@ -97,7 +97,14 @@
                             </ul>
                         </li>
                         <li><a href="outlier_detection.jsp" >异常检测</a></li>
-                        <li><a href="model_introduction.jsp" >模型介绍</a></li>
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">建模方法介绍 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="e_smoothing.jsp">指数平滑法</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="arima.jsp">ARIMA方法</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

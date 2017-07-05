@@ -87,6 +87,8 @@
                                 </li>
                             </ul>
                         </li>
+                        <li><a href="outlier_detection.jsp" >异常检测</a></li>
+
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">建模方法介绍 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">

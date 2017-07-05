@@ -91,6 +91,8 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
                 </li>
               </ul>
+            <li><a href="outlier_detection.jsp" >异常检测</a></li>
+
             <li>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">建模方法介绍 <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
