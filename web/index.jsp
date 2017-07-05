@@ -87,8 +87,6 @@
                 </li>
               </ul>
             </li>
-            <li><a href="outlier_detection.jsp" >异常检测</a></li>
-            <li><a href="model_introduction.jsp" >模型介绍</a></li>
           </ul>
         </div>
       </div>
@@ -103,7 +101,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12" align="center">
-        Copyright &copy; 华东师范大学.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+        Copyright &copy;泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
       </div>
     </div>
   </div>

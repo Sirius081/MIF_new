@@ -91,6 +91,14 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
                 </li>
               </ul>
+            <li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">建模方法介绍 <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="e_smoothing.jsp">指数平滑法</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="arima.jsp">ARIMA方法</a>
+                </li>
+              </ul>
+            </li>
             </li>
           </ul>
         </div>
@@ -100,63 +108,63 @@
 </section>
 <div  id="content2">
   <!--切换标签页面-->
-  <div id="source_table_content" style="">
-    <div class="wrap" >
-      <form id="queryPredict">
-        <!--右部显示详细信息-->
-        <div id="detail-information">
-        </div>
-        <%--<span style="font-size:25px" >选择模型：</span>--%>
-        <%--<select id="select_model" class="form-control select_style" ></select>--%>
-        <%--<span style="font-size:25px">选择变量：</span>--%>
-        <%--<select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>--%>
-        <%--<input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>--%>
-      </form>
+    <div id="source_table_content" style="">
+      <div class="wrap" >
+        <form id="queryPredict">
+          <!--右部显示详细信息-->
+            <div id="detail-information">
+            </div>
+          <%--<span style="font-size:25px" >选择模型：</span>--%>
+          <%--<select id="select_model" class="form-control select_style" ></select>--%>
+          <%--<span style="font-size:25px">选择变量：</span>--%>
+          <%--<select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>--%>
+          <%--<input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>--%>
+        </form>
     </div>
   </div>
 </div>
-<script src="js/echarts.common.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $.ajax({
-      url:'/MIF/init',
-      type:'get',
-      dataType:'json',
-      success:function(data){
-        var model_select=$("#select_model");
-        $.each(data.modelList,function(i,item){
-          model_select.append("<option style='font-size: 20px' value='"+item.key+"'>"+item.value+"</option>");
-        });
-        var model_select=$("#select_variable");
-        $.each(data.variableList,function(i,item){
-          model_select.append("<option value='"+item.key+"'>"+item.value+"</option>");
-        });
-      }
-    });
+  <script src="js/echarts.common.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.ajax({
+        url:'/MIF/init',
+        type:'get',
+        dataType:'json',
+        success:function(data){
+          var model_select=$("#select_model");
+          $.each(data.modelList,function(i,item){
+            model_select.append("<option style='font-size: 20px' value='"+item.key+"'>"+item.value+"</option>");
+          });
+          var model_select=$("#select_variable");
+          $.each(data.variableList,function(i,item){
+            model_select.append("<option value='"+item.key+"'>"+item.value+"</option>");
+          });
+        }
+      });
 
 //            var model_selected=$("#select_model").val();
-    var model_selected=1;//1=gm11,2=holtwinter,3=multiregression,4=arima
+      var model_selected=1;//1=gm11,2=holtwinter,3=multiregression,4=arima
 
-    var params="&model="+model_selected;
-    $.ajax({
-      url:'/MIF/query',
-      type:'get',
-      data:params,
-      dataType:'json',
-      success:function(data){
-        $(data).each(function(i,value){
-          plot(value);
-        });
-      }
+      var params="&model="+model_selected;
+      $.ajax({
+        url:'/MIF/query',
+        type:'get',
+        data:params,
+        dataType:'json',
+        success:function(data){
+          $(data).each(function(i,value){
+            plot(value);
+          });
+        }
+      });
+
     });
-
-  });
-</script>
+  </script>
 <section class="footer-section">
   <div class="container">
     <div class="row">
       <div class="col-md-12" align="center">
-        Copyright &copy; 华东师范大学.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+        Copyright &copy;泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
       </div>
     </div>
   </div>
