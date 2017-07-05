@@ -87,6 +87,8 @@
                 </li>
               </ul>
             </li>
+            <li><a href="outlier_detection.jsp" >异常检测</a></li>
+            <li><a href="model_introduction.jsp" >模型介绍</a></li>
           </ul>
         </div>
       </div>

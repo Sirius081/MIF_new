@@ -14,7 +14,7 @@
         <typeAlias type="Entity.AgeDistribution" alias="AgeDistribution"/>
         <typeAlias type="Entity.Forecast" alias="Forecast"/>
         <typeAlias type="Entity.HospitalAD" alias="HospitalAD"/>
-
+        <typeAlias type="Entity.Outlier" alias="Outlier"/>
     </typeAliases>
 
 
@@ -25,7 +25,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://10.11.1.200:3306/mif"/>
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/MIF"/>
                 <property name="username" value="root"/>
                 <property name="password" value="ecnu105"/>
             </dataSource>
@@ -40,5 +40,6 @@
         <mapper resource="mapper/Statistic_Mapper.xml"/>
         <mapper resource="mapper/Forecast_Mapper.xml"/>
         <mapper resource="mapper/Dictionary_Mapper.xml"/>
+        <mapper resource="mapper/Outlier_Mapper.xml"/>
     </mappers>
 </configuration>

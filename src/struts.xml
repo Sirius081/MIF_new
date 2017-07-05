@@ -98,4 +98,10 @@
             <result type="json"></result>
         </action>
     </package>
+    <package name="outliers" namespace="/outliers" extends="json-default">
+        <action name="init" class="Action.OutlierAction" method="init">
+            <result type="json"></result>
+        </action>
+    </package>
+
 </struts>
