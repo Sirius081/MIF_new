@@ -130,7 +130,7 @@
                             </div>
                             <div class="panel-body">
                                 <form id="queryPredict">
-                                    <span class="label1">按区县代码：</span>
+                                    <span class="label1">按住院编号：</span>
                                     <style>.ui-autocomplete {
                                         max-height: 100px;
                                         overflow-y: auto; /* 防止水平滚动条 */
@@ -141,7 +141,6 @@
                                     <input type="text" id="regionname" class="input" maxlength="50">
                                     <input id="query2" class="query" type="button" onclick="selectResult()"
                                            value="查询"/>
-                                    <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
 
                                     <div class="grid_relative1">
                                         <table id="grid-table"></table>
@@ -172,7 +171,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12" align="center">
-                Copyright &copy; 华东师范大学.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
+                Copyright &copy; 泸州市医保局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
             </div>
         </div>
     </div>
