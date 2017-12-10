@@ -15,6 +15,7 @@
         <typeAlias type="Entity.Forecast" alias="Forecast"/>
         <typeAlias type="Entity.HospitalAD" alias="HospitalAD"/>
         <typeAlias type="Entity.Outlier" alias="Outlier"/>
+        <typeAlias type="Entity.HospitalizationDetail" alias="HospitalizationDetail"/>
     </typeAliases>
 
 
