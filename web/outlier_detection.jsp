@@ -136,10 +136,10 @@
                                         width: 80px;
                                         background-color: #ffff00
                                     }</style>
-                                    <input type="text" id="regionname" class="input" maxlength="50">
+                                    <input type="text" id="hospitalization_num" class="input" maxlength="50">
                                     <input id="query2" class="query" type="button" onclick="selectResult()"
                                            value="查询"/>
-
+                                    <input id="return" class="query" type="button" onclick="back()" value="返回"/>
                                     <div class="grid_relative1">
                                         <table id="grid-table"></table>
                                         <!--jqGrid 浏览导航栏所在-->

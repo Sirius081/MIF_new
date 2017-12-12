@@ -99,7 +99,7 @@
         </action>
     </package>
     <package name="outliers" namespace="/outliers" extends="json-default">
-        <action name="init" class="Action.OutlierAction" method="init">
+        <action name="query" class="Action.OutlierAction" method="query">
             <result type="json"></result>
         </action>
         <action name="details" class="Action.OutlierAction" method="details">
