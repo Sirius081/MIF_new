@@ -69,11 +69,11 @@
                         <li>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">费用管理 <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="region.jsp">区县</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital.jsp">医院</a>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="region_1.jsp">区县</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital_1.jsp">医院</a>
                                 </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease_1.jsp">病种</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="drug_1.jsp">药品</a></li>
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
                                 </li>
                             </ul>

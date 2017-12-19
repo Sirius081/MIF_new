@@ -42,77 +42,113 @@
 
 
 </head>
-<body onload="loadtop10()">
-<div class="navbar navbar-inverse set-radius-zero">
-    <div class="container">
-        <div class="header_bg">
-            <div class="logo">
-                <span class="font-style">泸州市医保基金监管平台</span>
-            </div>
+<body>
+<!--header start-->
+<header class="head-section">
+    <div class="navbar navbar-default navbar-static-top container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">泸州市<span>医保基金</span>监督平台</a>
+            <p>Luzhou Medical Fund Supervisory Platform</p>
         </div>
-    </div>
-</div>
-</div>
-<!-- LOGO HEADER END-->
-<section class="menu-section">
-    <div class="container">
-        <div class="row ">
-            <div class="col-md-12">
-                <div class="navbar-collapse collapse ">
-                    <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><a href="index.jsp">主页</a></li>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="index.jsp">主页</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">汇总分析 <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">统计分析 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="payment.jsp">基金收入模块</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="expense.jsp">费用支出模块</a>
-                                </li>
-                            </ul>
+                            <a href="typography.html">基金收入模块</a>
                         </li>
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">收支建模 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="predict.jsp">收支走向预测</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge_cost.jsp">收支模型</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">费用管理 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="region.jsp">区县</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital.jsp">医院</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease.jsp">病种</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="drug.jsp">药品</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li><a href="outlier_detection.jsp" >异常检测</a></li>
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">建模方法介绍 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="e_smoothing.jsp">指数平滑法</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="arima.jsp">ARIMA方法</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="gm11.jsp">灰度预测模型</a></li>
-                            </ul>
+                            <a href="button.html">基金支出模块</a>
                         </li>
                     </ul>
-                </div>
-            </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">收支建模<i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="predict.jsp">收支走向预测</a>
+                        </li>
+                        <li>
+                            <a href="charge.jsp">基金缴费模型</a>
+                        </li>
+                        <li>
+                            <a href="cost.jsp">医疗待遇支付模型</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">费用管理<i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="region.jsp">区县</a>
+                        </li>
+                        <li>
+                            <a href="hospital.jsp">医院</a>
+                        </li>
+                        <li>
+                            <a href="disease.jsp">病种</a>
+                        </li>
+                        <li>
+                            <a href="drug.jsp">药品</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">异常检测 <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="blog.html">异常检测</a>
+                        </li>
+                        <li>
+                            <a href="blog-two-col.html">Blog two column</a>
+                        </li>
+                        <li>
+                            <a href="blog-detail.html">Blog Single Image</a>
+                        </li>
+                        <li>
+                            <a href="blog-detail-video.html">Blog single video</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">建模方法介绍 <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="gm1.jsp">灰度预测模型</a>
+                        </li>
+                        <li>
+                            <a href="e_smoothing.jsp">指数平滑法</a>
+                        </li>
+                        <li>
+                            <a href="arima.jsp">ARIMA</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><input class="form-control search" placeholder=" Search" type="text"></li>
+            </ul>
         </div>
     </div>
-</section>
-<!-- MENU SECTION END-->
-
+</header>
+<!--header end-->
 </br>
 <!--切换标签页面-->
 <div id="content1">
@@ -165,16 +201,16 @@
 </div>
 </div>
 </div>
-<section class="footer-section">
+<!--small footer start -->
+<footer class="footer-small">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12" align="center">
-                Copyright &copy; 泸州市医保局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
-            </div>
+        <div class="col-md-12">
+            <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
         </div>
     </div>
-</section>
-
+    </div>
+</footer>
+<!--small footer end-->
 <script type="text/javascript" src="js/outliers.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
