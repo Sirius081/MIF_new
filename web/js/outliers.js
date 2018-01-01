@@ -121,7 +121,8 @@ function selectResult()
 function back()
 {
     window.location.reload();
-    selectResult();
+    javascript:location.reload();
+    //selectResult();
 }
 //back()
 selectResult();
