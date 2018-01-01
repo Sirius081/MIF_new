@@ -6,7 +6,9 @@
 function selectResult()
 {
     var hospitalization_num=$("#hospitalization_num").val();
-    var param="hospitalization_num="+hospitalization_num;
+    var hospital_num=$("#hospital_num").val();
+
+    var param="hospitalization_num="+hospitalization_num+'&hospital_num='+hospital_num;
     $.ajax({
         url:'/MIF/outliers/query',
         type:'get',
@@ -78,6 +80,8 @@ function selectResult()
                                 newjson[i].price = data.hospitalizationDetails[i].price;
                                 newjson[i].cnt = data.hospitalizationDetails[i].cnt;
                                 newjson[i].total_fee =data.hospitalizationDetails[i].total_fee;
+                                newjson[i].percentile = data.hospitalizationDetails[i].percentile+'%';
+                                newjson[i].percentage = data.hospitalizationDetails[i].percentage+'%';
                             }
                             var grid_selector = "#grid-table";
                             var pager_selector = "#grid-pager";
@@ -86,13 +90,16 @@ function selectResult()
                                 data: newjson,
                                 datatype: "local",
                                 height: "auto",
-                                colNames: ['名称','单价',"数量","总价"],
+                                colNames: ['名称','单价',"数量","总价","有%的人用了","超过了%的人"],
                                 colModel:
                                     [
-                                        { name: 'treatment_name', index: "treatment_name", width: "40%",align:"center", editable: true},
-                                        { name: 'price', index: 'price', width: "20%",align:"center",editable: true,sorttype:'integer',formatter:'integer' },
-                                        { name: 'cnt', index: 'cnt', width: "20%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
-                                        { name: 'total_fee', index: 'total_fee', width: "20%", align:"center",editable: true,sorttype:'integer',formatter:'integer'}
+                                        { name: 'treatment_name', index: "treatment_name", width: "30%",align:"center", editable: true},
+                                        { name: 'price', index: 'price', width: "15%",align:"center",editable: true,sorttype:'integer',formatter:'integer' },
+                                        { name: 'cnt', index: 'cnt', width: "15%",align:"center", editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'total_fee', index: 'total_fee', width: "15%", align:"center",editable: true,sorttype:'integer',formatter:'integer'},
+                                        { name: 'percentage', index: 'percentage', width: "25%", align: "center",editable: true,sorttype:'integer'},
+                                        { name: 'percentile', index: 'percentile', width: "25%", align: "center",editable: true,sorttype:'integer'},
+
 
                                     ],
                                 rowNum: 10, //每页显示记录数

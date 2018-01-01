@@ -129,16 +129,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="outlier_detection.jsp">异常检测</a>
-            </li>
-            <li>
-              <a href="blog-two-col.html">Blog two column</a>
-            </li>
-            <li>
-              <a href="blog-detail.html">Blog Single Image</a>
-            </li>
-            <li>
-              <a href="blog-detail-video.html">Blog single video</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
             </li>
           </ul>
         </li>

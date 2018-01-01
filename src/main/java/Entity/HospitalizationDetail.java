@@ -12,7 +12,24 @@ public class HospitalizationDetail {
     private String type; //类型
     private double limit_price; //限价
     private double total_fee; //总价
+    private int percentile; //数量百分位
+    private double percentage; //有多少人用了
 
+    public double getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(double percentage) {
+        this.percentage = percentage;
+    }
+
+    public int getPercentile() {
+        return percentile;
+    }
+
+    public void setPercentile(int percentile) {
+        this.percentile = percentile;
+    }
     public String getHospitalization_num() {
         return hospitalization_num;
     }

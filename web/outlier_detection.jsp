@@ -114,16 +114,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="blog.html">异常检测</a>
-                        </li>
-                        <li>
-                            <a href="blog-two-col.html">Blog two column</a>
-                        </li>
-                        <li>
-                            <a href="blog-detail.html">Blog Single Image</a>
-                        </li>
-                        <li>
-                            <a href="blog-detail-video.html">Blog single video</a>
+                            <a href="outlier_detection.jsp">住院异常检测</a>
                         </li>
                     </ul>
                 </li>
@@ -164,6 +155,11 @@
                             </div>
                             <div class="panel-body">
                                 <form id="queryPredict">
+                                    <span class="label1">病种：</span>
+                                    <select id="disease" class="select_relative">
+                                        <option value="1">高血压</option>
+                                        <option value="2">糖尿病</option>
+                                    </select>
                                     <span class="label1">按住院编号：</span>
                                     <style>.ui-autocomplete {
                                         max-height: 100px;
@@ -173,6 +169,16 @@
                                         background-color: #ffff00
                                     }</style>
                                     <input type="text" id="hospitalization_num" class="input" maxlength="50">
+                                    <span class="label1">按医院编号：</span>
+                                    <style>.ui-autocomplete {
+                                        max-height: 100px;
+                                        overflow-y: auto; /* 防止水平滚动条 */
+                                        overflow-x: auto;
+                                        width: 80px;
+                                        background-color: #ffff00
+                                    }</style>
+                                    <input type="text" id="hospital_num" class="input" maxlength="50">
+
                                     <input id="query2" class="query" type="button" onclick="selectResult()"
                                            value="查询"/>
                                     <input id="return" class="query" type="button" onclick="back()" value="返回"/>

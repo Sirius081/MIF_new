@@ -26,10 +26,11 @@ public class OutlierAction extends ActionSupport implements ServletRequestAware 
 
     public String query(){
         String hospitalization_num = request.getParameter("hospitalization_num");
-        if (hospitalization_num.equals("")){
+        String hospital_num = request.getParameter("hospital_num");
+        if (hospitalization_num.equals("") && hospital_num.equals("")){
             outliers = dao.init();
-        }else{
-            outliers = dao.query(hospitalization_num);
+        } else {
+            outliers = dao.query(hospitalization_num, hospital_num);
         }
 
         return SUCCESS;
