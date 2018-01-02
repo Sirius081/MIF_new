@@ -37,7 +37,7 @@ function selectresult()
                 var line = echarts.init(document.getElementById('detail-information'))
                 option = {
                     title: {
-                        text: '医疗待遇支付模型（单位：万元）'
+                        text: '统筹费用支出（单位：万元）'
                     },
                     tooltip : {
                         trigger: 'axis'
@@ -94,7 +94,7 @@ function selectresult()
                 var line = echarts.init(document.getElementById('detail-information'));
                 option = {
                     title: {
-                        text: '医疗待遇支付模型（单位：万元）'
+                        text: '统筹费用支出（单位：万元）'
                     },
                     tooltip : {
                         trigger: 'axis'

@@ -23,7 +23,7 @@
   <!--[if IE]>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <![endif]-->
-  <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+  <title>Luzhou Medical Fund Supervisory Platform</title>
   <!-- BOOTSTRAP CORE STYLE  -->
   <link href="css/bootstrap.css" rel="stylesheet"/>
   <!-- FONT AWESOME STYLE  -->
@@ -62,10 +62,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="typography.html">基金收入模块</a>
+              <a href="payment.jsp">基金收入模块</a>
             </li>
             <li>
-              <a href="button.html">基金支出模块</a>
+              <a href="expense.jsp">基金支出模块</a>
             </li>
           </ul>
         </li>
@@ -110,16 +110,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="blog.html">异常检测</a>
-            </li>
-            <li>
-              <a href="blog-two-col.html">Blog two column</a>
-            </li>
-            <li>
-              <a href="blog-detail.html">Blog Single Image</a>
-            </li>
-            <li>
-              <a href="blog-detail-video.html">Blog single video</a>
+              <a href="blog.html">住院异常检测</a>
             </li>
           </ul>
         </li>
@@ -129,7 +120,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="gm1.jsp">灰度预测模型</a>
+              <a href="gm11.jsp">灰度预测模型</a>
             </li>
             <li>
               <a href="e_smoothing.jsp">指数平滑法</a>
@@ -144,6 +135,23 @@
     </div>
   </div>
 </header>
+
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-4">
+        <h3>收支走向预测</h3>
+      </div>
+      <div class="col-lg-8 col-sm-8">
+        <ol class="breadcrumb pull-right">
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!--breadcrumbs end-->
+
 <div  id="content2">
   <!--切换标签页面-->
     <div id="source_table_content" style="">
@@ -207,6 +215,7 @@
   </div>
   </div>
 </footer>
+<!--small footer end-->
 
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>

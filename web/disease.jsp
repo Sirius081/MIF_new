@@ -15,7 +15,7 @@
   <!--[if IE]>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <![endif]-->
-  <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+  <title>Luzhou Medical Fund Supervisory Platform</title>
   <!-- BOOTSTRAP CORE STYLE  -->
   <link href="css/bootstrap.css" rel="stylesheet"/>
   <!-- FONT AWESOME STYLE  -->
@@ -66,10 +66,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="typography.html">基金收入模块</a>
+              <a href="payment.jsp">基金收入模块</a>
             </li>
             <li>
-              <a href="button.html">基金支出模块</a>
+              <a href="expense.jsp">基金支出模块</a>
             </li>
           </ul>
         </li>
@@ -114,16 +114,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="blog.html">异常检测</a>
-            </li>
-            <li>
-              <a href="blog-two-col.html">Blog two column</a>
-            </li>
-            <li>
-              <a href="blog-detail.html">Blog Single Image</a>
-            </li>
-            <li>
-              <a href="blog-detail-video.html">Blog single video</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
             </li>
           </ul>
         </li>
@@ -133,7 +124,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="gm1.jsp">灰度预测模型</a>
+              <a href="gm11.jsp">灰度预测模型</a>
             </li>
             <li>
               <a href="e_smoothing.jsp">指数平滑法</a>
@@ -149,6 +140,7 @@
   </div>
 </header>
 <!--header end-->
+
 </br>
 <!--切换标签页面-->
 <div id="content1">
@@ -241,29 +233,16 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-6 col-sm-6 col-xs-12">
-    <div id="detail-information1">
-    </div>
-  </div>
-  <div class="col-md-6 col-sm-6 col-xs-12">
-    <div id="detail-information">
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-<section class="footer-section">
+<!--small footer start -->
+<footer class="footer-small">
   <div class="container">
-    <div class="row">
-      <div class="col-md-12" align="center">
-        Copyright &copy;泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
-      </div>
+    <div class="col-md-12">
+      <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
     </div>
   </div>
-</section>
-
+  </div>
+</footer>
+<!--small footer end-->
 <script type="text/javascript" src="js/disease.js" charset="utf-8"></script>
 <script type="text/javascript" src="js/spider.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>

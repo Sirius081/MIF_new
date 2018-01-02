@@ -1,0 +1,222 @@
+.title h1 {
+    text-align: center;
+}
+
+.title p {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 17px;
+}
+.font-style{
+    font-size:30px;
+    color:#000;
+    font-family:"微软雅黑";
+    font-weight:bold;
+    margin-left:20px;
+}
+body {
+    width : 100%;
+    height : 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.header_bg{
+    width : 100%;
+    height : 12%;
+}
+
+.menu{
+    margin-left: -40px;
+}
+
+
+#content{
+    width : 80%;
+    height : 78%;
+    margin-left:10%;
+    margin-right:10%
+}
+
+#content_article{
+    width : 80%;
+    height : 78%;
+    margin-top:5%;
+    margin-left:10%;
+    margin-right:10%
+}
+
+#content1{
+    width : 95%;
+    height : 78%;
+    margin-left:2.5%;
+    margin-right:2.5%
+}
+
+#content2{
+    width : 60%;
+    height : 78%;
+    margin-left:20%;
+    margin-top:5%;
+    margin-right:20%
+}
+
+#content3{
+    width :100%;
+    height : 78%;
+
+}
+
+.footer1_bg {
+    position : fixed;
+    width : 100%;
+    height : 10%;
+    bottom: 0;
+}
+
+#myTab a {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#manager {
+    float: left;
+    width: 100%;
+    height: 80%;
+}
+
+
+
+#detail-information{
+    margin-top:5%;
+    height: 80%;
+}
+
+#detail-information1{
+    margin-top:5%;
+    height: 80%;
+}
+
+#detail-information2{
+    margin-top:5%;
+    height: 60%;
+}
+
+
+.factor{
+    width:50%;
+}
+
+#page{
+    height: 10%;
+}
+#page li{
+    width: 20%;
+}
+#page li:first-child{
+    margin-left: 30%;
+}
+
+#page a{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#sourceTab1,#sourceTab2,#sourceTab3,#bottonTab,#page{
+    cursor:pointer;
+}
+
+#sourceTab1,#sourceTab2,#sourceTab3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#crawling{
+
+}
+
+.exception{
+
+
+}
+
+#manager1 {
+    margin-top: 20px;
+    margin-left: 10px;
+    float: left;
+    width: 45%;
+    height: 80%;
+}
+
+#manager2 {
+    margin-top: 20px;
+    margin-left: 10px;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+#well {
+    margin-top: 20px;
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+#well h3{
+    width:30%;
+    margin:0 auto;
+}
+
+#well a{
+    display: block;
+    width:70%;
+    margin:0 auto;
+}
+
+#well img{
+    margin: 0 auto 0 50px;
+    width:80%;
+    height:250px;
+}
+
+th{
+    text-align : center;
+}
+
+.module-sub-menu {
+    display: none;
+    position: absolute;
+    background: none repeat scroll 0 0 #62A29E;
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+    border-radius: 3px;
+}
+
+.module-sub-menu li:first-child {
+    margin-left: 0;
+}
+
+.module-sub-menu li a {
+    text-align : center;
+    font-size: 15px;
+}
+
+.module-sub-menu li a:hover {
+    background: none repeat scroll 0 0 #f0f0f0;
+    border-radius: 0;
+    box-shadow: none;
+    color: #797979;
+}
+.wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+.select_style{
+    width:200px;
+    margin-left: 100px;
+    height:50px;
+    font-size:20px;
+}

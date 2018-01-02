@@ -16,15 +16,12 @@
   <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>
-    Acme | Home
-  </title>
+  <title>Luzhou Medical Fund Supervisory Platform</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/theme.css" rel="stylesheet">
   <link href="css/bootstrap-reset.css" rel="stylesheet">
-  <!-- <link href="css/bootstrap.min.css" rel="stylesheet">-->
 
   <!--external css-->
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -81,10 +78,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="typography.html">基金收入模块</a>
+              <a href="payment.jsp">基金收入模块</a>
             </li>
             <li>
-              <a href="button.html">基金支出模块</a>
+              <a href="expense.jsp">基金支出模块</a>
             </li>
             </ul>
         </li>
@@ -242,7 +239,7 @@
       <%--</div>--%>
     <%--</div>--%>
   </div>
-</div>4
+</div>
 <div class="container">
   <div class="row mar-b-50">
     <div class="col-md-12">
@@ -255,7 +252,7 @@
         <div class="col-md-3 col-sm-3 text-center wow fadeInUp">
           <div class="feature-box-heading">
             <em>
-              <img src="img/1.png" alt="" width="100" height="100">
+              <img src="images/1.png" alt="" width="100" height="100">
             </em>
             <h4>
               <b>汇总分析</b>
@@ -268,7 +265,7 @@
         <div class="col-md-3 col-sm-3 text-center wow fadeInUp">
           <div class="feature-box-heading">
             <em>
-              <img src="img/2.png" alt="" width="100" height="100">
+              <img src="images/2.png" alt="" width="100" height="100">
             </em>
             <h4>
               <b>收支建模</b>
@@ -281,7 +278,7 @@
         <div class="col-md-3 col-sm-3 text-center wow fadeInUp">
           <div class="feature-box-heading">
             <em>
-              <img src="img/3.png" alt="" width="100" height="100">
+              <img src="images/3.png" alt="" width="100" height="100">
             </em>
             <h4>
               <b>费用管理</b>
@@ -294,7 +291,7 @@
         <div class="col-md-3 col-sm-3 text-center wow fadeInUp">
           <div class="feature-box-heading">
             <em>
-              <img src="img/31.png" alt="" width="100" height="100">
+              <img src="images/31.png" alt="" width="100" height="100">
             </em>
             <h4>
               <b>异常检测</b>
@@ -305,19 +302,16 @@
           </p>
         </div>
       </div>
-
-      <!--feature end-->
     </div>
   </div>
 </div>
-
 
 <!--property start-->
 <div class="property gray-bg">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
-        <img src="img/risk.jpg" alt="">
+        <img src="images/risk.jpg" alt="">
       </div>
       <div class="col-lg-6 col-sm-6 wow fadeInRight">
         <h1>
@@ -357,22 +351,22 @@
         <p>常见的几种骗保行为</p>
         <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
           <div class="item view view-tenth">
-            <img src="img/outlier1.jpg" alt="work Image">
+            <img src="images/outlier1.jpg" alt="work Image">
           </div>
           <div class="item view view-tenth">
-            <img src="img/outlier2.jpg" alt="work Image">
+            <img src="images/outlier2.jpg" alt="work Image">
           </div>
           <div class="item view view-tenth">
-            <img src="img/outlier3.jpg" alt="work Image">
+            <img src="images/outlier3.jpg" alt="work Image">
           </div>
           <div class="item view view-tenth">
-            <img src="img/outlier4.jpg" alt="work Image">
+            <img src="images/outlier4.jpg" alt="work Image">
           </div>
           <div class="item view view-tenth">
-            <img src="img/outlier5.jpg" alt="work Image">
+            <img src="images/outlier5.jpg" alt="work Image">
           </div>
           <div class="item view view-tenth">
-            <img src="img/outlier6.jpg" alt="work Image">
+            <img src="images/outlier6.jpg" alt="work Image">
           </div>
         </div>
       </div>
@@ -560,12 +554,11 @@
 <!--small footer start -->
 <footer class="footer-small">
   <div class="container">
-    <div class="row">
-    <div class="col-md-12" align="center">
-        <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
-      </div>
+    <div class="col-md-12">
+      <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
     </div>
-    </div>
+  </div>
+  </div>
 </footer>
 <!--small footer end-->
 
