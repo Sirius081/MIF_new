@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Service.IDisease">
+
+
+    <select id="getDisease" resultType="Disease">
+        select * from disease where 1=1
+        <if test="identity !=0"> and identity=#{identity}</if>
+        <if test="name !=null"> and name like "%" #{name}"%"</if>
+        <if test="year !=0"> and year=#{year}</if>
+    </select>
+
+    <select id="getDiseaseTrend" resultType="Disease">
+        select * from disease where 1=1
+        <if test="identity !=0"> and identity=#{identity}</if>
+        <if test="name!=null"> and name=#{name}</if>
+        <if test="year !=0"> and year=#{year}</if>
+    </select>
+
+    <select id="getTop10" resultType="Disease">
+        select * from disease where 1=1
+        <if test="year !=0"> and year=#{year}</if>
+        <if test="identity !=0"> and identity=#{identity}</if>
+        order by ${orderBy} desc limit 10
+    </select>
+    <select id="getDetails" resultType="DiseaseHospital">
+        select * from disease_hospital a
+        left join hgrade grade on grade.id=a.grade
+        where 1=1
+        <if test="identity !=0"> and identity=#{identity}</if>
+        <if test="name !=null"> and d_name=#{name}</if>
+        <if test="year !=0"> and year=#{year}</if>
+    </select>
+</mapper>

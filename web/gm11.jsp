@@ -16,7 +16,7 @@
   <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Acme | Home</title>
+  <title>Luzhou Medical Fund Supervisory Platform</title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,8 +51,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <a class="navbar-brand" href="index.html">泸州市<span>医保基金</span>监督平台</a>
-       <p>Luzhou Medical Fund Supervisory Platform</p>
+      <a class="navbar-brand" href="index.html">泸州市<span>医保基金</span>监督平台</a>
+      <p>Luzhou Medical Fund Supervisory Platform</p>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -65,10 +65,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="typography.html">基金收入模块</a>
+              <a href="payment.jsp">基金收入模块</a>
             </li>
             <li>
-              <a href="button.html">基金支出模块</a>
+              <a href="expense.jsp">基金支出模块</a>
             </li>
           </ul>
         </li>
@@ -113,16 +113,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="blog.html">异常检测</a>
-            </li>
-            <li>
-              <a href="blog-two-col.html">Blog two column</a>
-            </li>
-            <li>
-              <a href="blog-detail.html">Blog Single Image</a>
-            </li>
-            <li>
-              <a href="blog-detail-video.html">Blog single video</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
             </li>
           </ul>
         </li>
@@ -132,7 +123,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="gm1.jsp">灰度预测模型</a>
+              <a href="gm11.jsp">灰度预测模型</a>
             </li>
             <li>
               <a href="e_smoothing.jsp">指数平滑法</a>
@@ -326,74 +317,13 @@
   </div>
 </div>
 <!--container end-->
-
-<!--footer start-->
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
-        <h1>contact info</h1>
-        <address>
-          <p><i class="fa fa-home pr-10"></i>Address: No.XXXXXX street</p>
-          <p><i class="fa fa-globe pr-10"></i>Mars city, Country</p>
-          <p><i class="fa fa-mobile pr-10"></i>Mobile : (123) 456-7890</p>
-          <p><i class="fa fa-phone pr-10"></i>Phone : (123) 456-7890</p>
-          <p><i class="fa fa-envelope pr-10"></i>Email : <a href="javascript:;">support@example.com</a></p>
-        </address>
-      </div>
-      <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
-        <h1>latest tweet</h1>
-        <div id="owl-slide">
-          <div class="tweet-box">
-            <i class="fa fa-twitter"></i>
-            <em>Please follow <a href="javascript:;">@example</a> for all future updates of us! <a href="javascript:;">twitter.com/acme</a></em>
-          </div>
-          <div class="tweet-box">
-            <i class="fa fa-twitter"></i>
-            <em>Please follow <a href="javascript:;">@example</a> for all future updates of us! <a href="javascript:;">twitter.com/acme</a></em>
-          </div>
-          <div class="tweet-box">
-            <i class="fa fa-twitter"></i>
-            <em>Please follow <a href="javascript:;">@example</a> for all future updates of us! <a href="javascript:;">twitter.com/acme</a></em>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-3">
-        <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
-          <h1>Our Company</h1>
-          <ul class="page-footer-list">
-
-            <li><i class="fa fa-angle-right"></i><a href="about.html">About Us</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="faq.html">Support</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="service.html">Service</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="career.html">We are Hiring</a></li>
-            <li><i class="fa fa-angle-right"></i><a href="terms.html">Term & condition</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-3 col-sm-3">
-
-        <div class="text-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".7s">
-          <h1>Text Widget</h1>
-          <p>
-            This is a text widget.Lorem ipsum dolor sit amet.
-            This is a text widget.Lorem ipsum dolor sit amet
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</footer>
-<!-- footer end -->
 <!--small footer start -->
 <footer class="footer-small">
   <div class="container">
-      <div class="col-md-12">
-        <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
-        </div>
+    <div class="col-md-12">
+      <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
     </div>
+  </div>
   </div>
 </footer>
 <!--small footer end-->

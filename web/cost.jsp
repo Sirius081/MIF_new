@@ -8,7 +8,7 @@
     <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
-    <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+    <title>Luzhou Medical Fund Supervisory Platform</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="css/bootstrap.css" rel="stylesheet"/>
     <!-- FONT AWESOME STYLE  -->
@@ -26,148 +26,186 @@
 
 </head>
 <body>
-<div class="navbar navbar-inverse set-radius-zero">
-    <div class="container">
-        <div class="header_bg">
-            <div class="logo">
-                <span class="font-style">泸州市医保基金监管平台</span>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!-- LOGO HEADER END-->
-<section class="menu-section">
-    <div class="container">
-        <div class="row ">
-            <div class="col-md-12">
-                <div class="navbar-collapse collapse ">
-                    <ul id="menu-top" class="nav navbar-nav navbar-right">
-                        <li><a href="index.jsp">主页</a></li>
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">统计分析 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="payment.jsp">基金收入模块</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="expense.jsp">费用支出模块</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">收支建模 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="predict.jsp">收支走向预测</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge.jsp">基金缴费模型</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="cost.jsp">医疗待遇支付模型</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="charge_cost.jsp">收支模型</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">费用管理 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="region_1.jsp">区县</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="hospital_1.jsp">医院</a>
-                                </li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="disease_1.jsp">病种</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="drug_1.jsp">药品</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="factor.jsp">费用支出影响因素</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="outlier_detection.jsp" >异常检测</a></li>
+<!--header start-->
+<header class="head-section">
+    <div class="navbar navbar-default navbar-static-top container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">泸州市<span>医保基金</span>监督平台</a>
 
+            <p>Luzhou Medical Fund Supervisory Platform</p>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="index.jsp">主页</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">汇总分析 <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
                         <li>
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">建模方法介绍 <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="e_smoothing.jsp">指数平滑法</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="arima.jsp">ARIMA方法</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="gm11.jsp">灰度预测模型</a></li>
-                            </ul>
+                            <a href="payment.jsp">基金收入模块</a>
+                        </li>
+                        <li>
+                            <a href="expense.jsp">基金支出模块</a>
                         </li>
                     </ul>
-                </div>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">收支建模<i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="predict.jsp">收支走向预测</a>
+                        </li>
+                        <li>
+                            <a href="charge.jsp">基金缴费模型</a>
+                        </li>
+                        <li>
+                            <a href="cost.jsp">医疗待遇支付模型</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">费用管理<i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="region.jsp">区县</a>
+                        </li>
+                        <li>
+                            <a href="hospital.jsp">医院</a>
+                        </li>
+                        <li>
+                            <a href="disease.jsp">病种</a>
+                        </li>
+                        <li>
+                            <a href="drug.jsp">药品</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">异常检测 <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="outlier_detection.jsp">住院异常检测</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                            "dropdown" data-toggle="dropdown" href="#">建模方法介绍 <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="gm11.jsp">灰度预测模型</a>
+                        </li>
+                        <li>
+                            <a href="e_smoothing.jsp">指数平滑法</a>
+                        </li>
+                        <li>
+                            <a href="arima.jsp">ARIMA</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><input class="form-control search" placeholder=" Search" type="text"></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--header end-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-4">
+                <h1>医疗待遇支付模型</h1>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <ol class="breadcrumb pull-right">
+                </ol>
             </div>
         </div>
     </div>
-</section>
-<!-- MENU SECTION END-->
-<div class="content-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7 col-sm-7 col-xs-12">
-                <div class="panel-body">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            医疗待遇支付模型
-                        </div>
-                        <div class="panel-body">
-                            <form id="queryPredict">
+</div>
+
+<!--container start-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-sm-7 col-xs-12">
+            <div class="panel-body">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        支出预测
+                    </div>
+                    <div class="panel-body">
+                        <form id="queryPredict">
           <span class="label1">一级在职人员：起付线
           <input type="text" id="line10" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio10" value="90" class="input2">%</span>
-            <br/>
+                            <br/>
             <span class="label1">一级退休人员：起付线
           <input type="tet" id="line11" value="400" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio11" value="96" class="input2">%</span>
-                                <br/>
+                            <br/>
           <span class="label1">二级在职人员：起付线
           <input type="text" id="line20" value="600" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio20" value="85" class="input2">%</span>
-            <br/>
+                            <br/>
           <span class="label1">二级退休人员：起付线
           <input type="text" id="line21" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio21" value="92" class="input2">%</span>
-                                <br/>
+                            <br/>
           <span class="label1">三级在职人员：起付线
           <input type="text" id="line30" value="700" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio30" value="80" class="input2">%</span>
-            <br/>
+                            <br/>
           <span class="label1">三级退休人员：起付线
           <input type="text" id="line31" value="600" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio31" value="88" class="input2">%</span>
-                                <br/>
+                            <br/>
           <span class="label1">社区在职人员：起付线
           <input type="text" id="line40" value="500" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio40" value="90" class="input2">%</span>
-            <br/>
+                            <br/>
           <span class="label1">社区退休人员：起付线
           <input type="text" id="line41" value="400" class="input2">&nbsp;&nbsp;&nbsp;&nbsp;报销比例
           <input type="text" id="ratio41" value="96" class="input2">%</span>
-                                <br/>
-                                <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
-                                       value="查询"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button type="reset" class="btn btn-primary">重置</button>
-                            </form>
-                        </div>
+                            <br/>
+                            <input id="query1" class="btn btn-primary" type="button" onclick="selectresult()"
+                                   value="查询"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="reset" class="btn btn-primary">重置</button>
+                        </form>
                     </div>
-
                 </div>
             </div>
-            <!--图形展示-->
-            <div class="col-md-5 col-sm-5 col-xs-5">
-                <div id="detail-information">
-
-                </div>
-            </div>
-
         </div>
-
+        <div class="col-md-5 col-sm-5 col-xs-12">
+            <div id="detail-information">
+            </div>
+        </div>
     </div>
 </div>
-<!-- CONTENT-WRAPPER SECTION END-->
-<section class="footer-section">
+<!--container end-->
+<!--small footer start -->
+<footer class="footer-small">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12" align="center">
-                Copyright &copy;泸州市医疗保险管理局.<a target="_blank" href="http://www.ecnu.edu.cn/"></a>
-            </div>
+        <div class="col-md-12">
+            <div class="copyright"> <p>&copy; Copyright -泸州市医疗保险管理局</p></div>
         </div>
     </div>
-</section>
+    </div>
+</footer>
+<!--small footer end-->
 
 <script src="assets/js/jquery-1.10.2.js"></script>
 <!-- BOOTSTRAP SCRIPTS  -->

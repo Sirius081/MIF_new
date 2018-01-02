@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Service.IRegion">
+
+
+    <select id="getRegions" resultType="Region">
+        select a.year,a.identity,a.r_name as name,sum(a.m_count) as m_count,sum(a.h_count) as h_count,sum(a.h_fees)
+        as h_fees,sum(a.h_groupfees) as h_groupfees,sum(a.m_fees) as m_fees,sum(a.m_groupfees) as m_groupfees
+        from hospital a
+        where 1=1
+        <if test="identity !=0"> and a.identity=#{identity}</if>
+        <if test="name !=null"> and a.r_name like "%" #{name}"%"</if>
+        <if test="year !=0"> and a.year=#{year}</if>
+        group by r_name,year,identity
+    </select>
+    <select id="getRegionDetails" resultType="Hospital">
+        select a.year,a.identity,a.r_name,a.h_name,a.m_count,a.h_count,a.h_fees,a.h_groupfees
+        ,a.m_fees,a.m_groupfees,a.drugfees,grade.grade from hospital a
+        left join hgrade grade on grade.id=a.grade
+        where 1=1
+        <if test="name !=''"> and a.r_name like "%" #{name}"%"</if>
+        <if test="year !=0"> and a.year=#{year}</if>
+    </select>
+</mapper>

@@ -15,7 +15,7 @@
   <!--[if IE]>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <![endif]-->
-  <title>FREE RESPONSIVE HORIZONTAL ADMIN</title>
+  <title>Luzhou Medical Fund Supervisory Platform</title>
   <!-- BOOTSTRAP CORE STYLE  -->
   <link href="css/bootstrap.css" rel="stylesheet"/>
   <!-- FONT AWESOME STYLE  -->
@@ -66,10 +66,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="typography.html">基金收入模块</a>
+              <a href="payment.jsp">基金收入模块</a>
             </li>
             <li>
-              <a href="button.html">基金支出模块</a>
+              <a href="expense.jsp">基金支出模块</a>
             </li>
           </ul>
         </li>
@@ -114,16 +114,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="blog.html">异常检测</a>
-            </li>
-            <li>
-              <a href="blog-two-col.html">Blog two column</a>
-            </li>
-            <li>
-              <a href="blog-detail.html">Blog Single Image</a>
-            </li>
-            <li>
-              <a href="blog-detail-video.html">Blog single video</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
             </li>
           </ul>
         </li>
@@ -133,7 +124,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="gm1.jsp">灰度预测模型</a>
+              <a href="gm11.jsp">灰度预测模型</a>
             </li>
             <li>
               <a href="e_smoothing.jsp">指数平滑法</a>
@@ -163,7 +154,7 @@
                 top10
               </div>
               <div class="panel-body">
-                <form id="queryPredict">
+                <form id="queryPredict" action="disease_details.jsp" method="get">
                   <span class="label1">保险：</span>
                   <select id="identity" class="select_relative">
                     <option value="1">职工</option>
@@ -219,11 +210,11 @@
                 background-color: #ffff00
               }</style>
               <input type="text" id="drugname" class="input2">
-              <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
+              <input id="query2" class="query" type="submit" onclick="selectResult()" value="查询"/>
               <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
-
               <div class="grid_relative1">
                 <table id="grid-table2"></table>
+
                 <!--jqGrid 浏览导航栏所在-->
                 <div id="grid-pager2"></div>
               </div>
@@ -234,17 +225,7 @@
     </div>
   </div>
 </div>
-<div id="content2">
-  <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div id="detail-information">
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
+
 <footer class="footer-small">
   <div class="container">
     <div class="col-md-12">

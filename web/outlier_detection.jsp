@@ -30,15 +30,14 @@
     <link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css"/>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
     <link rel="stylesheet" type="text/css" href="css/theme.css"/>
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/sub-menu.js"></script>
     <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/echarts.common.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 
 </head>
@@ -203,9 +202,6 @@
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
 </div>
 <!--small footer start -->
 <footer class="footer-small">
