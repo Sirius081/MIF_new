@@ -16,24 +16,16 @@
   <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
   <link rel="shortcut icon" href="img/favicon.png">
 
-<<<<<<< HEAD
-  <title>Luzhou Medical Fund Supervisory Platform</title>
-=======
+
   <title>
     Luzhou Medical Fund Supervisory Platform
   </title>
->>>>>>> song
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/theme.css" rel="stylesheet">
   <link href="css/bootstrap-reset.css" rel="stylesheet">
-<<<<<<< HEAD
-=======
-  <!--
-<link href="css/bootstrap.min.css" rel="stylesheet">
--->
->>>>>>> song
+
 
   <!--external css-->
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
