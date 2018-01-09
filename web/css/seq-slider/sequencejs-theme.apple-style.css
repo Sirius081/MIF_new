@@ -289,7 +289,7 @@ Sequence.js and its dependencies are (c) Ian Lunn Design 2012 - 2014 unless othe
   top: 10px;
 }
 #sequence .sequence-next {
-  background: url("../../img/seq-slider/bt-next-a.png") 50% 4px no-repeat;
+  background: url("../../images/seq-slider/bt-next-a.png") 50% 4px no-repeat;
   height: 34px;
   left: 128px;
   width: 41px;
@@ -301,19 +301,19 @@ Sequence.js and its dependencies are (c) Ian Lunn Design 2012 - 2014 unless othe
 }
 #sequence .sequence-prev {
   left: 28px;
-  background: url("../../img/seq-slider/bt-prev-a.png") 50% 4px no-repeat;
+  background: url("../../images/seq-slider/bt-prev-a.png") 50% 4px no-repeat;
   height: 34px;
   width: 41px;
 }
 #sequence .sequence-pause {
-  background: url("../../img/seq-slider/bt-pause.png") 50% 4px no-repeat;
+  background: url("../../images/seq-slider/bt-pause.png") 50% 4px no-repeat;
   cursor: pointer;
   height: 33px;
   left: 78px;
   width: 42px;
 }
 #sequence .sequence-pause.paused {
-  background: url("../../img/seq-slider/bt-play.png") 50% 4px no-repeat;
+  background: url("../../images/seq-slider/bt-play.png") 50% 4px no-repeat;
   height: 33px;
   left: 78px;
   width: 42px;
@@ -322,7 +322,7 @@ Sequence.js and its dependencies are (c) Ian Lunn Design 2012 - 2014 unless othe
   background-position: 50% -25px;
 }
 #sequence .status {
-  background: url("../../img/seq-slider/status-bar.png") -119px 0 repeat-y;
+  background: url("../../images/seq-slider/status-bar.png") -119px 0 repeat-y;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;

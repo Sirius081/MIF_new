@@ -154,7 +154,7 @@
           <div class="panel-body">
             <div class="panel panel-info">
               <div class="panel-heading">
-                top10
+                Top10
               </div>
               <div class="panel-body">
                 <form id="queryPredict">

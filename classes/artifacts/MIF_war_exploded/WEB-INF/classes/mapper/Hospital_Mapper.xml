@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Service.IHospital">
+
+
+    <select id="getHospitals" resultType="Hospital">
+        select a.year,a.identity,a.r_name,a.h_name,a.m_count,a.h_count,a.h_fees,a.h_groupfees
+        ,a.m_fees,a.m_groupfees,a.drugfees,grade.grade as grade
+        from hospital a left join hgrade grade on grade.id=a.grade
+        where 1=1
+        <if test="identity !=0"> and identity=#{identity}</if>
+        <if test="h_name !=null"> and h_name like "%" #{h_name}"%"</if>
+        <if test="year !=0"> and year=#{year}</if>
+        <if test="grade !=null"> and grade.grade=#{grade}</if>
+        order by a.h_fees,a.h_count desc
+    </select>
+    <select id="getTop10" resultType="Hospital">
+        select a.year,a.identity,a.r_name,a.h_name,a.m_count,a.h_count,a.h_fees,a.h_groupfees
+        ,a.m_fees,a.m_groupfees,a.drugfees,grade.grade as grade,1 as avg_hfees,1 as avg_hgroupfees,1 as avg_mfees,1 as avg_mgroupfees
+        from hospital a left join hgrade grade on a.grade=grade.id
+        where 1=1
+        <if test="year !=0"> and year=#{year}</if>
+        <if test="identity !=0"> and identity=#{identity}</if>
+        order by ${orderBy} desc limit 10
+    </select>
+    <select id="getDetails" resultType="DiseaseHospital">
+        select a.year,a.identity,a.h_name,a.d_name as d_name,a.h_count,a.h_fees,a.h_groupfees,grade.grade as grade
+        from disease_hospital a left join hgrade grade on grade.id=a.grade
+        where 1=1
+        <if test="identity !=0"> and identity=#{identity}</if>
+        <if test="h_name !=null"> and h_name like "%" #{h_name}"%"</if>
+        <if test="year !=0"> and year=#{year}</if>
+        order by a.h_fees,a.h_count desc
+    </select>
+    <select id="detectAvgGroup" resultType="HospitalAD">
+        select h.h_name,h.year,cast(coalesce(h.h_groupfees/h.h_count,0) as decimal(50,2)) as actual,
+        ad.predict,ad.error_rate
+        from hospital h
+        left join hospitalAD ad on h.h_name=ad.h_name and h.year=ad.year
+        where identity=1 and h.h_name='${h_name}'
+        and h.year between 2006 and 2015
+        order by h.year
+    </select>
+
+</mapper>

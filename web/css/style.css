@@ -1841,6 +1841,14 @@ ul#filters > .active > span {
     width: 100%;
     height: auto;
 }
+
+#owl-demo1 { margin-bottom: 15px }
+#owl-demo1 .item { margin: 3px }
+#owl-demo1 .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
 /*login*/
 /*login page*/
 .login-body { background-color: #f1f2f7 }

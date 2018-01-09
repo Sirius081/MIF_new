@@ -65,10 +65,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="typography.html">基金收入模块</a>
+                            <a href="payment.jsp">基金收入模块</a>
                         </li>
                         <li>
-                            <a href="button.html">基金支出模块</a>
+                            <a href="expense.jsp">基金支出模块</a>
                         </li>
                     </ul>
                 </li>
@@ -123,11 +123,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="gm1.jsp">灰度预测模型</a>
+                            <a href="gm11.jsp">灰度预测模型</a>
                         </li>
                         <li>
                             <a href="e_smoothing.jsp">指数平滑法</a>
-                        </li>
                         <li>
                             <a href="arima.jsp">ARIMA</a>
                         </li>
