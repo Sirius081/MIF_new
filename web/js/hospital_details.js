@@ -203,7 +203,7 @@ function loadDetails(){
                     {type : 'value'}],
                 series : [
                     {
-                        name: '均次统筹支付费用分布频率',
+                        name: '均次统筹支付费用人次',
                         type: 'bar',
                         barWidth: '60%',
                         data: [fees1, fees2, fees3, fees4, fees5, fees6, fees7, fees8, fees9, fees10, fees11],

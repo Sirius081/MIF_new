@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: songsong
-  Date: 2017/11/28
-  Time: 21:55
+  Date: 2018/1/3
+  Time: 16:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -16,12 +16,17 @@
   <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Luzhou Medical Fund Supervisory Platform</title>
+  <title>
+    Luzhou Medical Fund Supervisory Platform
+  </title>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/theme.css" rel="stylesheet">
   <link href="css/bootstrap-reset.css" rel="stylesheet">
+  <!--
+<link href="css/bootstrap.min.css" rel="stylesheet">
+-->
 
   <!--external css-->
   <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -32,18 +37,21 @@
   <link rel="stylesheet" href="assets/owlcarousel/owl.theme.css">
 
   <link href="css/superfish.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="css/seq-slider/sequencejs-theme.apple-style.css" />
   <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
-
+  <!--
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+-->
 
   <!-- Custom styles for this template -->
   <link rel="stylesheet" type="text/css" href="css/component.css">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/style-responsive.css" rel="stylesheet" />
 
-  <link rel="stylesheet" type="text/css" href="css/parallax-slider/parallax-slider.css" />
-  <script type="text/javascript" src="js/parallax-slider/modernizr.custom.28468.js">
-  </script>
+
+  <!--
+<link rel="stylesheet" media="screen" href="css/slider/sequencejs-theme.modern-slide-in.css" />
+-->
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
   <!--[if lt IE 9]>
@@ -83,7 +91,7 @@
             <li>
               <a href="expense.jsp">基金支出模块</a>
             </li>
-            </ul>
+          </ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
@@ -152,94 +160,62 @@
 </header>
 <!--header end-->
 
-<!-- Sequence Modern Slider -->
-<div id="da-slider" class="da-slider">
+<div id="sequence-theme">
+  <div id="sequence">
 
-  <%--<div class="da-slide">--%>
-    <%--<div class="container">--%>
-      <%--<div class="row">--%>
-        <%--<div class="col-md-12">--%>
-          <%--<h2>--%>
-            <%--<i>CLEAN &amp; FRESH</i>--%>
-            <%--<br>--%>
-            <%--<i>RESPONSIVE</i>--%>
-            <%--<br>--%>
-            <%--<i>DESIGN</i>--%>
-          <%--</h2>--%>
-          <%--<p>--%>
-            <%--<i>Lorem ipsum dolor amet</i>--%>
-            <%--<br />--%>
-            <%--<i>veniam omnis</i>--%>
-          <%--</p>--%>
-          <%--<a href="#" class="btn btn-info btn-lg da-link">--%>
-            <%--Read more--%>
-          <%--</a>--%>
-          <%--&lt;%&ndash;<div class="da-img">&ndash;%&gt;--%>
-            <%--&lt;%&ndash;<img src="img/index_1.jpg" alt="image01" />&ndash;%&gt;--%>
-          <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
-        <%--</div>--%>
-      <%--</div>--%>
-    <%--</div>--%>
-  </div>
+    <ul class="controls">
+      <li class="status">
+      </li>
+      <li class="sequence-prev">
+      </li>
+      <li class="sequence-pause">
+      </li>
+      <li class="sequence-next">
+      </li>
+    </ul>
 
+    <ul class="sequence-canvas">
+      <li class="animate-in">
+        <div class="intro">
+          <h2>
+            基本医疗保险制度
+          </h2>
+          <p>
+            基本医疗保险是为补偿劳动者因疾病风险造成的经济损失而建立的一项社会保险制度。
+          </p>
+        </div>
+        <img class="iphone" src="images/seq-slider/insurance.jpg" alt="resident" />
+        <img class="iphone-shadow" src="img/seq-slider/iphone-shadow.png" alt="" />
+      </li>
+      <li>
+        <img class="ipad" src="images/seq-slider/worker.jpg" alt="worker" />
+        <div class="slide2">
+          <h2>
+            城镇职工医疗保险
+          </h2>
+          <p>
+            是我国医疗保险的组成（城镇职工医疗保险，城镇居民医疗保险，新型农村合作医疗）之一，是为补偿劳动者因疾病风险遭受经济损失而建立一项社会保险制度。
+          </p>
+        </div>
+        <img class="ipad-shadow" src="images/seq-slider/ipad-shadow.png" alt="" />
+      </li>
+      <li>
+        <img class="ipad" src="images/seq-slider/resident.jpg" alt="resident" />
+        <div class="slide2">
+          <h2>
+            城镇居民医疗保险
+          </h2>
+          <p>
+            是社会医疗保险的组成部分，采取以政府为主导，以居民个人（家庭）缴费为主，政府适度补助为辅的筹资方式，按照缴费标准和待遇水平相一致的原则，为城镇居民提供医疗需求的医疗保险制度。
+          </p>
+        </div>
+        <img class="ipad-shadow" src="images/seq-slider/ipad-shadow.png" alt="" />
+      </li>
+    </ul>
 
-  <div class="da-slide">
-    <%--<div class="container">--%>
-      <%--<div class="row">--%>
-        <%--<div class="col-md-12">--%>
-          <%--<h2>--%>
-            <%--<i>RESPONSIVE VIDEO</i>--%>
-            <%--<br />--%>
-            <%--<i>SUPPORT AND</i>--%>
-            <%--<br />--%>
-            <%--<i>MANY MORE</i>--%>
-          <%--</h2>--%>
-          <%--<p>--%>
-            <%--<i>Lorem ipsum dolor amet</i>--%>
-            <%--<br />--%>
-            <%--<i>tempor incididunt ut</i>--%>
-          <%--</p>--%>
-          <%--<a href="#" class="btn btn-info btn-lg da-link">--%>
-            <%--Read more--%>
-          <%--</a>--%>
-          <%--<div class="da-img">--%>
-            <%--<img src="img/parallax-slider/images/3.png" alt="image01" />--%>
-          <%--</div>--%>
-        <%--</div>--%>
-      <%--</div>--%>
-    <%--</div>--%>
-  </div>
-
-
-  <div class="da-slide">
-    <%--<div class="container">--%>
-      <%--<div class="row">--%>
-        <%--<div class="col-md-12">--%>
-          <%--<h2>--%>
-            <%--<i>USING BEST WEB</i>--%>
-            <%--</br>--%>
-            <%--<i>SOLUTIONS WITH</i>--%>
-            <%--</br>--%>
-            <%--<i>HTML5/CSS3</i>--%>
-          <%--</h2>--%>
-          <%--<p>--%>
-            <%--<i>Lorem ipsum dolor amet</i>--%>
-            <%--<br />--%>
-            <%--<i>tempor incididunt ut</i>--%>
-            <%--<br />--%>
-            <%--<i>veniam omnis </i>--%>
-          <%--</p>--%>
-          <%--<a href="#" class="btn btn-info btn-lg da-link">--%>
-            <%--Read more--%>
-          <%--</a>--%>
-          <%--<div class="da-img">--%>
-            <%--<img src="img/parallax-slider/images/1.png" alt="image01" />--%>
-          <%--</div>--%>
-        <%--</div>--%>
-      <%--</div>--%>
-    <%--</div>--%>
   </div>
 </div>
+
 <div class="container">
   <div class="row mar-b-50">
     <div class="col-md-12">
@@ -255,7 +231,9 @@
               <img src="images/1.png" alt="" width="100" height="100">
             </em>
             <h4>
-              <b>汇总分析</b>
+              <a href="payment.jsp">
+                <b>汇总分析</b>
+              </a>
             </h4>
           </div>
           <p class="text-center">
@@ -268,7 +246,9 @@
               <img src="images/2.png" alt="" width="100" height="100">
             </em>
             <h4>
-              <b>收支建模</b>
+              <a href="charge.jsp">
+                <b>收支建模</b>
+              </a>
             </h4>
           </div>
           <p class="text-center">
@@ -281,7 +261,9 @@
               <img src="images/3.png" alt="" width="100" height="100">
             </em>
             <h4>
-              <b>费用管理</b>
+              <a href="hospital.jsp">
+                <b>费用管理</b>
+              </a>
             </h4>
           </div>
           <p class="text-center">
@@ -294,7 +276,9 @@
               <img src="images/31.png" alt="" width="100" height="100">
             </em>
             <h4>
-              <b>异常检测</b>
+              <a href="outlier_detection.jsp">
+                <b>异常检测</b>
+              </a>
             </h4>
           </div>
           <p class="text-center">
@@ -305,6 +289,7 @@
     </div>
   </div>
 </div>
+
 
 <!--property start-->
 <div class="property gray-bg">
@@ -340,7 +325,8 @@
   </div>
 </div>
 
-<!--recent work start-->
+
+
 <div class="bg-lg">
   <div class="container">
     <div class="row">
@@ -563,49 +549,39 @@
 <!--small footer end-->
 
 <!-- js placed at the end of the document so the pages load faster
-<script src="js/jquery.js">
-</script>
--->
-<script src="js/jquery-1.8.3.min.js">
-</script>
-<script src="js/bootstrap.min.js">
-</script>
-<script type="text/javascript" src="js/hover-dropdown.js">
-</script>
-<script defer src="js/jquery.flexslider.js">
-</script>
-<script type="text/javascript" src="assets/bxslider/jquery.bxslider.js">
-</script>
-<script type="text/javascript" src="js/jquery.parallax-1.1.3.js">
-</script>
-<script src="js/wow.min.js">
-</script>
-<script src="assets/owlcarousel/owl.carousel.js">
-</script>
-<script src="js/jquery.easing.min.js">
-</script>
-<script src="js/link-hover.js">
-</script>
-<script src="js/superfish.js">
-</script>
-<script type="text/javascript" src="js/parallax-slider/jquery.cslider.js">
-</script>
-<script type="text/javascript">
-  $(function() {
+<script src="js/jquery.js"></script>-->
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/hover-dropdown.js"></script>
+<script defer src="js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
 
-    $('#da-slider').cslider({
-      autoplay    : true,
-      bgincrement : 100
-    });
+<script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="assets/owlcarousel/owl.carousel.js"></script>
 
-  });
-</script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/link-hover.js"></script>
+<script src="js/superfish.js"></script>
+
+
+
 
 <!--common script for all pages-->
-<script src="js/common-scripts.js">
-</script>
+<script src="js/common-scripts.js"></script>
+
+
+
+<!-- Sequence Moder -slider js -->
+<script src="js/seq-slider/jquery.sequence-min.js"></script>
+<!--<script src="js/slider/sequencejs-options.modern-slide-in.js"></script>-->
+<script src="js/seq-slider/sequencejs-options.apple-style.js"></script>
+<!-- end of sequence slider js-->
+
 <script type="text/javascript">
   jQuery(document).ready(function() {
+
+
     $('.bxslider1').bxSlider({
       minSlides: 5,
       maxSlides: 6,
@@ -623,11 +599,8 @@
 
 
 </script>
-
-
 <script>
   $('a.info').tooltip();
-
   $(window).load(function() {
     $('.flexslider').flexslider({
       animation: "slide",
@@ -637,18 +610,25 @@
     });
   });
 
+
+
   $(document).ready(function() {
 
     $("#owl-demo").owlCarousel({
+
       items : 4
 
     });
 
   });
+
   jQuery(document).ready(function(){
     jQuery('ul.superfish').superfish();
   });
+
   new WOW().init();
+
+
 </script>
 </body>
 </html>

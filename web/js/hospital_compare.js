@@ -26,10 +26,12 @@ function loadDetails() {
             trigger: 'axis'
         },
         legend: {
-            show: true,
-            x: 'right',
-            y: 'top',
-            data: ['均次统筹费用变化']
+            tooltip:{
+                show:true
+            },
+            left:'65%',            //设置出现的位置
+            orient:'vertical',
+            data: [h_name1,h_name2]
         },
         toolbox: {
             feature: {
@@ -70,7 +72,6 @@ function loadDetails() {
                 '2014': 0,
                 '2015': 0
             }
-            //var disease = sortByKey(data.diseases, 'year');  //对获得到的结果按照年份进行排序
             for (var i = 0; i < data.hospitalADs.length; i++) {
                 map1[data.hospitalADs[i].year] = data.hospitalADs[i].actual
             }

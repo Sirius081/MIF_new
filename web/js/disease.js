@@ -77,6 +77,7 @@ function selectResult()
         type:'get',
         data:param,
         dataType:'json',
+        gridview: true,	//提高加载速度
         success:function(data){
             var newjson=[];
             for(var i = 0; i <data.diseases.length; i++){
