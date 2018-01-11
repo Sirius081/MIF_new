@@ -62,8 +62,14 @@ function selectResult()
                     $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
                     $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
                 },
+                onSortCol: function (index, colindex, sortorder)
+                {
+                    //列排序事件，向server传值，值为当前的页数
+                    if(index=='score'&& sortorder=='asc'){             //当点击异常检测按钮时，给出异常值的相关解释
+                        $('#myModal').modal('show')          //显示模态框
+                    }
+                },
                 onSelectRow: function(id,status,e){
-
                     var row = $("#grid-table").jqGrid('getRowData',id);
                     var hospitalization_num=row.hospitalization_num;
                     var param='&hospitalization_num='+hospitalization_num;
@@ -90,7 +96,7 @@ function selectResult()
                                 data: newjson,
                                 datatype: "local",
                                 height: "auto",
-                                colNames: ['名称','单价',"数量","总价","有%的人用了","超过了%的人"],
+                                colNames: ['名称','单价',"数量","总价","使用率占比(%)","费用支出同比(%)"],
                                 colModel:
                                     [
                                         { name: 'treatment_name', index: "treatment_name", width: "30%",align:"center", editable: true},
@@ -133,3 +139,5 @@ function back()
 }
 //back()
 selectResult();
+
+
