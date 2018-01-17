@@ -86,8 +86,8 @@ function selectResult()
                                 newjson[i].price = data.hospitalizationDetails[i].price;
                                 newjson[i].cnt = data.hospitalizationDetails[i].cnt;
                                 newjson[i].total_fee =data.hospitalizationDetails[i].total_fee;
-                                newjson[i].percentile = data.hospitalizationDetails[i].percentile+'%';
-                                newjson[i].percentage = data.hospitalizationDetails[i].percentage+'%';
+                                newjson[i].percentile = data.hospitalizationDetails[i].percentile;
+                                newjson[i].percentage = data.hospitalizationDetails[i].percentage;
                             }
                             var grid_selector = "#grid-table";
                             var pager_selector = "#grid-pager";
