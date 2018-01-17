@@ -8,7 +8,7 @@ function selectResult()
     var identity = $("#identity1").val();
     var year = $("#hospitalyear").val();
     var grade = $("#hospitallevel").val();
-    var h_name = $("#hospitalnum").val();
+    var h_name = $("#hospitalname").val();
     var param = "&identity=" + identity + '&grade=' + grade + '&h_name=' + h_name + '&year=' + year;
     $.ajax({
         url: '/MIF/hospital/queryHospitalOutlier',

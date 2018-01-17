@@ -170,7 +170,7 @@
                                         background-color: #ffff00
                                     }</style>
                                     <input type="text" id="hospitalization_num" class="input" maxlength="50">
-                                    <span class="label1">按医院编号：</span>
+                                    <span class="label1">按医院名：</span>
                                     <style>.ui-autocomplete {
                                         max-height: 100px;
                                         overflow-y: auto; /* 防止水平滚动条 */
@@ -178,7 +178,7 @@
                                         width: 80px;
                                         background-color: #ffff00
                                     }</style>
-                                    <input type="text" id="hospital_num" class="input" maxlength="50">
+                                    <input type="text" id="hospital_name" class="input" maxlength="50">
 
                                     <input id="query2" class="query" type="button" onclick="selectResult()"
                                            value="查询"/>

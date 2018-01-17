@@ -10,10 +10,17 @@
     </select>
     <select id="query" resultType="Outlier">
         select * from hospitalization_anomaly_score a
-        left join hospitalization b on a.hospitalization_num = b.hospitalization_num
+        left join (
+          select
+            hh.hospitalization_num,
+            nn.name
+          from hospitalization hh
+          left join num2name nn on hh.h_num=nn.num
+        ) b
+        on a.hospitalization_num = b.hospitalization_num
         where 1=1
         <if test="hospitalization_num != ''"> and a.hospitalization_num = '${hospitalization_num}'</if>
-        <if test="hospital_num !=null"> and b.h_num = '${hospital_num}'</if>
+        <if test="hospital_name !=null"> and b.name = '${hospital_name}'</if>
     </select>
     <select id="getDetail" resultType="HospitalizationDetail">
         select *

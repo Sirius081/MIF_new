@@ -4,6 +4,7 @@ import Dao.MybatisUtils;
 import Entity.*;
 import Service.IHospital;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.struts2.interceptor.ServletRequestAware;
 
@@ -50,6 +51,9 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         condition.setIdentity(identity);
         condition.setYear(year);
         condition.setGrade(grade);
+        if (h_name!=null && !h_name.equals("")) {
+            condition = new Hospital();
+        }
         condition.setH_name(h_name);
 
 
@@ -85,6 +89,9 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
         condition.setIdentity(identity);
         condition.setYear(year);
         condition.setGrade(grade);
+        if (h_name!=null && !"".equals(h_name)) {
+            condition = new Hospital();
+        }
         condition.setH_name(h_name);
 
         hospitalOutliers = dao.getHospitalOutliers(condition);
@@ -184,7 +191,9 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
 
     public static void main(String[] args) {
         HospitalAction h=new HospitalAction();
-        h.hospitals = h.dao.getHospitals(new Hospital());
+        Hospital condition = new Hospital();
+        condition.setH_name("医院1");
+        h.hospitals = h.dao.getHospitals(condition);
         h.hospitalOutlierDetails = h.dao.getADDetails("00E83D779DB32B01AE1B47736092F7E7");
         List<HospitalAD>hd=h.dao.detectAvgGroup("018FF7841008EAE36262A5C4B78AC483");
         System.out.println();

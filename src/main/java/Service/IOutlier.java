@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface IOutlier {
     List<Outlier> init();
-    List<Outlier> query(@Param("hospitalization_num")String hospitalization_num,@Param("hospital_num")String hospital_num);
+    List<Outlier> query(@Param("hospitalization_num")String hospitalization_num,@Param("hospital_name")String hospital_name);
     List<HospitalizationDetail> getDetail(@Param("hospitalization_num")String hospitalization_num);
 }
 

@@ -12,7 +12,7 @@
         join num2name c on c.num=a.h_name
         where 1=1
         <if test="identity !=0"> and identity=#{identity}</if>
-        <if test="h_name !=null"> and h_name like "%" #{h_name}"%"</if>
+        <if test="h_name !=''"> and c.name = '${h_name}'</if>
         <if test="year !=0"> and year=#{year}</if>
         <if test="grade !=null"> and grade.grade=#{grade}</if>
         order by a.h_fees,a.h_count desc
@@ -24,7 +24,7 @@
         join num2name b on b.num=a.h_name
         where 1=1
         <if test="identity !=0"> and identity=#{identity}</if>
-        <if test="h_name !=null"> and h_name like "%" #{h_name}"%"</if>
+        <if test="h_name != ''"> and b.name = '${h_name}'</if>
         <if test="year !=0"> and year=#{year}</if>
         <if test="grade !=null"> and grade.grade=#{grade}</if>
         order by a.score desc

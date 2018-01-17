@@ -226,7 +226,7 @@
                 <option>社区</option>
               </select>
               <br/>
-              <span class="label1">按医疗机构代码：</span>
+              <span class="label1">按医院名：</span>
               <style>.ui-autocomplete {
                 max-height: 100px;
                 overflow-y: auto; /* 防止水平滚动条 */
@@ -234,7 +234,7 @@
                 width: 80px;
                 background-color: #ffff00
               }</style>
-              <input type="text" class="input1" id="hospitalnum">
+              <input type="text" class="input1" id="hospitalname">
               <input id="query2" class="query" type="button" onclick="selectResult()" value="查询"/>
               <input id="query3" class="query" type="button" onclick="back()" value="返回"/>
               &nbsp;&nbsp;&nbsp;

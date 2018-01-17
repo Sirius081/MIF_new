@@ -6,9 +6,9 @@
 function selectResult()
 {
     var hospitalization_num=$("#hospitalization_num").val();
-    var hospital_num=$("#hospital_num").val();
+    var hospital_name=$("#hospital_name").val();
 
-    var param="hospitalization_num="+hospitalization_num+'&hospital_num='+hospital_num;
+    var param="hospitalization_num="+hospitalization_num+'&hospital_name='+hospital_name;
     $.ajax({
         url:'/MIF/outliers/query',
         type:'get',
