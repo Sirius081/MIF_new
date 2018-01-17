@@ -16,6 +16,8 @@
         <typeAlias type="Entity.HospitalAD" alias="HospitalAD"/>
         <typeAlias type="Entity.Outlier" alias="Outlier"/>
         <typeAlias type="Entity.HospitalizationDetail" alias="HospitalizationDetail"/>
+        <typeAlias type="Entity.HospitalOutlier" alias="HospitalOutlier"/>
+        <typeAlias type="Entity.HospitalOutlierDetail" alias="HospitalOutlierDetail"/>
     </typeAliases>
 
 

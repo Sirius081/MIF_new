@@ -58,6 +58,12 @@
         <action name="detectAvgGroup" class="Action.HospitalAction" method="detectAvgGroup">
             <result type="json"></result>
         </action>
+        <action name="queryHospitalOutlier" class="Action.HospitalAction" method="queryHospitalOutlier">
+            <result type="json"></result>
+        </action>
+        <action name="getADDetails" class="Action.HospitalAction" method="queryOutlierDetail">
+            <result type="json"/>
+        </action>
     </package>
 
     <package name="charge" namespace="/charge" extends="json-default">

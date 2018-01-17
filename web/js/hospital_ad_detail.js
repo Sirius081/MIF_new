@@ -1,5 +1,5 @@
 /**
- * Created by songsong on 2018/1/2.
+ * Created by sirius on 18-1-10.
  */
 function loadDetails(){
 
@@ -19,24 +19,22 @@ function loadDetails(){
     var h_name=arr2['h_name']
     var grade=arr2['grade']
     var r_avggroupfees=arr2['avg_hgroupfees']
-    var param = "&identity=" + identity + '&grade=' + grade + '&h_name=' + h_name + '&year=' + year;
+    var param = '&grade=' + grade + '&h_name=' + h_name;
     var param1 = '&h_name=' + h_name;
     $.ajax({
-        url: '/MIF/hospital/getDetails',
+        url: '/MIF/hospital/getADDetails',
         type: 'get',
         data: param,
         dataType: 'json',
         success: function (data) {
             var newjson = [];                             ///只展示其中的几列
-            for (var i = 0; i < data.diseaseHospitals.length; i++) {
+            for (var i = 0; i < data.hospitalOutlierDetails.length; i++) {
                 newjson[i] = new Object();
-                newjson[i].year = data.diseaseHospitals[i].year;
-                newjson[i].h_name = data.diseaseHospitals[i].h_name;
-                newjson[i].grade = data.diseaseHospitals[i].grade;
-                newjson[i].d_name = data.diseaseHospitals[i].d_name;
-                newjson[i].h_groupfees = data.diseaseHospitals[i].h_groupfees;
-                newjson[i].avg_hgroupfees = data.diseaseHospitals[i].avg_hgroupfees;
-                newjson[i].h_count = data.diseaseHospitals[i].h_count;
+                newjson[i].h_name = data.hospitalOutlierDetails[i].h_name;
+                newjson[i].d_name = data.hospitalOutlierDetails[i].d_name;
+                newjson[i].avg_disease_fee = data.hospitalOutlierDetails[i].avg_disease_fee;
+                newjson[i].cnt = data.hospitalOutlierDetails[i].cnt;
+                newjson[i].pp_beyond = data.hospitalOutlierDetails[i].pp_beyond;
             }
             var grid_selector = "#grid-table2";
             var pager_selector = "#grid-pager2";
@@ -45,15 +43,13 @@ function loadDetails(){
                 data: newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份', '医疗机构代码', "医院等级", "疾病名称", "住院统筹支付", "均次住院统筹费用", "住院人次"],
+                colNames: ['医疗机构代码', "疾病名称", "均次住院费用", "住院人次", "均次费用超统计平均值比例"],
                 colModel: [
-                    {name: 'year', index: "year", width: "5%", align: "center", editable: true},
                     {name: 'h_name', index: 'h_name', width: "35%", align: "center", editable: true},
-                    {name: 'grade', index: 'grade', width: "5%", align: "center", editable: true},
                     {name: 'd_name', index: 'd_name', width: "15%", align: "center", editable: true},
                     {
-                        name: 'h_groupfees',
-                        index: 'h_groupfees',
+                        name: 'avg_disease_fee',
+                        index: 'avg_disease_fee',
                         width: "15%",
                         align: "center",
                         editable: true,
@@ -61,8 +57,8 @@ function loadDetails(){
                         formatter: 'integer'
                     },
                     {
-                        name: 'avg_hgroupfees',
-                        index: 'avg_hgroupfees',
+                        name: 'cnt',
+                        index: 'cnt',
                         width: "15%",
                         align: "center",
                         editable: true,
@@ -70,8 +66,8 @@ function loadDetails(){
                         formatter: 'integer'
                     },
                     {
-                        name: 'h_count',
-                        index: 'h_count',
+                        name: 'pp_beyond',
+                        index: 'pp_beyond',
                         width: "10%",
                         align: "center",
                         editable: true,

@@ -124,7 +124,7 @@
             </li>
             <li>
               <a href="drug.jsp">药品</a>
-            </li>
+            </li>f
           </ul>
         </li>
         <li class="dropdown">
@@ -134,6 +134,9 @@
           <ul class="dropdown-menu">
             <li>
               <a href="outlier_detection.jsp">住院异常检测</a>
+            </li>
+            <li>
+              <a href="hospital_anomaly_detection.jsp">医院异常检测</a>
             </li>
           </ul>
         </li>
@@ -215,39 +218,6 @@
   </div>
 </div>
 
-<<<<<<< HEAD
-
-  <div class="da-slide">
-    <%--<div class="container">--%>
-      <%--<div class="row">--%>
-        <%--<div class="col-md-12">--%>
-          <%--<h2>--%>
-            <%--<i>USING BEST WEB</i>--%>
-            <%--</br>--%>
-            <%--<i>SOLUTIONS WITH</i>--%>
-            <%--</br>--%>
-            <%--<i>HTML5/CSS3</i>--%>
-          <%--</h2>--%>
-          <%--<p>--%>
-            <%--<i>Lorem ipsum dolor amet</i>--%>
-            <%--<br />--%>
-            <%--<i>tempor incididunt ut</i>--%>
-            <%--<br />--%>
-            <%--<i>veniam omnis </i>--%>
-          <%--</p>--%>
-          <%--<a href="#" class="btn btn-info btn-lg da-link">--%>
-            <%--Read more--%>
-          <%--</a>--%>
-          <%--<div class="da-img">--%>
-            <%--<img src="img/parallax-slider/images/1.png" alt="image01" />--%>
-          <%--</div>--%>
-        <%--</div>--%>
-      <%--</div>--%>
-    <%--</div>--%>
-  </div>
-</div>
-=======
->>>>>>> song
 <div class="container">
   <div class="row mar-b-50">
     <div class="col-md-12">

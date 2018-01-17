@@ -16,6 +16,17 @@
         <if test="grade !=null"> and grade.grade=#{grade}</if>
         order by a.h_fees,a.h_count desc
     </select>
+    <select id="getHospitalOutliers" resultType="HospitalOutlier">
+        select a.year,a.identity,a.r_name,a.h_name,a.m_count,a.h_count,a.h_fees,a.h_groupfees
+        ,a.m_fees,a.m_groupfees,a.drugfees,grade.grade as grade, a.score as score
+        from hospital_anomaly_detection a left join hgrade grade on grade.id=a.grade
+        where 1=1
+        <if test="identity !=0"> and identity=#{identity}</if>
+        <if test="h_name !=null"> and h_name like "%" #{h_name}"%"</if>
+        <if test="year !=0"> and year=#{year}</if>
+        <if test="grade !=null"> and grade.grade=#{grade}</if>
+        order by a.score desc
+    </select>
     <select id="getTop10" resultType="Hospital">
         select a.year,a.identity,a.r_name,a.h_name,a.m_count,a.h_count,a.h_fees,a.h_groupfees
         ,a.m_fees,a.m_groupfees,a.drugfees,grade.grade as grade,1 as avg_hfees,1 as avg_hgroupfees,1 as avg_mfees,1 as avg_mgroupfees
@@ -33,6 +44,16 @@
         <if test="h_name !=null"> and h_name like "%" #{h_name}"%"</if>
         <if test="year !=0"> and year=#{year}</if>
         order by a.h_fees,a.h_count desc
+    </select>
+    <select id="getADDetails" resultType="HospitalOutlierDetail">
+        select a.h_name, a.d_name, a.avg_disease_fee, a.cnt, (a.avg_disease_fee-b.avg_fee)/b.avg_fee as pp_beyond
+        from (
+        select *
+        from hospital_outlier_detail
+        where h_name='${h_name}'
+        ) a
+        join disease_fee b on a.d_name = b.d_name and a.h_grade = b.h_grade
+        order by a.cnt desc
     </select>
     <select id="detectAvgGroup" resultType="HospitalAD">
         select h.h_name,h.year,cast(coalesce(h.h_groupfees/h.h_count,0) as decimal(50,2)) as actual,
