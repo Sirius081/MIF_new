@@ -43,7 +43,7 @@ function loadDetails(){
                 data: newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['医疗机构代码', "疾病名称", "均次住院费用", "住院人次", "均次费用超统计平均值比例"],
+                colNames: ['医疗机构代码', "疾病名称", "均次住院费用", "住院人次", "均次费用同比（%）"],
                 colModel: [
                     {name: 'h_name', index: 'h_name', width: "35%", align: "center", editable: true},
                     {name: 'd_name', index: 'd_name', width: "15%", align: "center", editable: true},
