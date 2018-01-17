@@ -162,6 +162,9 @@
             <li>
               <a href="arima.jsp">ARIMA</a>
             </li>
+            <li>
+              <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
+            </li>
           </ul>
         </li>
         <li><input class="form-control search" placeholder=" Search" type="text"></li>

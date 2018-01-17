@@ -116,7 +116,7 @@
                             <a href="e_smoothing.jsp">指数平滑法</a>
                         </li>
                         <li>
-                            <a href="arima.jsp">ARIMA</a>
+                            <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
                         </li>
                     </ul>
                 </li>

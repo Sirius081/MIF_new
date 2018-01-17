@@ -135,6 +135,9 @@
                         <li>
                             <a href="arima.jsp">ARIMA</a>
                         </li>
+                        <li>
+                            <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
+                        </li>
                     </ul>
                 </li>
                 <li><input class="form-control search" placeholder=" Search" type="text"></li>
@@ -183,6 +186,27 @@
 </div>
 </div>
 </div>
+</div>
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel1">
+                    均次费用同比Tips
+                </h4>
+            </div>
+            <div class="modal-body">
+                均次费用同比p：该病种的均次住院费用比同等级医院的均次住院费用平均值超出p%。若p为负，则表示低于平均值。
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 <!--small footer start -->
 <footer class="footer-small">

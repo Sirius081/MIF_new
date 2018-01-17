@@ -84,7 +84,14 @@ function loadDetails(){
                 altRows: true, //设置为交替行表格,默认为false
                 loadonce: true,
                 multiboxonly: true, //是否只能点击复选框多选
-                autowidth: true //自动宽
+                autowidth: true,//自动宽
+                onSortCol: function (index, colindex, sortorder)
+                {
+                    //列排序事件，向server传值，值为当前的页数
+                    if(index=='pp_beyond'&& sortorder=='asc'){
+                        $('#myModal1').modal('show')          //显示模态框
+                    }
+                }
             });
         }
     });

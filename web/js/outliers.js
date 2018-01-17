@@ -68,6 +68,12 @@ function selectResult()
                     if(index=='score'&& sortorder=='asc'){             //当点击异常检测按钮时，给出异常值的相关解释
                         $('#myModal').modal('show')          //显示模态框
                     }
+                    else if(index=='percentage'&& sortorder=='asc'){
+                        $('#myModal1').modal('show')          //显示模态框
+                }
+                    else if(index=='percentile'&& sortorder=='asc'){
+                        $('#myModa2').modal('show')          //显示模态框
+                    }
                 },
                 onSelectRow: function(id,status,e){
                     var row = $("#grid-table").jqGrid('getRowData',id);
@@ -115,9 +121,18 @@ function selectResult()
                                 altRows: true, //设置为交替行表格,默认为false
                                 loadonce: true,
                                 multiboxonly: true, //是否只能点击复选框多选
-                                autowidth: true //自动宽
+                                autowidth: true,//自动宽
+                                onSortCol: function (index, colindex, sortorder)
+                                {
+                                    //列排序事件，向server传值，值为当前的页数
+                                    if(index=='percentage'&& sortorder=='asc'){
+                                        $('#myModal1').modal('show')          //显示模态框
+                                    }
+                                    else if(index=='percentile'&& sortorder=='asc'){
+                                        $('#myModal2').modal('show')          //显示模态框
+                                    }
+                                }
                             });
-
                             $("#grid-table").jqGrid('navGrid','#grid-pager',{del:false,add:false,edit:false},{},{},{},{multipleSearch:true});
 
                         }

@@ -133,6 +133,9 @@
                         <li>
                             <a href="arima.jsp">ARIMA</a>
                         </li>
+                        <li>
+                            <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
+                        </li>
                     </ul>
                 </li>
                 <li><input class="form-control search" placeholder=" Search" type="text"></li>
@@ -228,6 +231,51 @@
             </div>
             <div class="modal-body">
                 异常值是指该条住院记录可能存在骗保行为的可能性大小，该值越大越有可能存在骗保行为，需要重点关注。
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabe1l">
+                    使用率占比Tips
+                </h4>
+            </div>
+            <div class="modal-body">
+                使用率占比p：有p%的住院（同病种）中使用了该药品或诊疗
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel2">
+                    费用支出同比Tips
+                </h4>
+            </div>
+            <div class="modal-body">
+                费用支出同比p：该药品或诊疗的费用超过了p%的住院（同病种）
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭
