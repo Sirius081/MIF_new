@@ -35,6 +35,7 @@ function loadDetails(){
                 newjson[i].avg_disease_fee = data.hospitalOutlierDetails[i].avg_disease_fee;
                 newjson[i].cnt = data.hospitalOutlierDetails[i].cnt;
                 newjson[i].pp_beyond = data.hospitalOutlierDetails[i].pp_beyond;
+                newjson[i].fake_name = data.hospitalOutlierDetails[i].fake_name;
             }
             var grid_selector = "#grid-table2";
             var pager_selector = "#grid-pager2";
@@ -43,9 +44,10 @@ function loadDetails(){
                 data: newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['医疗机构代码', "疾病名称", "均次住院费用", "住院人次", "均次费用同比（%）"],
+                colNames: ['医院名','医院编号', "疾病名称", "均次住院费用", "住院人次", "均次费用同比（%）"],
                 colModel: [
-                    {name: 'h_name', index: 'h_name', width: "35%", align: "center", editable: true},
+                    {name: 'fake_name', index: 'fake_name', width: "35%", align: "center", editable: true},
+                    {name: 'h_name', index: 'h_name', width: "0%", align: "center", editable: true},
                     {name: 'd_name', index: 'd_name', width: "15%", align: "center", editable: true},
                     {
                         name: 'avg_disease_fee',

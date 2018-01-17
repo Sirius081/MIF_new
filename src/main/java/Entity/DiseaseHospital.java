@@ -7,21 +7,25 @@ public class DiseaseHospital {
     int year;//年份
     int identity;//职工1 或 居民2
     String h_name;//医院代码
+    String fake_name;
     String grade;//医院等级
     String d_name;//疾病名称
     int h_count;//住院人次
     double h_fees;//总费用
     double h_groupfees;//住院统筹支付
     double avg_hgroupfees;
-    public DiseaseHospital(int year, int identity, String h_name, String grade, String d_name, int h_count, double h_fees, double h_groupfees) {
+
+    public DiseaseHospital(int year, int identity, String h_name, String fake_name, String grade, String d_name, int h_count, double h_fees, double h_groupfees, double avg_hgroupfees) {
         this.year = year;
         this.identity = identity;
         this.h_name = h_name;
+        this.fake_name = fake_name;
         this.grade = grade;
         this.d_name = d_name;
         this.h_count = h_count;
         this.h_fees = h_fees;
         this.h_groupfees = h_groupfees;
+        this.avg_hgroupfees = avg_hgroupfees;
     }
 
     public DiseaseHospital() {
@@ -30,6 +34,14 @@ public class DiseaseHospital {
         this.h_count = -1;
         this.h_fees = -1;
         this.h_groupfees = -1;
+    }
+
+    public String getFake_name() {
+        return fake_name;
+    }
+
+    public void setFake_name(String fake_name) {
+        this.fake_name = fake_name;
     }
 
     public int getYear() {

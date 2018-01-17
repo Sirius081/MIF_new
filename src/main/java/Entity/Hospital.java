@@ -9,6 +9,7 @@ public class Hospital {
     private int identity;//职工1 或 居民2
     private String r_name;//区县代码
     private String h_name;//医院代码
+    private String fake_name;
     private String grade;//grade of hospital
 
     private int m_count;//门诊人次
@@ -24,7 +25,13 @@ public class Hospital {
     private double avg_mfees;//平均门诊费用
     private double avg_mgroupfees;//平均门诊统筹支付费用
 
+    public String getFake_name() {
+        return fake_name;
+    }
 
+    public void setFake_name(String fake_name) {
+        this.fake_name = fake_name;
+    }
 
     public int getYear() {
         return year;

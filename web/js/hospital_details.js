@@ -37,6 +37,7 @@ function loadDetails(){
                 newjson[i].h_groupfees = data.diseaseHospitals[i].h_groupfees;
                 newjson[i].avg_hgroupfees = data.diseaseHospitals[i].avg_hgroupfees;
                 newjson[i].h_count = data.diseaseHospitals[i].h_count;
+                newjson[i].fake_name = data.diseaseHospitals[i].fake_name;
             }
             var grid_selector = "#grid-table2";
             var pager_selector = "#grid-pager2";
@@ -45,10 +46,11 @@ function loadDetails(){
                 data: newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份', '医疗机构代码', "医院等级", "疾病名称", "住院统筹支付", "均次住院统筹费用", "住院人次"],
+                colNames: ['年份', '医院名', '代码', "医院等级", "疾病名称", "住院统筹支付", "均次住院统筹费用", "住院人次"],
                 colModel: [
                     {name: 'year', index: "year", width: "5%", align: "center", editable: true},
-                    {name: 'h_name', index: 'h_name', width: "35%", align: "center", editable: true},
+                    {name: 'fake_name', index: 'fake_name', width: "35%", align: "center", editable: true},
+                    {name: 'h_name', index: 'h_name', width: "0%", align: "center", editable: true},
                     {name: 'grade', index: 'grade', width: "5%", align: "center", editable: true},
                     {name: 'd_name', index: 'd_name', width: "15%", align: "center", editable: true},
                     {

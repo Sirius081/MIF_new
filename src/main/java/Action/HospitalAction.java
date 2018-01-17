@@ -184,6 +184,7 @@ public class HospitalAction extends ActionSupport implements ServletRequestAware
 
     public static void main(String[] args) {
         HospitalAction h=new HospitalAction();
+        h.hospitals = h.dao.getHospitals(new Hospital());
         h.hospitalOutlierDetails = h.dao.getADDetails("00E83D779DB32B01AE1B47736092F7E7");
         List<HospitalAD>hd=h.dao.detectAvgGroup("018FF7841008EAE36262A5C4B78AC483");
         System.out.println();

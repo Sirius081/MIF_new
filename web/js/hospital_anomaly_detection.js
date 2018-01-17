@@ -26,7 +26,8 @@ function selectResult()
                 newjson[i].avg_hgroupfees = data.hospitalOutliers[i].avg_hgroupfees;
                 newjson[i].m_groupfees = data.hospitalOutliers[i].m_groupfees;
                 newjson[i].avg_mgroupfees = data.hospitalOutliers[i].avg_mgroupfees;
-                newjson[i].score = data.hospitalOutliers[i].score
+                newjson[i].score = data.hospitalOutliers[i].score;
+                newjson[i].fake_name = data.hospitalOutliers[i].fake_name;
             }
             var grid_selector = "#grid-table2";
             var pager_selector = "#grid-pager2";
@@ -35,10 +36,11 @@ function selectResult()
                 data:newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份', '编号', "医院等级", "住院统筹支付", "均次住院统筹支付", "门诊统筹支付", "均次门诊统筹支付", "异常值"],
+                colNames: ['年份','医院名', '编号', "医院等级", "住院统筹支付", "均次住院统筹支付", "门诊统筹支付", "均次门诊统筹支付", "异常值"],
                 colModel: [
                     {name: 'year', index: "year", width: "5%", align: "center", editable: true},
-                    {name: 'h_name', index: 'h_name', width: "35%", align: "center", editable: true},
+                    {name: 'fake_name', index: 'fake_name', width: "35%", align: "center", editable: true},
+                    {name: 'h_name', index: 'h_name', width: "0%", align: "center", editable: true},
                     {name: 'grade', index: 'grade', width: "8%", align: "center", editable: true},
                     {name: 'h_groupfees', index: 'h_groupfees', width: "12%", align: "center", editable: true, sorttype: 'integer', formatter: 'integer'},
                     {name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "14%", align: "center", editable: true, sorttype: 'integer', formatter: 'integer'},

@@ -25,6 +25,7 @@ function updatetop10()
                 newjson[i].h_name = data.hospitals[i].h_name;
                 newjson[i].year = data.hospitals[i].year;
                 newjson[i].h_fees = data.hospitals[i][orderBy];
+                newjson[i].fake_name = data.hospitals[i].fake_name;
             }
             var grid_selector = "#grid-table";
             var pager_selector = "#grid-pager";
@@ -33,9 +34,10 @@ function updatetop10()
                 data: newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['编号', '费用'],
+                colNames: ['编号','医院名', '费用'],
                 colModel: [
-                    {name: 'h_name', index: 'h_name', width: "70%", align: "center", editable: true},
+                    {name: 'h_name', index: 'h_name', width: "0%", align: "center", editable: true},
+                    {name: 'fake_name', index: 'fake_name', width: "70%", align: "center", editable: true},
                     {name: "h_fees", index: "h_fees", width: "30%", align: "center", sorttype: 'integer', formatter: 'integer'},
                 ],
                 viewrecords: true, //是否在浏览导航栏显示记录总数
@@ -87,6 +89,7 @@ function selectResult()
                 newjson[i].avg_mgroupfees = data.hospitals[i].avg_mgroupfees;
                 newjson[i].m_count = data.hospitals[i].m_count;
                 newjson[i].h_count = data.hospitals[i].h_count;
+                newjson[i].fake_name = data.hospitals[i].fake_name;
             }
             var grid_selector = "#grid-table2";
             var pager_selector = "#grid-pager2";
@@ -95,10 +98,11 @@ function selectResult()
                 data:newjson,
                 datatype: "local",
                 height: "auto",
-                colNames: ['年份', '编号', "医院等级", "住院统筹支付", "均次住院统筹支付", "门诊统筹支付", "均次门诊统筹支付"],
+                colNames: ['年份', '医院名','编号', "医院等级", "住院统筹支付", "均次住院统筹支付", "门诊统筹支付", "均次门诊统筹支付"],
                 colModel: [
                     {name: 'year', index: "year", width: "5%", align: "center", editable: true},
-                    {name: 'h_name', index: 'h_name', width: "35%", align: "center", editable: true},
+                    {name: 'fake_name', index: 'fake_name', width: "35%", align: "center", editable: true},
+                    {name: 'h_name', index: 'h_name', width: "0%", align: "center", editable: true},
                     {name: 'grade', index: 'grade', width: "8%", align: "center", editable: true},
                     {name: 'h_groupfees', index: 'h_groupfees', width: "12%", align: "center", editable: true, sorttype: 'integer', formatter: 'integer'},
                     {name: 'avg_hgroupfees', index: 'avg_hgroupfees', width: "14%", align: "center", editable: true, sorttype: 'integer', formatter: 'integer'},

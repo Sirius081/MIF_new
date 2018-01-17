@@ -6,19 +6,27 @@ package Entity;
 public class HospitalOutlierDetail {
     private String h_name;
     private String d_name;
+    private String fake_name;
     private double avg_disease_fee;
     private int cnt;
     private double pp_beyond;
 
-    public HospitalOutlierDetail(String h_name, String d_name, double avg_disease_fee, int cnt, double pp_beyond) {
+    public HospitalOutlierDetail(String h_name, String d_name, String fake_name, double avg_disease_fee, int cnt, double pp_beyond) {
         this.h_name = h_name;
         this.d_name = d_name;
+        this.fake_name = fake_name;
         this.avg_disease_fee = avg_disease_fee;
         this.cnt = cnt;
         this.pp_beyond = pp_beyond;
     }
 
+    public String getFake_name() {
+        return fake_name;
+    }
 
+    public void setFake_name(String fake_name) {
+        this.fake_name = fake_name;
+    }
 
     public String getH_name() {
         return h_name;

@@ -8,6 +8,7 @@ public class HospitalOutlier {
     private int identity;//职工1 或 居民2
     private String r_name;//区县代码
     private String h_name;//医院代码
+    private String fake_name;//医院名
     private String grade;//grade of hospital
 
     private int m_count;//门诊人次
@@ -24,6 +25,13 @@ public class HospitalOutlier {
     private double avg_mgroupfees;//平均门诊统筹支付费用
     private double score;
 
+    public String getFake_name() {
+        return fake_name;
+    }
+
+    public void setFake_name(String fake_name) {
+        this.fake_name = fake_name;
+    }
 
     public double getScore() {
         return score;
