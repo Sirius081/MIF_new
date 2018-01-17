@@ -46,7 +46,7 @@
         order by a.h_fees,a.h_count desc
     </select>
     <select id="getADDetails" resultType="HospitalOutlierDetail">
-        select a.h_name, a.d_name, a.avg_disease_fee, a.cnt, (a.avg_disease_fee-b.avg_fee)/b.avg_fee as pp_beyond
+        select a.h_name, a.d_name, a.avg_disease_fee, a.cnt, (a.avg_disease_fee-b.avg_fee)/b.avg_fee*100 as pp_beyond
         from (
         select *
         from hospital_outlier_detail
