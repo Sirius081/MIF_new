@@ -115,6 +115,9 @@
                         <li>
                             <a href="outlier_detection.jsp">住院异常检测</a>
                         </li>
+                        <li>
+                            <a href="hospital_anomaly_detection.jsp">医院异常检测</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="dropdown">

@@ -234,6 +234,115 @@ function load(){
                 //为echarts对象加载数据
                 line.setOption(option);
 
+                //新参保和退保情况
+                var line = echarts.init(document.getElementById('new_back'));
+                var timeData = ['2002','2003','2004','2005','2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015'];
+                var new_number=[20362, 28841, 16539, 21498, 99793, 38516, 25575, 36837, 53089, 39398, 38936, 53907, 48777, 44193];
+                var back_number=[1988, 4250, 3667, 4670, 3445, 5856, 6848, 8557, 11230, 13569, 14794, 18860, 25243, 33666];
+                var option = {
+                    title: {
+                        text: '新参保和退保情况',
+                        subtext: '数据来自泸州医保局',
+                        x: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            animation: false
+                        }
+                    },
+                    legend: {
+                        data: ['新参保人数', '退保人数'],
+                        x: 'left'
+                    },
+                    toolbox: {
+                        feature: {
+                            dataZoom: {
+                                yAxisIndex: 'none'
+                            },
+                            restore: {},
+                            saveAsImage: {}
+                        }
+                    },
+                    axisPointer: {
+                        link: {xAxisIndex: 'all'}
+                    },
+                    dataZoom: [
+                        {
+                            show: true,
+                            realtime: true,
+                            start: 30,
+                            end: 70,
+                            xAxisIndex: [0, 1]
+                        },
+                        {
+                            type: 'inside',
+                            realtime: true,
+                            start: 30,
+                            end: 70,
+                            xAxisIndex: [0, 1]
+                        }
+                    ],
+                    grid: [{
+                        left: 50,
+                        right: 50,
+                        height: '35%'
+                    }, {
+                        left: 50,
+                        right: 50,
+                        top: '55%',
+                        height: '35%'
+                    }],
+                    xAxis: [
+                        {
+                            type: 'category',
+                            boundaryGap: false,
+                            axisLine: {onZero: true},
+                            data: timeData
+                        },
+                        {
+                            gridIndex: 1,
+                            type: 'category',
+                            boundaryGap: false,
+                            axisLine: {onZero: true},
+                            data: timeData,
+                            position: 'top'
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            name: '新参保人数',
+                            type: 'value'
+                        },
+                        {
+                            gridIndex: 1,
+                            name: '退保人数',
+                            type: 'value',
+                            inverse: true
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '新参保人数',
+                            type: 'line',
+                            symbolSize: 10,
+                            hoverAnimation: false,
+                            data:new_number
+                        },
+                        {
+                            name: '退保人数',
+                            type: 'line',
+                            xAxisIndex: 1,
+                            yAxisIndex: 1,
+                            symbolSize: 10,
+                            hoverAnimation: false,
+                            data:back_number
+                        }
+                    ]
+                };
+                line.setOption(option);
+                //var line= echarts.init(document.getElementById('first'));
+                //line.setOption(option);
                 //年龄结构
                 var param = '&identity=' +'1';
                 var line= echarts.init(document.getElementById('age_group'));

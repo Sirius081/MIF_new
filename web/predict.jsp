@@ -16,6 +16,27 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zh-cn">
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>统计报表页面</title>
+  <link rel="stylesheet" href="css/style.default.css" type="text/css" />
+  <script type="text/javascript" src="js/plugins/jquery-1.7.min.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery.cookie.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery.flot.min.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery.flot.pie.js"></script>
+  <script type="text/javascript" src="js/plugins/jquery.flot.resize.min.js"></script>
+  <script type="text/javascript" src="js/custom/general.js"></script>
+  <script type="text/javascript" src="js/custom/charts.js"></script>
+  <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
+  <!--[if IE 9]>
+  <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+  <![endif]-->
+  <!--[if IE 8]>
+  <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+  <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="js/plugins/css3-mediaqueries.js"></script>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <meta name="description" content=""/>
@@ -27,19 +48,29 @@
   <!-- BOOTSTRAP CORE STYLE  -->
   <link href="css/bootstrap.css" rel="stylesheet"/>
   <!-- FONT AWESOME STYLE  -->
+  <link href="css/common.css" rel="stylesheet"/>
   <link href="css/font-awesome.css" rel="stylesheet"/>
   <!-- CUSTOM STYLE  -->
-  <link href="css/common.css" rel="stylesheet"/>
+
   <link href="css/spider.css" rel="stylesheet"/>
   <link href="css/style.css" rel="stylesheet"/>
-  <script type="text/javascript" src="js/common.js"></script>
   <!-- GOOGLE FONT -->
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'/>
-  <script type="text/javascript" src="js/echarts.common.min.js"></script>
-  <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/ui.jqgrid.css"/>
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.10.4.custom.css"/>
+  <link rel="stylesheet" type="text/css" href="css/theme.css"/>
 
-</head><body>
+  <script type="text/javascript" src="js/echarts.common.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/sub-menu.js"></script>
+  <script type="text/javascript" src="js/grid.locale-cn.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery.jqGrid.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="js/echarts.js"></script>
+
+</head><body onload="load()">
 <header class="head-section">
   <div class="navbar navbar-default navbar-static-top container">
     <div class="navbar-header">
@@ -110,7 +141,10 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a href="blog.html">住院异常检测</a>
+              <a href="outlier_detection.jsp">住院异常检测</a>
+            </li>
+            <li>
+              <a href="hospital_anomaly_detection.jsp">医院异常检测</a>
             </li>
           </ul>
         </li>
@@ -152,23 +186,46 @@
 </div>
 <!--breadcrumbs end-->
 
-<div  id="content2">
-  <!--切换标签页面-->
-    <div id="source_table_content" style="">
-      <div class="wrap" >
-        <form id="queryPredict">
-          <!--右部显示详细信息-->
-            <div id="detail-information">
-            </div>
-          <%--<span style="font-size:25px" >选择模型：</span>--%>
-          <%--<select id="select_model" class="form-control select_style" ></select>--%>
-          <%--<span style="font-size:25px">选择变量：</span>--%>
-          <%--<select id="select_variable" class="form-control select_style" style="width:200px;margin-left: 100px"></select>--%>
-          <%--<input id="query" class="btn" type="button" value="查询" style="font-size: 20px; margin-left: 100px;margin-top:20px "/>--%>
-        </form>
-    </div>
+<div class="contentwrapper">
+  <div class="text-center feature-head wow fadeInDown">
+    <h1 class="">
+      总体趋势
+    </h1>
   </div>
-</div>
+  <div id="charts" class="subcontent">
+    <div class="one_half">
+      <div class="contenttitle2">
+        <h3>未来5年平均工资</h3>
+      </div><!--contenttitle-->
+      <br />
+      <div id="avgWage" style="height:300px;"></div>
+    </div><!--one_half last-->
+
+    <div class="one_half last">
+      <div class="contenttitle2">
+        <h3>在职离退人数</h3>
+      </div><!--contenttitle-->
+      <br />
+      <div id="working_retired" style="height: 300px;"></div>
+    </div><!--one_half last-->
+
+    <br clear="all" />
+
+  </div><!--#charts-->
+
+  <div id="statistics" class="subcontent">
+    <div class="text-center feature-head wow fadeInDown">
+      <h1 class="">
+        收支走向预测
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div id="detail-information" style="height: 300px;"></div>
+      </div>
+    </div><!--#statistics-->
+  </div><!--contentwrapper-->
+</div><!--bodywrapper-->
   <script src="js/echarts.common.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function(){
@@ -216,9 +273,8 @@
   </div>
 </footer>
 <!--small footer end-->
-
 <script type="text/javascript" src="js/spider.js"></script>
+<script type="text/javascript" src="js/predict.js"></script>
 <script type="text/javascript" src="js/plot_forecast.js"></script>
-
 </body>
 </html>

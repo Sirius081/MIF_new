@@ -64,6 +64,13 @@ function selectResult()
                     }
                     $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-x' : 'scroll' });
                     $("#grid-table").closest(".ui-jqgrid-bdiv").css({ 'overflow-y' : 'scroll' });
+                },
+                onSortCol: function (index, colindex, sortorder)
+                {
+                    //列排序事件，向server传值，值为当前的页数
+                    if(index=='score'&& sortorder=='asc'){             //当点击异常检测按钮时，给出异常值的相关解释
+                        $('#myModal').modal('show')          //显示模态框
+                    }
                 }
             });
             $("#grid-table2").jqGrid('navGrid','#grid-pager2',{del:false,add:false,edit:false},{},{},{},{multipleSearch:true});
