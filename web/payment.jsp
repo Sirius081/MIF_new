@@ -161,6 +161,12 @@
                         <li>
                             <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
                         </li>
+                        <li>
+                            <a href="lof.jsp">局部异常因子(LOF)算法</a>
+                        </li>
+                        <li>
+                            <a href="context_method.jsp">基于context的异常检测</a>
+                        </li>
                     </ul>
                 </li>
                 <li><input class="form-control search" placeholder=" Search" type="text"></li>

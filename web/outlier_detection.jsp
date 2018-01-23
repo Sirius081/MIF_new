@@ -136,6 +136,12 @@
                         <li>
                             <a href="dbscan.jsp">DBSCAN聚类分析方法</a>
                         </li>
+                        <li>
+                            <a href="lof.jsp">局部异常因子(LOF)算法</a>
+                        </li>
+                        <li>
+                            <a href="context_method.jsp">基于context的异常检测</a>
+                        </li>
                     </ul>
                 </li>
                 <li><input class="form-control search" placeholder=" Search" type="text"></li>
@@ -230,7 +236,7 @@
                 </h4>
             </div>
             <div class="modal-body">
-                异常值是指该条住院记录可能存在骗保行为的可能性大小，该值越大越有可能存在骗保行为，需要重点关注。
+                <a href="context_method.jsp">异常值</a>是指该条住院记录可能存在骗保行为的可能性大小，该值越大越有可能存在骗保行为，需要重点关注。
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭
