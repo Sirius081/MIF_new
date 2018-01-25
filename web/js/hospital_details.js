@@ -92,7 +92,7 @@ function loadDetails(){
             });
         }
     });
-    var param2 = "&identity=" + identity + '&grade=' + grade+ '&year=' + year;
+    var param2 = "&identity=" + identity + '&grade=' + grade+'&year=' + year+'&h_name='+"";
     var line = echarts.init(document.getElementById('detail-information'))
     $.ajax({
         url: '/MIF/hospital/query',

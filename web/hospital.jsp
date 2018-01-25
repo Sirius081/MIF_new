@@ -191,7 +191,7 @@
                     <option value="m_groupfees">门诊统筹支付</option>
                     <option value="m_count">门诊人次</option>
                     <option value="h_count">住院人次</option>
-                    <option value="drugfees">住院人次</option>
+                    <option value="drugfees">药品费用</option>
                   </select>
                   <input id="query1" class="query" type="button" onclick="updatetop10()" value="查询"/>
 

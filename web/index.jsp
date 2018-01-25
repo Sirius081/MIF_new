@@ -124,7 +124,7 @@
             </li>
             <li>
               <a href="drug.jsp">药品</a>
-            </li>f
+            </li>
           </ul>
         </li>
         <li class="dropdown">
@@ -196,7 +196,6 @@
           </p>
         </div>
         <img class="iphone" src="images/seq-slider/insurance.jpg" alt="resident" />
-        <img class="iphone-shadow" src="img/seq-slider/iphone-shadow.png" alt="" />
       </li>
       <li>
         <img class="ipad" src="images/seq-slider/worker.jpg" alt="worker" />
